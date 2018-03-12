@@ -2,17 +2,32 @@
 <div class="form-wizard-catalogo step-active" id="step-share">
   <div class="grid-container">
     <div class="grid-x grid-padding-x align-center">
-      <div class="paginacao"></div>
+      <div class="box-paginacao">
+        <div class="paginacao"></div>
+      </div>
       <div class="cell small-12 medium-7 margin-top-2">
+        <ul class="menu">
+          <li>
+            <a href="#" data-grid="grid2">
+              <i class="fas fa-th-large"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" data-grid="grid3">
+              <i class="fas fa-th"></i>
+            </a>
+          </li>
+        </ul>
         <div class="swiper-container swiper-container-share">
           <div class="swiper-wrapper">
             <div class="catalogo-page swiper-slide capa-usuario" title="{{nome_persona}}">
               <div class="capa capa-{{nome_persona}} text-center">
                 <div class="padding-top-1">
-                  <img src="assets/img/rommanel-logo.png" />
+                  <img src="assets/img/logo-rommanel-capa-mobile.png" class="show-for-small-only" />
+                  <img src="assets/img/logo-rommanel-capa.png" class="hide-for-small-only" />
                 </div>
                 <div class="catalogo-nome">
-                  <p>Catálago Rommanel 2018 da</p>
+                  <p>Catálogo Rommanel 2018 da</p>
                   <h1>{{nome}}</h1>
                 </div>
               </div>
@@ -20,16 +35,15 @@
             <div class="catalogo-page swiper-slide" title="{{nome}}">
               <h3 class="margin-vertical-1">Esse catálogo Rommanel 2018 pertence à:</h3>
               <div class="padding-vertical-2 bg-dark overflow-hidden">
-                <div class="sm-avatar avatar margin-right-1 margin-left-2 float-left">
-                  <img *ngIf="url_imagem" src="{{ url_imagem }}" class="user-img" style="width: 100px; height: 100px;border-radius: 100px;" />
-                  <!-- <i class="fas fa-user"></i> -->
-                </div>
+                <img *ngIf="url_imagem" src="{{ url_imagem }}" class="user-img"/>
+                <div class="sm-avatar avatar margin-right-1 margin-left-2 float-left" *ngIf="!url_imagem"><i class="fas fa-user"></i></div>
                 <div class="color-white float-left margin-vertical-1 padding-left-1">
                   <p style="margin-bottom:5px;">
                     <b>{{nome}}</b>
                   </p>
                   <p class="font-14">
-                    <i>{{cidade}}, {{estado}}</i>
+                    <i>{{cidade}}
+                      <i *ngIf="cidade && estado">, </i>{{estado}}</i>
                   </p>
                 </div>
               </div>
@@ -37,7 +51,7 @@
                 <div class="padding-top-2  margin-horizontal-auto user-info">
                   <p class="color-primary">
                     <i class="fas fa-envelope margin-right-1 perfil-ico"></i>{{email}}</p>
-                  <p class="color-primary">
+                  <p class="color-primary" *ngIf="telefone">
                     <i class="fas fa-phone margin-right-1 perfil-ico"></i>{{telefone}}</p>
                 </div>
                 <p class="color-gray text-center font-12 padding-3 margin-0">{{mensagem}}</p>
@@ -45,6 +59,7 @@
             </div>
             <div *ngFor="let pagina of paginas" class="catalogo-page swiper-slide paginas-usuario" title="{{pagina.tituloPagina}}">
               <div class="grid-x">
+                <h3 class="margin-vertical-1 text-center width-100">{{pagina.tituloPagina == 'Pulseiras' ? "Minhas " + pagina.tituloPagina : "Meus " + pagina.tituloPagina}}</h3>
                 <div [innerHtml]="pagina.pagina | safe: 'html'" style="width:100%;"></div>
               </div>
               <hr style="width:90%;">
@@ -169,43 +184,43 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_raquel/11/512548_a.jpg" alt="">
-                    <div class="caption">512548_a</div>
+                    <div class="caption">512548</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_raquel/11/512548_b.jpg" alt="">
-                    <div class="caption">512548_b</div>
+                    <div class="caption">512548</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_raquel/11/512548_c.jpg" alt="">
-                    <div class="caption">512548_c</div>
+                    <div class="caption">512548</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_raquel/11/512548_d.jpg" alt="">
-                    <div class="caption">512548_d</div>
+                    <div class="caption">512548</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_raquel/11/512568_a.jpg" alt="">
-                    <div class="caption">512568_a</div>
+                    <div class="caption">512568</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_raquel/11/512568_b.jpg" alt="">
-                    <div class="caption">512568_b</div>
+                    <div class="caption">512568</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_raquel/11/512568_c.jpg" alt="">
-                    <div class="caption">512568_c</div>
+                    <div class="caption">512568</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
@@ -623,25 +638,25 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_alice/21/512579_a.jpg" alt="">
-                    <div class="caption">512579_a</div>
+                    <div class="caption">512579</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_alice/21/512579_b.jpg" alt="">
-                    <div class="caption">512579_b</div>
+                    <div class="caption">512579</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_alice/21/526030_a.jpg" alt="">
-                    <div class="caption">526030_a</div>
+                    <div class="caption">526030</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_alice/21/526030_b.jpg" alt="">
-                    <div class="caption">526030_b</div>
+                    <div class="caption">526030</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
@@ -927,13 +942,13 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_duda/27/140783_a.jpg" alt="">
-                    <div class="caption">140783_a</div>
+                    <div class="caption">140783</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_duda/27/140783_b.jpg" alt="">
-                    <div class="caption">140783_b</div>
+                    <div class="caption">140783</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
@@ -1239,19 +1254,19 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_maria_antonia/35/512558_a.jpg" alt="">
-                    <div class="caption">512558_a</div>
+                    <div class="caption">512558</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_maria_antonia/35/512558_b.jpg" alt="">
-                    <div class="caption">512558_b</div>
+                    <div class="caption">512558</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_maria_antonia/35/512558_c.jpg" alt="">
-                    <div class="caption">512558_c</div>
+                    <div class="caption">512558</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
@@ -1375,73 +1390,73 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_maria_antonia/37/526052_a.jpg" alt="">
-                    <div class="caption">526052_a</div>
+                    <div class="caption">526052</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_maria_antonia/37/526052_b.jpg" alt="">
-                    <div class="caption">526052_b</div>
+                    <div class="caption">526052</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_maria_antonia/37/526052_c.jpg" alt="">
-                    <div class="caption">526052_c</div>
+                    <div class="caption">526052</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_maria_antonia/37/526052_d.jpg" alt="">
-                    <div class="caption">526052_d</div>
+                    <div class="caption">526052</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_maria_antonia/37/542075_a.jpg" alt="">
-                    <div class="caption">542075_a</div>
+                    <div class="caption">542075</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_maria_antonia/37/542075_b.jpg" alt="">
-                    <div class="caption">542075_b</div>
+                    <div class="caption">542075</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_maria_antonia/37/542075_c.jpg" alt="">
-                    <div class="caption">542075_c</div>
+                    <div class="caption">542075</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_maria_antonia/37/542075_d.jpg" alt="">
-                    <div class="caption">542075_d</div>
+                    <div class="caption">542075</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_maria_antonia/37/551533_a.jpg" alt="">
-                    <div class="caption">551533_a</div>
+                    <div class="caption">551533</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_maria_antonia/37/551533_b.jpg" alt="">
-                    <div class="caption">551533_b</div>
+                    <div class="caption">551533</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_maria_antonia/37/551533_c.jpg" alt="">
-                    <div class="caption">551533_c</div>
+                    <div class="caption">551533</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_maria_antonia/37/551533_d.jpg" alt="">
-                    <div class="caption">551533_d</div>
+                    <div class="caption">551533</div>
                   </div>
                 </div>
               </div>
@@ -1458,25 +1473,25 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_maria_antonia/38/512549_a.jpg" alt="">
-                    <div class="caption">512549_a</div>
+                    <div class="caption">512549</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_maria_antonia/38/512549_b.jpg" alt="">
-                    <div class="caption">512549_b</div>
+                    <div class="caption">512549</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_maria_antonia/38/512593_a.jpg" alt="">
-                    <div class="caption">512593_a</div>
+                    <div class="caption">512593</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_maria_antonia/38/512593_b.jpg" alt="">
-                    <div class="caption">512593_b</div>
+                    <div class="caption">512593</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
@@ -1488,25 +1503,25 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_maria_antonia/38/526051_a.jpg" alt="">
-                    <div class="caption">526051_a</div>
+                    <div class="caption">526051</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_maria_antonia/38/526051_b.jpg" alt="">
-                    <div class="caption">526051_b</div>
+                    <div class="caption">526051</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_maria_antonia/38/531864_a.jpg" alt="">
-                    <div class="caption">531864_a</div>
+                    <div class="caption">531864</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_maria_antonia/38/531864_b.jpg" alt="">
-                    <div class="caption">531864_b</div>
+                    <div class="caption">531864</div>
                   </div>
                 </div>
               </div>
@@ -1598,9 +1613,9 @@
       do Catálogo 2018. Compartilhe com as suas clientes e boas vendas!
     </p>
     <div class="buttons-share">
-      <button class="button f-button expanded" (click)="share('http://df-app1-test.s3-website-sa-east-1.amazonaws.com/meuCatalogo')">
+      <button class="button f-button expanded rounded" (click)="share('http://df-app1-test.s3-website-sa-east-1.amazonaws.com/meuCatalogo/')">
         <i class="fab fa-facebook-f padding-right-1"></i>Compartilhar</button>
-      <button class="button l-button expanded" data-open="copiar_link">
+      <button class="button l-button expanded rounded" data-open="copiar_link">
         <i class="fas fa-link padding-right-1 "></i>Copiar link</button>
       <!-- <button class="button d-button expanded">
         <i class="fas fa-download padding-right-1 "></i>Baixar PDF</button> -->
@@ -1616,8 +1631,13 @@
     <div class="reveal text-center" id="copiar_link" data-reveal>
       <p>Selecione o link para copiar</p>
       <div class="input-group margin-vertical-1">
-        <span class="input-group-label"><i class="fas fa-link"></i></span>
-        <input class="input-group-field" type="text" value="http://df-app1-test.s3-website-sa-east-1.amazonaws.com/meuCatalogo/{{emailencrypt}}">
+        <span class="input-group-label">
+          <i class="fas fa-link"></i>
+        </span>
+        <input class="input-group-field" id="share-link" type="text" value="http://df-app1-test.s3-website-sa-east-1.amazonaws.com/meuCatalogo/{{emailencrypt}}">
+        <div class="input-group-button">
+          <button class="button share-copy-btn">Copiar</button>
+        </div>
       </div>
       <button class="close-button" data-close aria-label="Close modal" type="button">
         <span aria-hidden="true">&times;</span>

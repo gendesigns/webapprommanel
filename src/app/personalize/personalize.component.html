@@ -2,8 +2,8 @@
   <div class="bg-overlay"></div>
   <div class="grid-container">
     <div class="grid-x grid-padding-x align-center">
-      <div class="cell small-12 medium-7 question margin-top-9 text-center">
-        <h5 class="font-20">Passo 2</h5>
+      <div class="cell small-12 medium-7 question margin-top-2 text-center">
+        <h5 class="font-20">Passo 2 | <span class="step-info">Anéis</span></h5>
         <h6 class="font-20 text-light">Chegou a hora de personalizar o seu catálogo!</h6>
         <p>Aqui serão 6 etapas de personalização. Você terá 5 páginas divididas nas seguintes categorias: anéis, brincos, colares,
           pulseiras e pingentes. Nessas páginas você poderá escolher as joias que quiser. Em seguida, poderá personalizar
@@ -44,7 +44,7 @@
               </div>
             </div>
           </div>
-          <button class="button expanded margin-top-9 rounded width-75 margin-horizontal-auto" (click)="proxima('#pagina-de-brincos')">Personalizar página de Brincos
+          <button class="button expanded margin-top-2 rounded width-75 margin-horizontal-auto" (click)="proxima('#pagina-de-brincos')">Personalizar página de Brincos
             <i class="fas fa-angle-right float-right"></i>
           </button>
           <div class="swiper-container-shake swiper-container-custom hide-for-small-only">
@@ -61,61 +61,14 @@
               </div>
             </div>
             <div class="swiper-wrapper-shake">
-              <!-- onde ficarao os aneis para serem adicionados  ['512562','512576','512578','512579_a','512579_b','512591'] -->
-              <!-- Alice -->
-              <div class="swiper-slide" *ngFor="let alice_anel of alice_aneis" (click)="addImage('alice-anel-'+alice_anel)" id="alice-anel-{{alice_anel}}">
-                <img src="assets/img/aneis/alice/{{alice_anel}}.jpg">
-                <div class="caption">{{alice_anel}}</div>
+              <!-- onde ficarao os aneis para serem adicionados -->
+              <div class="swiper-slide" *ngFor="let anel of aneis" (click)="addImage(anel.persona+'-anel-'+anel.code)" id="{{anel.persona}}-anel-{{anel.code}}">
+                <img src="{{anel.img}}">
+                <div class="caption">{{anel.legenda}}</div>
                 <a href="#">
                   <i class="fas fa-plus"></i>
                 </a>
               </div>
-
-              <!-- Brenda -->
-              <div class="swiper-slide" *ngFor="let brenda_anel of brenda_aneis" (click)="addImage('brenda-anel-'+brenda_anel)" id="brenda-anel-{{brenda_anel}}">
-                <img src="assets/img/aneis/brenda/{{brenda_anel}}.jpg">
-                <div class="caption">{{brenda_anel}}</div>
-                <a href="#">
-                  <i class="fas fa-plus"></i>
-                </a>
-              </div>
-
-              <!-- Debora -->
-              <div class="swiper-slide" *ngFor="let debora_anel of debora_aneis" (click)="addImage('debora-anel-'+debora_anel)" id="debora-anel-{{debora_anel}}">
-                <img src="assets/img/aneis/debora/{{debora_anel}}.jpg">
-                <div class="caption">{{debora_anel}}</div>
-                <a href="#">
-                  <i class="fas fa-plus"></i>
-                </a>
-              </div>
-
-              <!-- Duda -->
-              <div class="swiper-slide" *ngFor="let duda_anel of duda_aneis" (click)="addImage('duda-anel-'+duda_anel)" id="duda-anel-{{duda_anel}}">
-                <img src="assets/img/aneis/duda/{{duda_anel}}.jpg">
-                <div class="caption">{{duda_anel}}</div>
-                <a href="#">
-                  <i class="fas fa-plus"></i>
-                </a>
-              </div>
-
-              <!-- Maria Antonia -->
-              <div class="swiper-slide" *ngFor="let maria_anel of maria_aneis" (click)="addImage('maria-anel-'+maria_anel)" id="maria-anel-{{maria_anel}}">
-                <img src="assets/img/aneis/maria-antonia/{{maria_anel}}.jpg">
-                <div class="caption">{{maria_anel}}</div>
-                <a href="#">
-                  <i class="fas fa-plus"></i>
-                </a>
-              </div>
-
-              <!-- Raquel -->
-              <div class="swiper-slide" *ngFor="let raquel_anel of raquel_aneis" (click)="addImage('raquel-anel-'+raquel_anel)" id="raquel-anel-{{raquel_anel}}">
-                <img src="assets/img/aneis/raquel/{{raquel_anel}}.jpg">
-                <div class="caption">{{raquel_anel}}</div>
-                <a href="#">
-                  <i class="fas fa-plus"></i>
-                </a>
-              </div>
-
             </div>
             <div class="swiper-button-next">
               <i class="fas fa-chevron-down"></i>
@@ -149,77 +102,16 @@
 
             <div class="grid-x grid-padding-x">
               <!-- onde ficarao os aneis para serem adicionados na versao mobile -->
-              <!-- Alice -->
-              <div class="cell small-4 margin-top-1 cell-prod" *ngFor="let alice_m_anel of alice_aneis" id="mobile-alice-anel-{{alice_m_anel}}"
-                (click)="addImage('mobile-alice-anel-'+alice_m_anel,1)">
+              <div class="cell small-4 margin-top-1 cell-prod" *ngFor="let anel of aneis" id="mobile-{{anel.persona}}-anel-{{anel.code}}"
+                (click)="addImage('mobile-'+anel.persona+'-anel-'+anel.code,1)">
                 <div>
-                  <img src="assets/img/aneis/alice/{{alice_m_anel}}.jpg" alt="">
-                  <div class="caption">{{alice_m_anel}}</div>
+                  <img src="{{anel.img}}" alt="">
+                  <div class="caption">{{anel.legenda}}</div>
                   <a href="#" class="plus">
                     <i class="fas fa-plus"></i>
                   </a>
                 </div>
               </div>
-              <!-- Brenda -->
-              <div class="cell small-4 margin-top-1 cell-prod" *ngFor="let brenda_m_anel of brenda_aneis" id="mobile-brenda-anel-{{brenda_m_anel}}"
-                (click)="addImage('mobile-brenda-anel-'+brenda_m_anel,1)">
-                <div>
-                  <img src="assets/img/aneis/brenda/{{brenda_m_anel}}.jpg" alt="">
-                  <div class="caption">{{brenda_m_anel}}</div>
-                  <a href="#" class="plus">
-                    <i class="fas fa-plus"></i>
-                  </a>
-                </div>
-              </div>
-
-              <!-- Debora -->
-              <div class="cell small-4 margin-top-1 cell-prod" *ngFor="let debora_m_anel of debora_aneis" id="mobile-debora-anel-{debora_m_anel}}"
-                (click)="addImage('mobile-debora-anel-'+debora_m_anel,1)">
-                <div>
-                  <img src="assets/img/aneis/debora/{{debora_m_anel}}.jpg" alt="">
-                  <div class="caption">{{debora_m_anel}}</div>
-                  <a href="#" class="plus">
-                    <i class="fas fa-plus"></i>
-                  </a>
-                </div>
-              </div>
-
-              <!-- Duda -->
-              <div class="cell small-4 margin-top-1 cell-prod" *ngFor="let duda_m_anel of duda_aneis" id="mobile-duda-anel-{{duda_m_anel}}"
-                (click)="addImage('mobile-duda-anel-'+duda_m_anel,1)">
-                <div>
-                  <img src="assets/img/aneis/duda/{{duda_m_anel}}.jpg" alt="">
-                  <div class="caption">{{duda_m_anel}}</div>
-                  <a href="#" class="plus">
-                    <i class="fas fa-plus"></i>
-                  </a>
-                </div>
-              </div>
-
-              <!-- Maria Antonia -->
-              <div class="cell small-4 margin-top-1 cell-prod" *ngFor="let maria_m_anel of maria_aneis" id="mobile-maria-anel-{{maria_m_anel}}"
-                (click)="addImage('mobile-maria-anel-'+maria_m_anel,1)">
-                <div>
-                  <img src="assets/img/aneis/maria-antonia/{{maria_m_anel}}.jpg" alt="">
-                  <div class="caption">{{maria_m_anel}}</div>
-                  <a href="#" class="plus">
-                    <i class="fas fa-plus"></i>
-                  </a>
-                </div>
-              </div>
-
-              <!-- Raquel -->
-              <div class="cell small-4 margin-top-1 cell-prod" *ngFor="let raquel_m_anel of raquel_aneis" id="mobile-raquel-anel-{{raquel_m_anel}}"
-                (click)="addImage('mobile-raquel-anel-'+raquel_m_anel,1)">
-                <div>
-                  <img src="assets/img/aneis/raquel/{{raquel_m_anel}}.jpg" alt="">
-                  <div class="caption">{{raquel_m_anel}}</div>
-                  <a href="#" class="plus">
-                    <i class="fas fa-plus"></i>
-                  </a>
-                </div>
-              </div>
-
             </div>
             <button class="close-button" data-close aria-label="Close reveal" type="button">
               <span aria-hidden="true">&times;</span>
@@ -261,7 +153,7 @@
               </div>
             </div>
           </div>
-          <button class="button expanded margin-top-9 rounded width-75 margin-horizontal-auto" (click)="proxima('#pagina-de-colares')">Personalizar página de Colares
+          <button class="button expanded margin-top-2 rounded width-75 margin-horizontal-auto" (click)="proxima('#pagina-de-colares')">Personalizar página de Colares
             <i class="fas fa-angle-right float-right"></i>
           </button>
           <div class="swiper-container-shake swiper-container-custom hide-for-small-only">
@@ -279,53 +171,9 @@
             </div>
             <div class="swiper-wrapper-shake">
               <!-- onde ficarao os aneis para serem adicionados -->
-              <!-- Alice -->
-              <div class="swiper-slide" *ngFor="let alice_brinco of alice_brincos" (click)="addImage('alice-brinco-'+alice_brinco)" id="alice-brinco-{{alice_brinco}}">
-                <img src="assets/img/brincos/alice/{{alice_brinco}}.jpg">
-                <div class="caption">{{alice_brinco}}</div>
-                <a href="#">
-                  <i class="fas fa-plus"></i>
-                </a>
-              </div>
-              <!-- Brenda -->
-              <div class="swiper-slide" *ngFor="let brenda_brinco of brenda_brincos" (click)="addImage('brenda-brinco-'+brenda_brinco)"
-                id="brenda-brinco-{{brenda_brinco}}">
-                <img src="assets/img/brincos/brenda/{{brenda_brinco}}.jpg">
-                <div class="caption">{{brenda_brinco}}</div>
-                <a href="#">
-                  <i class="fas fa-plus"></i>
-                </a>
-              </div>
-              <!-- Debora -->
-              <div class="swiper-slide" *ngFor="let debora_brinco of debora_brincos" (click)="addImage('debora-brinco-'+debora_brinco)"
-                id="debora-brinco-{{debora_brinco}}">
-                <img src="assets/img/brincos/debora/{{debora_brinco}}.jpg">
-                <div class="caption">{{debora_brinco}}</div>
-                <a href="#">
-                  <i class="fas fa-plus"></i>
-                </a>
-              </div>
-              <!-- Duda -->
-              <div class="swiper-slide" *ngFor="let duda_brinco of duda_brincos" (click)="addImage('duda-brinco-'+duda_brinco)" id="duda-brinco-{{duda_brinco}}">
-                <img src="assets/img/brincos/duda/{{duda_brinco}}.jpg">
-                <div class="caption">{{duda_brinco}}</div>
-                <a href="#">
-                  <i class="fas fa-plus"></i>
-                </a>
-              </div>
-              <!-- Maria Antonia -->
-              <div class="swiper-slide" *ngFor="let maria_brinco of maria_brincos" (click)="addImage('maria-brinco-'+maria_brinco)" id="maria-brinco-{{maria_brinco}}">
-                <img src="assets/img/brincos/maria-antonia/{{maria_brinco}}.jpg">
-                <div class="caption">{{maria_brinco}}</div>
-                <a href="#">
-                  <i class="fas fa-plus"></i>
-                </a>
-              </div>
-              <!-- Raquel -->
-              <div class="swiper-slide" *ngFor="let raquel_brinco of raquel_brincos" (click)="addImage('raquel-brinco-'+raquel_brinco)"
-                id="raquel-brinco-{{raquel_brinco}}">
-                <img src="assets/img/brincos/raquel/{{raquel_brinco}}.jpg">
-                <div class="caption">{{raquel_brinco}}</div>
+              <div class="swiper-slide" *ngFor="let brinco of brincos" (click)="addImage(brinco.persona+'-brinco-'+brinco.code)" id="{{brinco.persona}}-brinco-{{brinco.code}}">
+                <img src="{{brinco.img}}">
+                <div class="caption">{{brinco.legenda}}</div>
                 <a href="#">
                   <i class="fas fa-plus"></i>
                 </a>
@@ -363,73 +211,16 @@
 
             <div class="grid-x grid-padding-x">
               <!-- onde ficarao os aneis para serem adicionados na versao mobile -->
-              <!-- Alice -->
-              <div class="cell small-4 margin-top-1 cell-prod" *ngFor="let alice_m_brinco of alice_brincos" id="mobile-alice-brinco-{{alice_m_brinco}}"
-                (click)="addImage('mobile-alice-brinco-'+alice_m_brinco,1)">
+              <div class="cell small-4 margin-top-1 cell-prod" *ngFor="let brinco of brincos" id="mobile-{{brinco.persona}}-brinco-{{brinco.code}}"
+                (click)="addImage('mobile-'+brinco.persona+'-brinco-'+brinco.code,1)">
                 <div>
-                  <img src="assets/img/brincos/alice/{{alice_m_brinco}}.jpg" alt="">
-                  <div class="caption">{{alice_m_brinco}}</div>
+                  <img src="{{brinco.img}}" alt="">
+                  <div class="caption">{{brinco.legenda}}</div>
                   <a href="#" class="plus">
                     <i class="fas fa-plus"></i>
                   </a>
                 </div>
               </div>
-              <!-- Brenda -->
-              <div class="cell small-4 margin-top-1 cell-prod" *ngFor="let brenda_m_brinco of brenda_brincos" id="mobile-brenda-brinco-{{brenda_m_brinco}}"
-                (click)="addImage('mobile-brenda-brinco-'+brenda_m_brinco,1)">
-                <div>
-                  <img src="assets/img/brincos/brenda/{{brenda_m_brinco}}.jpg" alt="">
-                  <div class="caption">{{brenda_m_brinco}}</div>
-                  <a href="#" class="plus">
-                    <i class="fas fa-plus"></i>
-                  </a>
-                </div>
-              </div>
-              <!-- Debora -->
-              <div class="cell small-4 margin-top-1 cell-prod" *ngFor="let debora_m_brinco of debora_brincos" id="mobile-debora-brinco-{{debora_m_brinco}}"
-                (click)="addImage('mobile-debora-brinco-'+debora_m_brinco,1)">
-                <div>
-                  <img src="assets/img/brincos/debora/{{debora_m_brinco}}.jpg" alt="">
-                  <div class="caption">{{debora_m_brinco}}</div>
-                  <a href="#" class="plus">
-                    <i class="fas fa-plus"></i>
-                  </a>
-                </div>
-              </div>
-              <!-- Duda -->
-              <div class="cell small-4 margin-top-1 cell-prod" *ngFor="let duda_m_brinco of duda_brincos" id="mobile-duda-brinco-{{duda_m_brinco}}"
-                (click)="addImage('mobile-duda-brinco-'+duda_m_brinco,1)">
-                <div>
-                  <img src="assets/img/brincos/duda/{{duda_m_brinco}}.jpg" alt="">
-                  <div class="caption">{{duda_m_brinco}}</div>
-                  <a href="#" class="plus">
-                    <i class="fas fa-plus"></i>
-                  </a>
-                </div>
-              </div>
-              <!-- Maria Antonia -->
-              <div class="cell small-4 margin-top-1 cell-prod" *ngFor="let maria_m_brinco of maria_brincos" id="mobile-maria-brinco-{{maria_m_brinco}}"
-                (click)="addImage('mobile-maria-brinco-'+maria_m_brinco,1)">
-                <div>
-                  <img src="assets/img/brincos/maria-antonia/{{maria_m_brinco}}.jpg" alt="">
-                  <div class="caption">{{maria_m_brinco}}</div>
-                  <a href="#" class="plus">
-                    <i class="fas fa-plus"></i>
-                  </a>
-                </div>
-              </div>
-              <!-- Raquel -->
-              <div class="cell small-4 margin-top-1 cell-prod" *ngFor="let raquel_m_brinco of raquel_brincos" id="mobile-raquel-brinco-{{raquel_m_brinco}}"
-                (click)="addImage('mobile-raquel-brinco-'+raquel_m_brinco,1)">
-                <div>
-                  <img src="assets/img/brincos/raquel/{{raquel_m_brinco}}.jpg" alt="">
-                  <div class="caption">{{raquel_m_brinco}}</div>
-                  <a href="#" class="plus">
-                    <i class="fas fa-plus"></i>
-                  </a>
-                </div>
-              </div>
-
             </div>
             <button class="close-button" data-close aria-label="Close reveal" type="button">
               <span aria-hidden="true">&times;</span>
@@ -471,7 +262,7 @@
               </div>
             </div>
           </div>
-          <button class="button expanded margin-top-9 rounded width-75 margin-horizontal-auto" (click)="proxima('#pagina-de-pingentes')">Personalizar página de Pingentes
+          <button class="button expanded margin-top-2 rounded width-75 margin-horizontal-auto" (click)="proxima('#pagina-de-pingentes')">Personalizar página de Pingentes
             <i class="fas fa-angle-right float-right"></i>
           </button>
           <div class="swiper-container-shake swiper-container-custom hide-for-small-only">
@@ -489,50 +280,9 @@
             </div>
             <div class="swiper-wrapper-shake">
               <!-- onde ficarao os aneis para serem adicionados -->
-              <!-- Alice -->
-              <div class="swiper-slide" *ngFor="let alice_colar of alice_colares" (click)="addImage('alice-colar-'+alice_colar)" id="alice-colar-{{alice_colar}}">
-                <img src="assets/img/colares/alice/{{alice_colar}}.jpg">
-                <div class="caption">{{alice_colar}}</div>
-                <a href="#">
-                  <i class="fas fa-plus"></i>
-                </a>
-              </div>
-              <!-- Brenda -->
-              <div class="swiper-slide" *ngFor="let brenda_colar of brenda_colares" (click)="addImage('brenda-colar-'+brenda_colar)" id="brenda-colar-{{brenda_colar}}">
-                <img src="assets/img/colares/brenda/{{brenda_colar}}.jpg">
-                <div class="caption">{{brenda_colar}}</div>
-                <a href="#">
-                  <i class="fas fa-plus"></i>
-                </a>
-              </div>
-              <!-- Debora -->
-              <div class="swiper-slide" *ngFor="let debora_colar of debora_colares" (click)="addImage('debora-colar-'+debora_colar)" id="debora-colar-{{debora_colar}}">
-                <img src="assets/img/colares/debora/{{debora_colar}}.jpg">
-                <div class="caption">{{debora_colar}}</div>
-                <a href="#">
-                  <i class="fas fa-plus"></i>
-                </a>
-              </div>
-              <!-- Duda -->
-              <div class="swiper-slide" *ngFor="let duda_colar of duda_colares" (click)="addImage('duda-colar-'+duda_colar)" id="duda-colar-{{duda_colar}}">
-                <img src="assets/img/colares/duda/{{duda_colar}}.jpg">
-                <div class="caption">{{duda_colar}}</div>
-                <a href="#">
-                  <i class="fas fa-plus"></i>
-                </a>
-              </div>
-              <!-- Maria Antonia -->
-              <div class="swiper-slide" *ngFor="let maria_colar of maria_colares" (click)="addImage('maria-colar-'+maria_colar)" id="maria-colar-{{maria_colar}}">
-                <img src="assets/img/colares/maria-antonia/{{maria_colar}}.jpg">
-                <div class="caption">{{maria_colar}}</div>
-                <a href="#">
-                  <i class="fas fa-plus"></i>
-                </a>
-              </div>
-              <!-- Raquel -->
-              <div class="swiper-slide" *ngFor="let raquel_colar of raquel_colares" (click)="addImage('raquel-colar-'+raquel_colar)" id="raquel-colar-{{raquel_colar}}">
-                <img src="assets/img/colares/raquel/{{raquel_colar}}.jpg">
-                <div class="caption">{{raquel_colar}}</div>
+              <div class="swiper-slide" *ngFor="let colar of colares" (click)="addImage(colar.persona+'-colar-'+colar.code)" id="{{colar.persona}}-colar-{{colar.code}}">
+                <img src="{{colar.img}}">
+                <div class="caption">{{colar.legenda}}</div>
                 <a href="#">
                   <i class="fas fa-plus"></i>
                 </a>
@@ -570,73 +320,16 @@
 
             <div class="grid-x grid-padding-x">
               <!-- onde ficarao os aneis para serem adicionados na versao mobile -->
-              <!-- Alice -->
-              <div class="cell small-4 margin-top-1 cell-prod" *ngFor="let alice_m_colar of alice_colares" id="mobile-alice-colar-{{alice_m_colar}}"
-                (click)="addImage('mobile-alice-colar-'+alice_m_colar,1)">
+              <div class="cell small-4 margin-top-1 cell-prod" *ngFor="let colar of colares" id="mobile-{{colar.persona}}-colar-{{colar.code}}"
+                (click)="addImage('mobile-'+colar.persona+'-colar-'+colar.code,1)">
                 <div>
-                  <img src="assets/img/colares/alice/{{alice_m_colar}}.jpg" alt="">
-                  <div class="caption">{{alice_m_colar}}</div>
+                  <img src="{{colar.img}}" alt="">
+                  <div class="caption">{{colar.legenda}}</div>
                   <a href="#" class="plus">
                     <i class="fas fa-plus"></i>
                   </a>
                 </div>
               </div>
-              <!-- Brenda -->
-              <div class="cell small-4 margin-top-1 cell-prod" *ngFor="let brenda_m_colar of brenda_colares" id="mobile-brenda-colar-{{brenda_m_colar}}"
-                (click)="addImage('mobile-brenda-colar-'+brenda_m_colar,1)">
-                <div>
-                  <img src="assets/img/colares/brenda/{{brenda_m_colar}}.jpg" alt="">
-                  <div class="caption">{{brenda_m_colar}}</div>
-                  <a href="#" class="plus">
-                    <i class="fas fa-plus"></i>
-                  </a>
-                </div>
-              </div>
-              <!-- Debora -->
-              <div class="cell small-4 margin-top-1 cell-prod" *ngFor="let debora_m_colar of debora_colares" id="mobile-debora-colar-{{debora_m_colar}}"
-                (click)="addImage('mobile-debora-colar-'+debora_m_colar,1)">
-                <div>
-                  <img src="assets/img/colares/debora/{{debora_m_colar}}.jpg" alt="">
-                  <div class="caption">{{debora_m_colar}}</div>
-                  <a href="#" class="plus">
-                    <i class="fas fa-plus"></i>
-                  </a>
-                </div>
-              </div>
-              <!-- Duda -->
-              <div class="cell small-4 margin-top-1 cell-prod" *ngFor="let duda_m_colar of duda_colares" id="mobile-duda-colar-{{duda_m_colar}}"
-                (click)="addImage('mobile-duda-colar-'+duda_m_colar,1)">
-                <div>
-                  <img src="assets/img/colares/duda/{{duda_m_colar}}.jpg" alt="">
-                  <div class="caption">{{duda_m_colar}}</div>
-                  <a href="#" class="plus">
-                    <i class="fas fa-plus"></i>
-                  </a>
-                </div>
-              </div>
-              <!-- Maria Antonia -->
-              <div class="cell small-4 margin-top-1 cell-prod" *ngFor="let maria_m_colar of maria_colares" id="mobile-maria-colar-{{maria_m_colar}}"
-                (click)="addImage('mobile-maria-colar-'+maria_m_colar,1)">
-                <div>
-                  <img src="assets/img/colares/maria-antonia/{{maria_m_colar}}.jpg" alt="">
-                  <div class="caption">{{maria_m_colar}}</div>
-                  <a href="#" class="plus">
-                    <i class="fas fa-plus"></i>
-                  </a>
-                </div>
-              </div>
-              <!-- Raquel -->
-              <div class="cell small-4 margin-top-1 cell-prod" *ngFor="let raquel_m_colar of raquel_colares" id="mobile-raquel-colar-{{raquel_m_colar}}"
-                (click)="addImage('mobile-raquel-colar-'+raquel_m_colar,1)">
-                <div>
-                  <img src="assets/img/colares/raquel/{{raquel_m_colar}}.jpg" alt="">
-                  <div class="caption">{{raquel_m_colar}}</div>
-                  <a href="#" class="plus">
-                    <i class="fas fa-plus"></i>
-                  </a>
-                </div>
-              </div>
-
             </div>
             <button class="close-button" data-close aria-label="Close reveal" type="button">
               <span aria-hidden="true">&times;</span>
@@ -678,7 +371,7 @@
               </div>
             </div>
           </div>
-          <button class="button expanded margin-top-9 rounded width-75 margin-horizontal-auto" (click)="proxima('#pagina-de-pulseiras')">Personalizar página de Pulseiras
+          <button class="button expanded margin-top-2 rounded width-75 margin-horizontal-auto" (click)="proxima('#pagina-de-pulseiras')">Personalizar página de Pulseiras
             <i class="fas fa-angle-right float-right"></i>
           </button>
           <div class="swiper-container-shake swiper-container-custom hide-for-small-only">
@@ -696,47 +389,10 @@
             </div>
             <div class="swiper-wrapper-shake">
               <!-- onde ficarao os aneis para serem adicionados -->
-              <!-- Brenda -->
-              <div class="swiper-slide" *ngFor="let brenda_pingente of brenda_pingentes" (click)="addImage('brenda-pingente-'+brenda_pingente)"
-                id="brenda-pingente-{{brenda_pingente}}">
-                <img src="assets/img/pingentes/brenda/{{brenda_pingente}}.jpg">
-                <div class="caption">{{brenda_pingente}}</div>
-                <a href="#">
-                  <i class="fas fa-plus"></i>
-                </a>
-              </div>
-              <!-- Debora -->
-              <div class="swiper-slide" *ngFor="let debora_pingente of debora_pingentes" (click)="addImage('debora-pingente-'+debora_pingente)"
-                id="debora-pingente-{{debora_pingente}}">
-                <img src="assets/img/pingentes/debora/{{debora_pingente}}.jpg">
-                <div class="caption">{{debora_pingente}}</div>
-                <a href="#">
-                  <i class="fas fa-plus"></i>
-                </a>
-              </div>
-              <!-- Duda -->
-              <div class="swiper-slide" *ngFor="let duda_pingente of duda_pingentes" (click)="addImage('duda-pingente-'+duda_pingente)"
-                id="duda-pingente-{{duda_pingente}}">
-                <img src="assets/img/pingentes/duda/{{duda_pingente}}.jpg">
-                <div class="caption">{{duda_pingente}}</div>
-                <a href="#">
-                  <i class="fas fa-plus"></i>
-                </a>
-              </div>
-              <!-- Maria Antonia -->
-              <div class="swiper-slide" *ngFor="let maria_pingente of maria_pingentes" (click)="addImage('maria-pingente-'+maria_pingente)"
-                id="maria-pingente-{{maria_pingente}}">
-                <img src="assets/img/pingentes/maria-antonia/{{maria_pingente}}.jpg">
-                <div class="caption">{{maria_pingente}}</div>
-                <a href="#">
-                  <i class="fas fa-plus"></i>
-                </a>
-              </div>
-              <!-- Raquel -->
-              <div class="swiper-slide" *ngFor="let raquel_pingente of raquel_pingentes" (click)="addImage('raquel-pingente-'+raquel_pingente)"
-                id="raquel-pingente-{{raquel_pingente}}">
-                <img src="assets/img/pingentes/raquel/{{raquel_pingente}}.jpg">
-                <div class="caption">{{raquel_pingente}}</div>
+              <div class="swiper-slide" *ngFor="let pingente of pingentes" (click)="addImage(pingente.persona+'-pingente-'+pingente.code)"
+                id="{{pingente.persona}}-pingente-{{pingente.code}}">
+                <img src="{{pingente.img}}">
+                <div class="caption">{{pingente.legenda}}</div>
                 <a href="#">
                   <i class="fas fa-plus"></i>
                 </a>
@@ -774,56 +430,11 @@
 
             <div class="grid-x grid-padding-x">
               <!-- onde ficarao os aneis para serem adicionados na versao mobile -->
-              <!-- Brenda -->
-              <div class="cell small-4 margin-top-1 cell-prod" *ngFor="let brenda_m_pingente of brenda_pingentes" id="mobile-brenda-pingente-{{brenda_m_pingente}}"
-                (click)="addImage('mobile-brenda-pingente-'+brenda_m_pingente,1)">
+              <div class="cell small-4 margin-top-1 cell-prod" *ngFor="let pingente of pingentes" id="mobile-{{pingente.persona}}-pingente-{{pingente.code}}"
+                (click)="addImage('mobile-'+pingente.persona+'-pingente-'+pingente.code,1)">
                 <div>
-                  <img src="assets/img/pingentes/brenda/{{brenda_m_pingente}}.jpg" alt="">
-                  <div class="caption">{{brenda_m_pingente}}</div>
-                  <a href="#" class="plus">
-                    <i class="fas fa-plus"></i>
-                  </a>
-                </div>
-              </div>
-              <!-- Debora -->
-              <div class="cell small-4 margin-top-1 cell-prod" *ngFor="let debora_m_pingente of debora_pingentes" id="mobile-debora-pingente-{{debora_m_pingente}}"
-                (click)="addImage('mobile-debora-pingente-'+debora_m_pingente,1)">
-                <div>
-                  <img src="assets/img/pingentes/debora/{{debora_m_pingente}}.jpg" alt="">
-                  <div class="caption">{{debora_m_pingente}}</div>
-                  <a href="#" class="plus">
-                    <i class="fas fa-plus"></i>
-                  </a>
-                </div>
-              </div>
-              <!-- Duda -->
-              <div class="cell small-4 margin-top-1 cell-prod" *ngFor="let duda_m_pingente of duda_pingentes" id="mobile-duda-pingente-{{duda_m_pingente}}"
-                (click)="addImage('mobile-duda-pingente-'+duda_m_pingente,1)">
-                <div>
-                  <img src="assets/img/pingentes/duda/{{duda_m_pingente}}.jpg" alt="">
-                  <div class="caption">{{duda_m_pingente}}</div>
-                  <a href="#" class="plus">
-                    <i class="fas fa-plus"></i>
-                  </a>
-                </div>
-              </div>
-              <!-- Maria Antonia -->
-              <div class="cell small-4 margin-top-1 cell-prod" *ngFor="let maria_m_pingente of maria_pingentes" id="mobile-maria-pingente-{{maria_m_pingente}}"
-                (click)="addImage('mobile-maria-pingente-'+maria_m_pingente,1)">
-                <div>
-                  <img src="assets/img/pingentes/maria-antonia/{{maria_m_pingente}}.jpg" alt="">
-                  <div class="caption">{{maria_m_pingente}}</div>
-                  <a href="#" class="plus">
-                    <i class="fas fa-plus"></i>
-                  </a>
-                </div>
-              </div>
-              <!-- Raquel -->
-              <div class="cell small-4 margin-top-1 cell-prod" *ngFor="let raquel_m_pingente of raquel_pingentes" id="mobile-raquel-pingente-{{raquel_m_pingente}}"
-                (click)="addImage('mobile-raquel-pingente-'+raquel_m_pingente,1)">
-                <div>
-                  <img src="assets/img/pingentes/raquel/{{raquel_m_pingente}}.jpg" alt="">
-                  <div class="caption">{{raquel_m_pingente}}</div>
+                  <img src="{{pingente.img}}" alt="">
+                  <div class="caption">{{pingente.legenda}}</div>
                   <a href="#" class="plus">
                     <i class="fas fa-plus"></i>
                   </a>
@@ -870,7 +481,7 @@
               </div>
             </div>
           </div>
-          <button class="button expanded margin-top-9 rounded width-75 margin-horizontal-auto" (click)="proxima('#pagina-de-info')">Editar informações
+          <button class="button expanded margin-top-2 rounded width-75 margin-horizontal-auto" (click)="proxima('#pagina-de-info')">Editar informações
             <i class="fas fa-angle-right float-right"></i>
           </button>
           <div class="swiper-container-shake swiper-container-custom hide-for-small-only">
@@ -888,53 +499,10 @@
             </div>
             <div class="swiper-wrapper-shake">
               <!-- onde ficarao os aneis para serem adicionados -->
-              <!-- Alice -->
-              <div class="swiper-slide" *ngFor="let alice_pulseira of alice_pulseiras" (click)="addImage('alice-pulseira-'+alice_pulseira)" id="alice-pulseira-{{alice_pulseira}}">
-                <img src="assets/img/pulseiras/alice/{{alice_pulseira}}.jpg">
-                <div class="caption">{{alice_pulseira}}</div>
-                <a href="#">
-                  <i class="fas fa-plus"></i>
-                </a>
-              </div>
-              <!-- Brenda -->
-              <div class="swiper-slide" *ngFor="let brenda_pulseira of brenda_pulseiras" (click)="addImage('brenda-pulseira-'+brenda_pulseira)"
-                id="brenda-pulseira-{{brenda_pulseira}}">
-                <img src="assets/img/pulseiras/brenda/{{brenda_pulseira}}.jpg">
-                <div class="caption">{{brenda_pulseira}}</div>
-                <a href="#">
-                  <i class="fas fa-plus"></i>
-                </a>
-              </div>
-              <!-- Debora -->
-              <div class="swiper-slide" *ngFor="let debora_pulseira of debora_pulseiras" (click)="addImage('debora-pulseira-'+debora_pulseira)"
-                id="debora-pulseira-{{debora_pulseira}}">
-                <img src="assets/img/pulseiras/debora/{{debora_pulseira}}.jpg">
-                <div class="caption">{{debora_pulseira}}</div>
-                <a href="#">
-                  <i class="fas fa-plus"></i>
-                </a>
-              </div>
-              <!-- Duda -->
-              <div class="swiper-slide" *ngFor="let duda_pulseira of duda_pulseiras" (click)="addImage('duda-pulseira-'+duda_pulseira)" id="duda-pulseira-{{duda_pulseira}}">
-                <img src="assets/img/pulseiras/duda/{{duda_pulseira}}.jpg">
-                <div class="caption">{{duda_pulseira}}</div>
-                <a href="#">
-                  <i class="fas fa-plus"></i>
-                </a>
-              </div>
-              <!-- Maria Antonia -->
-              <div class="swiper-slide" *ngFor="let maria_pulseira of maria_pulseiras" (click)="addImage('maria-pulseira-'+maria_pulseira)" id="maria-pulseira-{{maria_pulseira}}">
-                <img src="assets/img/pulseiras/maria-antonia/{{maria_pulseira}}.jpg">
-                <div class="caption">{{maria_pulseira}}</div>
-                <a href="#">
-                  <i class="fas fa-plus"></i>
-                </a>
-              </div>
-              <!-- Raquel -->
-              <div class="swiper-slide" *ngFor="let raquel_pulseira of raquel_pulseiras" (click)="addImage('raquel-pulseira-'+raquel_pulseira)"
-                id="raquel-pulseira-{{raquel_pulseira}}">
-                <img src="assets/img/pulseiras/raquel/{{raquel_pulseira}}.jpg">
-                <div class="caption">{{raquel_pulseira}}</div>
+              <div class="swiper-slide" *ngFor="let pulseira of pulseiras" (click)="addImage(pulseira.persona+'-pulseira-'+pulseira.code)"
+                id="{{pulseira.persona}}-pulseira-{{pulseira.code}}">
+                <img src="{{pulseira.img}}">
+                <div class="caption">{{pulseira.legenda}}</div>
                 <a href="#">
                   <i class="fas fa-plus"></i>
                 </a>
@@ -972,16 +540,19 @@
 
             <div class="grid-x grid-padding-x">
               <!-- onde ficarao os aneis para serem adicionados na versao mobile -->
-              <div class="cell small-4 margin-top-1 cell-prod" id="mobile-pulseira-0000000001" (click)="addImage('mobile-pulseira-0000000001',1)">
+              <div class="cell small-4 margin-top-1 cell-prod" *ngFor="let pulseira of pulseiras" id="mobile-{{pulseira.persona}}-pulseira-{{pulseira.code}}"
+                (click)="addImage('mobile-'+pulseira.persona+'-pulseira-'+pulseira.code,1)">
                 <div>
-                  <img src="assets/img/anel-01.jpg" alt="">
-                  <div class="caption">pulseira</div>
+                  <img src="{{pulseira.img}}" alt="">
+                  <div class="caption">{{pulseira.legenda}}</div>
                   <a href="#" class="plus">
                     <i class="fas fa-plus"></i>
                   </a>
                 </div>
               </div>
             </div>
+
+
             <button class="close-button" data-close aria-label="Close reveal" type="button">
               <span aria-hidden="true">&times;</span>
             </button>

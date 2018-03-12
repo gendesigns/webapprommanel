@@ -24,7 +24,7 @@ export const RESPOSTAS_3: Resposta[] = [
     { resposta: 'Fazer o que amo e inspirar pessoas.' , valor: 2 },
     { resposta: 'Ter uma vida saudável.' , valor: 3 },
     { resposta: 'Cuidar da minha família.' , valor: 4 },
-    { resposta: 'Equilibrar vida profissional e pessoal' , valor: 5 }
+    { resposta: 'Equilibrar vida profissional e pessoal.' , valor: 5 }
 ]
 
 export const RESPOSTAS_4: Resposta[] = [

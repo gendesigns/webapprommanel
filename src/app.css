@@ -502,7 +502,7 @@ ul.tabs{
 .help{
     color: #a2a2a2;
 }
-.customize .bg-overlay{
+.customize .bg-overlay,.bg-overlay{
     background: #e8e8e8;
     position: fixed;
     height: 100%;
@@ -638,7 +638,7 @@ ul.tabs{
 .swiper-container-shake{
     position: absolute;
     right: 0;
-    height: 70%;
+    height: 80%;
     width: 200px;
     top: 200px;
     background: #f4f4f4;
@@ -939,19 +939,19 @@ ul.tabs{
     position: fixed;
     top: 47%;
     width: 160px;
-    right: -5px;
+    right: 250px;
 }
-.buttons-share button{
+/* .buttons-share button{
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-}
+} */
 .pronto{
     position:  fixed;
     right: 173px;
     width: 16%;
     top: 25%;
     font-size: 14px;
-    font-weight:  bold;
+    font-weight:  lighter;
     color: #664a90;
 }
 .pronto b{
@@ -1022,7 +1022,7 @@ ul.tabs{
     color: #664a90;
 }
 a.btn-verde,a.btn-verde:hover,a.btn-verde:focus,a.btn-verde:active{
-    background: #8ee269;
+    background: #63b141;
     width: 75%;
 }
 .prod-disabled{
@@ -1091,17 +1091,22 @@ i.perfil-ico{
     color: #fff;
     padding: 15px;
 }
-.catalogo-page .cell-prod{
-    width: 33.33333%;
+.catalogo-page{
+    margin-bottom: 10px;
+}
+.catalogo-page .cell-prod.small-4{
+    width: 30% !important;
     float: left;
 }
-.catalogo-page .cell-prod div{
-    box-shadow: none;
-    border: 1px solid #f4f4f4;
+.catalogo-page .cell-prod.small-6{
+    width: 47% !important;
+    float: left;
+    padding: 1%;
 }
 .catalogo-page .cell-prod div .caption{
     text-align: center;
     border: none;
+    box-shadow: none;
 }
 .catalogo-page .cell-prod a{
     display: none;
@@ -1109,16 +1114,32 @@ i.perfil-ico{
 .swiper-container-share{
     max-height: 690px;
 }
-.paginacao{
+.box-paginacao{
     position: absolute;
-    background: #664a90;
+    background: #402a5f;
     width: 210px;
     left: 0;
     right: auto;
     height: 88%;
     top:122px;
-    overflow: auto;
+    overflow: hidden;
     padding-bottom: 100px;
+    padding-top: 15px;
+}
+.catalogo-page .user-img{
+    width: 93px;
+    height: 93px;
+    float: left;
+    margin-left: 25px;
+}
+.paginacao{
+    position: absolute;
+    background: #402a5f;
+    width: 200px;
+    left: 0;
+    right: auto;
+    height: 100%;
+    overflow: auto;
 }
 .pagina-thumb{
     font-size: 0px;
@@ -1168,6 +1189,11 @@ i.perfil-ico{
     font-size: 5px;
     margin: 3px !important;
 }
+.pagina-thumb .user-img{
+    width: 20px;
+    height: 20px;
+    margin: 3px !important;
+}
 .pagina-thumb .padding-left-1{
     padding-left: 0 !important;
 }
@@ -1182,6 +1208,7 @@ i.perfil-ico{
     line-height: 13px;
     text-align: center;
     margin-right: 3px !important;
+    font-size: 4px !important;
 }
 .pagina-thumb .margin-vertical-1{
     margin: 5px !important;
@@ -1217,25 +1244,27 @@ i.perfil-ico{
 
 /* Handle */
 .paginacao::-webkit-scrollbar-thumb{
-    background: #402a5f;
+    background: #664a90;
     border-radius: 10px;
+    top: 15px;
+    position: relative;
 }
 
 /* Handle on hover */
 .paginacao::-webkit-scrollbar-thumb:hover {
-    background: #402a5f;
+    background: #664a90;
 }
 .swiper-container-share.swiper-container-vertical>.swiper-scrollbar{
     background: #af94d7;
     width: 10px;
 }
 .swiper-scrollbar-drag{
-    background: #402a5f;
+    background: #664a90;
     border-radius: 10px;
 }
 .loader {
-    border: 8px solid #af94d7; /* Light grey */
-    border-top: 8px solid #664a90; /* Blue */
+    border: 8px solid #af94d7;
+    border-top: 8px solid #664a90;
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -1252,9 +1281,21 @@ i.perfil-ico{
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1;
+    z-index: 100;
 }
-
+#step-share .menu a{
+    color: #fff;
+    background: #664a90;
+    margin-bottom: 5px;
+    border-right: 1px solid #af94d7;
+}
+.off-canvas{
+    background: rgba(64, 42, 95, 0.9) !important;
+}
+.close-button, .close-button.medium{
+    right: 7px !important;
+    top: 3px !important;
+}
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
@@ -1396,6 +1437,7 @@ i.perfil-ico{
     }
     .buttons-share{
         z-index: 2;
+        right: 8px;
     }
     .paginacao{
         z-index: 2;
@@ -1410,11 +1452,18 @@ i.perfil-ico{
         height: 100%;
         left: 0;
     }
-    .buttons-share,.share-over,.paginacao{
+    .buttons-share,.share-over,.box-paginacao{
         display: none;
+    }
+    .box-paginacao{
+        top: 85px;
     }
     .user-info{
         width: 75%;
+    }
+    .catalogo-page h3{
+        font-size: 12px;
+        font-size: 0.75rem;
     }
 }
 /* Media queries para tablets (.small )*/

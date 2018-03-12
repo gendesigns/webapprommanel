@@ -14,8 +14,6 @@ import { UpdateFieldsUsuario } from '../usuario/updateFieldsUsuario.model';
   styleUrls: ['./editar-perfil.component.css']
 })
 
-
-
 export class EditarPerfilComponent implements OnInit {
   
   private formulario: FormGroup = new FormGroup({

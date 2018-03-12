@@ -50,11 +50,12 @@ export class CompartilheComponent implements OnInit {
     $('.paginacao').append('<div class="loader-overlay"></div>');
 
     var swiper_share;
+
     function load_swiper() {
       swiper_share = new Swiper('.swiper-container-share', {
         direction: 'vertical',
         slidesPerView: 'auto',
-        spaceBetween: 10,
+        spaceBetween: 30,
         freeMode: true,
         scrollbar: {
           el: '.swiper-scrollbar',
@@ -74,6 +75,8 @@ export class CompartilheComponent implements OnInit {
       });
 
       $('.loader-overlay').remove();
+      $('.catalogo-page .cell-prod').removeClass('small-6');
+      $('.catalogo-page .cell-prod').addClass('small-4');
     }
     $(document).on('click', '.pagina-thumb', function (e) {
       e.preventDefault();
@@ -86,82 +89,96 @@ export class CompartilheComponent implements OnInit {
       $('#share-link').select();
       document.execCommand('copy');
       $(this).text("Copiado");
-      setTimeout(function(){ $('.share-copy-btn').text("Copiar"); }, 3000);
-  });
+      setTimeout(function () { $('.share-copy-btn').text("Copiar"); }, 3000);
+    });
+
+    $(document).on('click', '#step-share .menu a', function (e) {
+        e.preventDefault();
+        var type = $(this).attr('data-grid');
+        if (type == 'grid2') {
+          $('.catalogo-page .cell').removeClass("small-4");
+          $('.catalogo-page .cell').addClass("small-6");
+        }
+        if (type == 'grid3') {
+          $('.catalogo-page .cell').removeClass("small-6");
+          $('.catalogo-page .cell').addClass("small-4");
+        }
+        swiper_share.updateSize()
+        swiper_share.updateSlides()
+    });
 
     var carregou = function () {
-  if ($('.catalogo-page').hasClass('paginas-usuario')) {
-    console.log("Carregas thumbs agora...");
-    load_swiper();
-    load_pages_thumbs();
-    clearInterval(intervalId);
-  } else {
-    console.log('nao achou');
-  }
-}
+      if ($('.catalogo-page').hasClass('paginas-usuario')) {
+        load_swiper();
+        load_pages_thumbs();
+        clearInterval(intervalId);
+      }
+    }
 
-function load_pages_thumbs() {
-  var cont = 0;
-  $('.catalogo-page').each(function (e) {
-    $('.paginacao').append('<div class="pagina-thumb" data-slide="' + cont + '">' + $(this).html() + '</div>');
-    $('.paginacao .capa').addClass('capa-mini');
-    $('.paginacao .pagina-thumb').eq(0).addClass('ativo');
-    cont++;
-  })
-}
+    function load_pages_thumbs() {
+      var cont = 0;
+      $('.catalogo-page').each(function (e) {
+        $('.paginacao').append('<div class="pagina-thumb" data-slide="' + cont + '">' + $(this).html() + '</div>');
+        $('.paginacao .capa').addClass('capa-mini');
+        $('.paginacao .pagina-thumb').eq(0).addClass('ativo');
+        cont++;
+      })
+    }
 
-var intervalId = setInterval(carregou, 1000);
+    var intervalId = setInterval(carregou, 1000);
 
-$('.catalogo-page .cell-prod').removeClass('small-6');
-$('.catalogo-page .cell-prod').addClass('small-4');
 
-$(document).on('click', '.catalogo-page .cell-prod', function () {
-  var image = $(this).find('img').attr('src');
-  var legenda = $(this).find('.caption').html();
-  $('#zoom img').attr('src', image);
-  $('#zoom .caption').html(legenda);
-  $('#zoom').foundation('open');
-});
+
+    $(document).on('click', '.catalogo-page .cell-prod', function () {
+      var image = $(this).find('img').attr('src');
+      var legenda = $(this).find('.caption').html();
+      $('#zoom img').attr('src', image);
+      $('#zoom .caption').html(legenda);
+      $('#zoom').foundation('open');
+    });
+    $(document).on('click', '#zoom', function () { $('#zoom').foundation('close'); });
+
   }
 
-share(url: string) {
+  share(url: string) {
 
-  let params: UIParams = {
-    href: `${url}/${btoa(this.email)}`,
-    method: 'share'
-  };
+    let params: UIParams = {
+      href: `${url}/${btoa(this.email)}`,
+      method: 'share'
+    };
 
-  this.fb.ui(params)
-    .then((res: UIResponse) => console.log(res))
-    .catch((e: any) => console.error(e));
+    this.fb.ui(params)
+      .then((res: UIResponse) => console.log(res))
+      .catch((e: any) => console.error(e));
 
-}
+  }
+  
 
-showShare() {
-  $('.share-over, .paginacao,.buttons-share').show();
-}
-hideShare() {
-  $('.share-over, .paginacao,.buttons-share').hide();
-}
+  showShare() {
+    $('.share-over, .box-paginacao,.buttons-share').show();
+  }
+  hideShare() {
+    $('.share-over, .box-paginacao,.buttons-share').hide();
+  }
 
   public carregarInfos(): void {
-  this.bd.consultaInfos(this.email)
-    .then((infos: any) => {
-      this.nome = infos.displayName
-      this.email = infos.email
-      this.telefone = infos.telefone
-      this.cidade = infos.cidade
-      this.estado = infos.estado
-      this.mensagem = infos.mensagem
-    })
-}
+    this.bd.consultaInfos(this.email)
+      .then((infos: any) => {
+        this.nome = infos.displayName
+        this.email = infos.email
+        this.telefone = infos.telefone
+        this.cidade = infos.cidade
+        this.estado = infos.estado
+        this.mensagem = infos.mensagem
+      })
+  }
 
   public carregaPersonas(): void {
-  this.bd.consultaPersona(this.email)
-    .then((persona: any) => {
-      this.nome_persona = persona.nome_persona
-    })
-}
+    this.bd.consultaPersona(this.email)
+      .then((persona: any) => {
+        this.nome_persona = persona.nome_persona
+      })
+  }
 
   public carregaPaginas(): void {
     this.bd.consultaPaginasFavoritas(this.email)
@@ -170,12 +187,12 @@ hideShare() {
       })
   }
 
-  public carregarImagem():void {
+  public carregarImagem(): void {
     this.bd.carregaImagem(this.email)
-    .then((url: string)=>{
-      this.url_imagem = url
-    })
+      .then((url: string) => {
+        this.url_imagem = url
+      })
   }
-  
+
 }
 

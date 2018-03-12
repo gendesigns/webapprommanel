@@ -1,14 +1,14 @@
 <div class="off-canvas position-left" id="offCanvasLeft" data-off-canvas>
   <div class="user-profile">
-    <span class="sm-avatar">
-      <img *ngIf="url_imagem" src="{{ url_imagem }}" class="user-img" />
+    <img *ngIf="url_imagem" src="{{ url_imagem }}" class="user-img" />
+    <span class="sm-avatar" *ngIf="!url_imagem">
       <i class="fas fa-user"></i>
     </span>
     <p>
       <b>{{name}}</b>
     </p>
     <p>
-      <span>San Francisco, CA</span>
+      <span>{{cidade}}<span *ngIf="cidade && estado">, </span>{{estado}}</span>
     </p>
   </div>
   <ul class="vertical menu">
@@ -16,7 +16,7 @@
       <a href="/compartilhe">Meu Catálogo</a>
     </li>
     <li>
-        <a href="/editarPerfil">Editar informações</a>
+      <a href="/editarPerfil">Editar informações</a>
     </li>
     <li>
       <a href="#" (click)="sair()">Sair</a>
@@ -27,11 +27,11 @@
   <div class="grid-container">
     <div class="grid-x grid-padding-x">
       <div class="cell small-3 medium-2 logo">
-        <img src="assets/img/logo.png">
+        <img src="assets/img/logo-meu-catalogo-mobile-inicio.png">
       </div>
       <div class="cell small-6 medium-7 text-center">
-        <img src="assets/img/rommanel-ico.png" class="show-for-small-only rommanel-ico">
-        <img src="assets/img/rommanel.png" class="hide-for-small-only">
+        <img src="assets/img/borboleta-rommanel-mobile.png" class="show-for-small-only rommanel-ico">
+        <img src="assets/img/logo-rommanel-desk.png" class="hide-for-small-only">
       </div>
       <div class="cell small-3 medium-3">
         <button class="float-right btn-menu show-for-small-only" data-toggle="offCanvasLeft">
@@ -40,18 +40,18 @@
         <ul class="dropdown menu hide-for-small-only is-active" data-dropdown-menu>
           <li>
             <a href="#">
-              <span class="sm-avatar">
-                <img *ngIf="url_imagem" src="{{ url_imagem }}" class="user-img" />
+              <img *ngIf="url_imagem" src="{{ url_imagem }}" class="user-img" />
+              <span class="sm-avatar" *ngIf="!url_imagem">
                 <i class="fas fa-user"></i>
               </span>
-              <!-- <img src="assets/img/avatar.png" class="user-img"> -->{{name | uppercase}}
+              {{name | uppercase}}
             </a>
             <ul class="menu text-center">
               <li>
                 <a href="/compartilhe">Meu Catálogo</a>
               </li>
               <li>
-                  <a href="/editarPerfil">Editar informações</a>
+                <a href="/editarPerfil">Editar informações</a>
               </li>
               <li>
                 <a href="#" (click)="sair()">Sair</a>

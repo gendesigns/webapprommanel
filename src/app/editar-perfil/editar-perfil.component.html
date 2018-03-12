@@ -1,27 +1,21 @@
 <app-header></app-header>
+<div class="bg-overlay"></div>
+<div class="form-wizard-catalogo customize step-active" id="step-customize">
 <div class="grid-container">
   <div class="grid-x grid-padding-x align-center">
     <div class="cell small-12 medium-7 margin-top-2">
-      <div class="step-active" id="pagina-de-info">
+      <div class="pagina-de-produtos" style="display:block">
         <form [formGroup]="formulario" (ngSubmit)="atualizarUsuario()">    
           <div class="callout" data-closable>
             <button class="close-button" aria-label="Close alert" type="button" data-close>
               <span aria-hidden="true">&times;</span>
             </button>
-            <p>Clique nos campos em cinza para editar as informações que serão exibidas em seu catálogo:</p>
+            <p>Clique nos campos para editar as informações que serão exibidas em seu catálogo:</p>
           </div>
           <div class="page margin-top-1 padding-2" style="height:auto">
             
-            <h3 class="text-uppercase font-14 color-primary">Minhas informações pessoais</h3>
-            <label class="text-center text-uppercase font-14 margin-vertical-2" for="foto">
-                <div id="perfil">
-                  <div class="sm-avatar avatar">
-                  <i class="fas fa-user"></i>
-                </div>
-              </div>adicionar foto
-              <app-foto-do-perfil></app-foto-do-perfil>
-            </label>
-        
+            <h3 class="text-uppercase font-14 color-primary text-center">Minhas informações pessoais</h3>
+            <app-foto-do-perfil></app-foto-do-perfil>
             <div class="input-group">
               <span class="input-group-label text-uppercase font-14 color-gray border-none bg-none">Nome:</span>
               <input class="input-group-field text-center color-primary font-14 border-none shadow-none bg-none" type="text" placeholder="Seu Nome" formControlName="displayName">
@@ -60,4 +54,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>
