@@ -1,0 +1,210 @@
+<app-header></app-header>
+<div class="steps width-100">
+  <div class="step text-center is-active" id="step-quiz-lk">
+    <b>1</b>
+    <span> Quiz</span>
+  </div>
+  <div class="step text-center" id="step-customize-lk">
+    <b>2</b>
+    <span> Personalize</span>
+  </div>
+  <div class="step text-center" id="step-share-lk">
+    <b>3</b>
+    <span> Compartilhe</span>
+  </div>
+</div>
+<div class="form-wizard-catalogo step-active" id="step-quiz">
+  <div class="form-wizard-quiz margin-top-2 width-100 float-left active" id="quiz-1">
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="cell small-12 medium-6 question margin-top-9">
+          <div class="callout alert" data-closable>
+            <button class="close-button" aria-label="Close alert" type="button" data-close>
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <p>Por favor, selecione uma das opções abaixo.</p>
+          </div>
+          <h6 class="font-20">Pergunta 1</h6>
+          <h5 class="font-24">No meu tempo livre eu gosto de:</h5>
+          <ul class="awnsers no-bullet margin-top-3">
+            <li *ngFor="let resposta of respostas_1 | shuffle">
+              <input type="radio" name="radiogroup1" id="r1_{{ resposta.valor }}">
+              <!-- <input type="radio" name="radiogroup1" [checked]="idx === 0" [value]="resposta.valor" (change)="onSelectionChange(resposta)"
+                id="r1_{{resposta.valor}}"> -->
+              <label for="r1_{{resposta.valor}}">{{ resposta.resposta }}</label>
+            </li>
+          </ul>
+          <button class="button expanded margin-top-9 nextBtn width-75 rounded margin-horizontal-auto">ir para a pergunta
+            <b>1 de 4</b>
+            <i class="fas fa-angle-right float-right"></i>
+          </button>
+        </div>
+        <div class="cell small-6 hide-for-small-only">
+          <div class="grid-x grid-quiz-images">
+            <div class="cell medium-6">
+              <img src="assets/img/1.jpg">
+            </div>
+            <div class="cell medium-6">
+              <img src="assets/img/2.jpg">
+            </div>
+            <div class="cell medium-6">
+              <img src="assets/img/3.jpg">
+            </div>
+            <div class="cell medium-6">
+              <img src="assets/img/4.jpg">
+            </div>
+            <div class="cell medium-6">
+              <img src="assets/img/5.jpg">
+            </div>
+            <div class="cell medium-6">
+              <img src="assets/img/6.jpg">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-wizard-quiz margin-top-2 width-100 float-left" id="quiz-2">
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="cell small-12 medium-6 question margin-top-9">
+          <div class="callout alert" data-closable>
+            <button class="close-button" aria-label="Close alert" type="button" data-close>
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <p>Por favor, selecione uma das opções abaixo.</p>
+          </div>
+          <h6 class="font-20">Pergunta 2</h6>
+          <h5 class="font-24">Eu adoro acessórios:</h5>
+          <ul class="awnsers no-bullet margin-top-3">
+            <li *ngFor="let resposta of respostas_2 | shuffle">
+              <input type="radio" name="radiogroup3" [checked]="idx === 0" [value]="resposta.valor" (change)="onSelectionChange(resposta)" id="r2_{{resposta.valor}}">
+              <label for="r2_{{ resposta.valor }}">{{ resposta.resposta }}</label>
+            </li>
+          </ul>
+          <button class="button expanded margin-top-9 nextBtn width-75 rounded margin-horizontal-auto">ir para a pergunta
+            <b>2 de 4</b>
+            <i class="fas fa-angle-right float-right"></i>
+          </button>
+        </div>
+        <div class="cell small-6 hide-for-small-only">
+          <div class="grid-x">
+            <div class="cell medium-6">
+              <img src="assets/img/21.jpg">
+            </div>
+            <div class="cell medium-6">
+              <img src="assets/img/22.jpg">
+            </div>
+            <div class="cell medium-6">
+              <img src="assets/img/23.jpg">
+            </div>
+            <div class="cell medium-6">
+              <img src="assets/img/24.jpg">
+            </div>
+            <div class="cell medium-6">
+              <img src="assets/img/25.jpg">
+            </div>
+            <div class="cell medium-6">
+              <img src="assets/img/26.jpg">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-wizard-quiz margin-top-2 width-100 float-left" id="quiz-3">
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="cell small-12 medium-6 question margin-top-9">
+          <div class="callout alert" data-closable>
+            <button class="close-button" aria-label="Close alert" type="button" data-close>
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <p>Por favor, selecione uma das opções abaixo.</p>
+          </div>
+          <h6 class="font-20">Pergunta 3</h6>
+          <h5 class="font-24">Para mim o mais importante é:</h5>
+          <ul class="awnsers no-bullet margin-top-3">
+            <li *ngFor="let resposta of respostas_3 | shuffle">
+              <input type="radio" name="radiogroup3" id="r3_{{ resposta.valor }}">
+              <label for="r3_{{ resposta.valor }}">{{ resposta.resposta }}</label>
+            </li>
+          </ul>
+          <button class="button expanded margin-top-9 nextBtn width-75 rounded margin-horizontal-auto">ir para a pergunta
+            <b>3 de 4</b>
+            <i class="fas fa-angle-right float-right"></i>
+          </button>
+        </div>
+        <div class="cell small-6 hide-for-small-only">
+          <div class="grid-x">
+            <div class="cell medium-6">
+              <img src="assets/img/31.jpg">
+            </div>
+            <div class="cell medium-6">
+              <img src="assets/img/32.jpg">
+            </div>
+            <div class="cell medium-6">
+              <img src="assets/img/33.jpg">
+            </div>
+            <div class="cell medium-6">
+              <img src="assets/img/34.jpg">
+            </div>
+            <div class="cell medium-6">
+              <img src="assets/img/35.jpg">
+            </div>
+            <div class="cell medium-6">
+              <img src="assets/img/36.jpg">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-wizard-quiz margin-top-2 width-100 float-left" id="quiz-4">
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="cell small-12 medium-6 question margin-top-9">
+          <div class="callout alert" data-closable>
+            <button class="close-button" aria-label="Close alert" type="button" data-close>
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <p>Por favor, selecione uma das opções abaixo.</p>
+          </div>
+          <h6 class="font-20">Pergunta 4</h6>
+          <h5 class="font-24">Eu me considero uma pessoa:</h5>
+          <ul class="awnsers no-bullet margin-top-3">
+            <li *ngFor="let resposta of respostas_4 | shuffle">
+              <input type="radio" name="radiogroup4" id="r4_{{ resposta.valor }}">
+              <label for="r4_{{ resposta.valor }}">{{ resposta.resposta }}</label>
+            </li>
+          </ul>
+          <button class="button expanded margin-top-9 finishBtn width-75 rounded margin-horizontal-auto" (click)="getResult()">Finalizar
+            <i class="fas fa-angle-right float-right"></i>
+          </button>
+        </div>
+        <div class="cell small-6 hide-for-small-only">
+          <div class="grid-x">
+            <div class="cell medium-6">
+              <img src="assets/img/41.jpg">
+            </div>
+            <div class="cell medium-6">
+              <img src="assets/img/42.jpg">
+            </div>
+            <div class="cell medium-6">
+              <img src="assets/img/43.jpg">
+            </div>
+            <div class="cell medium-6">
+              <img src="assets/img/44.jpg">
+            </div>
+            <div class="cell medium-6">
+              <img src="assets/img/45.jpg">
+            </div>
+            <div class="cell medium-6">
+              <img src="assets/img/46.jpg">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

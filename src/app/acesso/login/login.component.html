@@ -1,0 +1,29 @@
+
+<div class="tabs-content" data-tabs-content="authentic-tabs">
+  <div class="tabs-panel" id="login">
+      <p class="font-18 color-gray margin-bottom-2 text-center">Faça o seu login para responder o quiz e personalizar o seu Catálogo 2018.</p>
+      <form [formGroup]="formulario" (ngSubmit)="autenticar()">
+          <div class="input-group">
+              <span class="input-group-label border-none">
+                  <i class="fas fa-envelope"></i>
+              </span>
+              <input class="input-group-field border-none shadow-none" [(ngModel)]="emailForReset" type="email" placeholder="Endereço de e-mail" formControlName="email">
+          </div>
+          <div class="input-group">
+              <span class="input-group-label border-none">
+                  <i class="fas fa-lock"></i>
+              </span>
+              <input class="input-group-field border-none shadow-none" type="password" placeholder="Senha" formControlName="password">
+          </div>
+
+          <div [innerHtml]="messageError | safe: 'html' "></div>
+
+          <button type="submit" class="button expanded rounded margin-horizontal-auto margin-top-3 s-button">Entrar
+              <i class="fas fa-angle-right padding-left-1"></i>
+          </button>
+      </form>
+      <p class="text-center">
+        <a (click)="resetPassword(emailForReset)"><small><p>Redefinir senha</p></small></a>
+      </p>
+  </div>
+</div>

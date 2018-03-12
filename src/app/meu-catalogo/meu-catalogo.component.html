@@ -1,0 +1,1618 @@
+<header>
+    <div class="grid-container">
+        <div class="grid-x grid-padding-x">
+            <div class="cell small-3 medium-2 logo">
+                <img src="assets/img/logo.png">
+            </div>
+            <div class="cell small-6 medium-7 text-center">
+                <img src="assets/img/rommanel-ico.png" class="show-for-small-only rommanel-ico">
+                <img src="assets/img/rommanel.png" class="hide-for-small-only">
+            </div>
+        </div>
+    </div>
+</header>
+<div>
+    <div class="grid-container">
+        <div class="grid-x grid-padding-x align-center">
+            <div class="cell small-12 medium-7 margin-top-2">
+
+                <div class="swiper-container swiper-container-share">
+                    <div class="swiper-wrapper">
+                        <div class="catalogo-page swiper-slide" title="{{nome_persona}}">
+                            <div class="capa capa-{{nome_persona}} text-center">
+                                <div class="padding-top-1">
+                                    <img src="assets/img/rommanel-logo.png" />
+                                </div>
+                                <div class="catalogo-nome">
+                                    <p>Catálago Rommanel 2018 da</p>
+                                    <h1>{{nome}}</h1>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalogo-page swiper-slide" title="{{nome}}">
+                            <h3 class="margin-vertical-1">Esse catálogo Rommanel 2018 pertence à:</h3>
+                            <div class="padding-vertical-2 bg-dark overflow-hidden">
+                                <div class="sm-avatar avatar margin-right-1 margin-left-2 float-left">
+                                    <img *ngIf="url_imagem" src="{{ url_imagem }}" class="user-img" style="width: 100px; height: 100px;border-radius: 100px;" />
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="color-white float-left margin-vertical-1 padding-left-1">
+                                    <p style="margin-bottom:5px;">
+                                        <b>{{nome}}</b>
+                                    </p>
+                                    <p class="font-14">
+                                        <i>{{cidade}}, {{estado}}</i>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="box-user-info">
+                                <div class="padding-top-2  margin-horizontal-auto user-info">
+                                    <p class="color-primary">
+                                        <i class="fas fa-envelope margin-right-1 perfil-ico"></i>{{email}}</p>
+                                    <p class="color-primary">
+                                        <i class="fas fa-phone margin-right-1 perfil-ico"></i>{{telefone}}</p>
+                                </div>
+                                <p class="color-gray text-center font-12 padding-3 margin-0">{{mensagem}}</p>
+                            </div>
+                        </div>
+                        <div *ngFor="let pagina of paginas" class="catalogo-page swiper-slide" title="{{pagina.tituloPagina}}">
+                            <div class="grid-x">
+                                <div [innerHtml]="pagina.pagina | safe: 'html'" style="width:100%;"></div>
+                            </div>
+                            <hr style="width:90%;">
+                        </div>
+                        <div class="catalogo-page swiper-slide" title="Raquel">
+                            <div class="capa capa-raquel text-center" style="background-image: url(assets/img/raquel.jpg);">
+                                <div class="catalogo-nome">
+                                    <h1 style="margin-top:5px;">
+                                        <img src="assets/img/assinatura-raquel.png">
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="catalogo-page swiper-slide" title="Pág. 9">
+                            <div class="grid-x">
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_raquel/09/512571.jpg" alt="">
+                                        <div class="caption">512571</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_raquel/09/526007.jpg" alt="">
+                                        <div class="caption">526007</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_raquel/09/526028.jpg" alt="">
+                                        <div class="caption">526028</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_raquel/09/526064.jpg" alt="">
+                                        <div class="caption">526064</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_raquel/09/551530.jpg" alt="">
+                                        <div class="caption">551530</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_raquel/09/551545.jpg" alt="">
+                                        <div class="caption">551545</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr style="width:90%;">
+                        </div>
+                        <div class="catalogo-page swiper-slide" title="Pág. 10">
+                            <div class="grid-x">
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_raquel/10/512557.jpg" alt="">
+                                        <div class="caption">512557</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_raquel/10/512565.jpg" alt="">
+                                        <div class="caption">512565</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_raquel/10/512580.jpg" alt="">
+                                        <div class="caption">512580</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_raquel/10/512590.jpg" alt="">
+                                        <div class="caption">512590</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_raquel/10/526008.jpg" alt="">
+                                        <div class="caption">526008</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_raquel/10/526041.jpg" alt="">
+                                        <div class="caption">526041</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_raquel/10/526046.jpg" alt="">
+                                        <div class="caption">526046</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_raquel/10/526072.jpg" alt="">
+                                        <div class="caption">526072</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_raquel/10/551525.jpg" alt="">
+                                        <div class="caption">551525</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr style="width:90%;">
+                        </div>
+                        <div class="catalogo-page swiper-slide" title="Pág. 11">
+                            <div class="grid-x">
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_raquel/11/512542.jpg" alt="">
+                                        <div class="caption">512542</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_raquel/11/512548_a.jpg" alt="">
+                                        <div class="caption">512548_a</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_raquel/11/512548_b.jpg" alt="">
+                                        <div class="caption">512548_b</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_raquel/11/512548_c.jpg" alt="">
+                                        <div class="caption">512548_c</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_raquel/11/512548_d.jpg" alt="">
+                                        <div class="caption">512548_d</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_raquel/11/512568_a.jpg" alt="">
+                                        <div class="caption">512568_a</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_raquel/11/512568_b.jpg" alt="">
+                                        <div class="caption">512568_b</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_raquel/11/512568_c.jpg" alt="">
+                                        <div class="caption">512568_c</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_raquel/11/512599.jpg" alt="">
+                                        <div class="caption">512599</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_raquel/11/525983.jpg" alt="">
+                                        <div class="caption">525983</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_raquel/11/526061.jpg" alt="">
+                                        <div class="caption">526061</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_raquel/11/526096.jpg" alt="">
+                                        <div class="caption">526096</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_raquel/11/542082.jpg" alt="">
+                                        <div class="caption">542082</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_raquel/11/551537.jpg" alt="">
+                                        <div class="caption">551537</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr style="width:90%;">
+                        </div>
+                        <div class="catalogo-page swiper-slide" title="Pág. 12">
+                            <div class="grid-x">
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_raquel/12/110767.jpg" alt="">
+                                        <div class="caption">110767</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_raquel/12/110769.jpg" alt="">
+                                        <div class="caption">110769</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_raquel/12/110776.jpg" alt="">
+                                        <div class="caption">110776</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_raquel/12/121677.jpg" alt="">
+                                        <div class="caption">121677</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_raquel/12/121681.jpg" alt="">
+                                        <div class="caption">121681</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_raquel/12/121684.jpg" alt="">
+                                        <div class="caption">121684</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_raquel/12/121697.jpg" alt="">
+                                        <div class="caption">121697</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_raquel/12/130421.jpg" alt="">
+                                        <div class="caption">130421</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_raquel/12/150310.jpg" alt="">
+                                        <div class="caption">150310</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr style="width:90%;">
+                        </div>
+                        <div class="catalogo-page swiper-slide" title="Brenda">
+                            <div class="capa capa-brenda text-center" style="background-image: url(assets/img/brenda.jpg);">
+                                <div class="catalogo-nome">
+                                    <h1 style="margin-top:5px;">
+                                        <img src="assets/img/assinatura-brenda.png">
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="catalogo-page swiper-slide" title="Pág. 14">
+                            <div class="grid-x">
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_brenda/14/512552.jpg" alt="">
+                                        <div class="caption">512552</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_brenda/14/526029.jpg" alt="">
+                                        <div class="caption">526029</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_brenda/14/526042.jpg" alt="">
+                                        <div class="caption">526042</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_brenda/14/526043.jpg" alt="">
+                                        <div class="caption">526043</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_brenda/14/526044.jpg" alt="">
+                                        <div class="caption">526044</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_brenda/14/526074.jpg" alt="">
+                                        <div class="caption">526074</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_brenda/14/531854.jpg" alt="">
+                                        <div class="caption">531854</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_brenda/14/551527.jpg" alt="">
+                                        <div class="caption">551527</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr style="width:90%;">
+                        </div>
+                        <div class="catalogo-page swiper-slide" title="Pág. 15">
+                            <div class="grid-x">
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_brenda/15/512543.jpg" alt="">
+                                        <div class="caption">512543</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_brenda/15/512544.jpg" alt="">
+                                        <div class="caption">512544</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_brenda/15/512560.jpg" alt="">
+                                        <div class="caption">512560</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_brenda/15/525996.jpg" alt="">
+                                        <div class="caption">525996</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_brenda/15/525998.jpg" alt="">
+                                        <div class="caption">525998</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_brenda/15/526056.jpg" alt="">
+                                        <div class="caption">526056</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_brenda/15/526076.jpg" alt="">
+                                        <div class="caption">526076</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_brenda/15/542084.jpg" alt="">
+                                        <div class="caption">542084</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_brenda/15/542112.jpg" alt="">
+                                        <div class="caption">542112</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr style="width:90%;">
+                        </div>
+                        <div class="catalogo-page swiper-slide" title="Pág. 16">
+                            <div class="grid-x">
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_brenda/16/512551.jpg" alt="">
+                                        <div class="caption">512551</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_brenda/16/512561.jpg" alt="">
+                                        <div class="caption">512561</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_brenda/16/512586.jpg" alt="">
+                                        <div class="caption">512586</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_brenda/16/512598.jpg" alt="">
+                                        <div class="caption">512598</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_brenda/16/525997.jpg" alt="">
+                                        <div class="caption">525997</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_brenda/16/526033.jpg" alt="">
+                                        <div class="caption">526033</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_brenda/16/526055.jpg" alt="">
+                                        <div class="caption">526055</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_brenda/16/526071.jpg" alt="">
+                                        <div class="caption">526071</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_brenda/16/531860.jpg" alt="">
+                                        <div class="caption">531860</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr style="width:90%;">
+                        </div>
+                        <div class="catalogo-page swiper-slide" title="Pág. 17">
+                            <div class="grid-x">
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_brenda/17/512559.jpg" alt="">
+                                        <div class="caption">512559</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_brenda/17/512576.jpg" alt="">
+                                        <div class="caption">512576</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_brenda/17/512581.jpg" alt="">
+                                        <div class="caption">512581</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_brenda/17/526002.jpg" alt="">
+                                        <div class="caption">526002</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_brenda/17/526039.jpg" alt="">
+                                        <div class="caption">526039</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_brenda/17/526045.jpg" alt="">
+                                        <div class="caption">526045</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_brenda/17/526066.jpg" alt="">
+                                        <div class="caption">526066</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_brenda/17/531852.jpg" alt="">
+                                        <div class="caption">531852</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_brenda/17/531857.jpg" alt="">
+                                        <div class="caption">531857</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr style="width:90%;">
+                        </div>
+                        <div class="catalogo-page swiper-slide" title="Alice">
+                            <div class="capa capa-alice text-center" style="background-image: url(assets/img/alice.jpg);">
+                                <div class="catalogo-nome">
+                                    <h1 style="margin-top:5px;">
+                                        <img src="assets/img/assinatura-alice.png">
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="catalogo-page swiper-slide" title="Pág. 19">
+                            <div class="grid-x">
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_alice/19/512591.jpg" alt="">
+                                        <div class="caption">512591</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_alice/19/526036.jpg" alt="">
+                                        <div class="caption">526036</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_alice/19/526037.jpg" alt="">
+                                        <div class="caption">526037</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_alice/19/526062.jpg" alt="">
+                                        <div class="caption">526062</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_alice/19/531869.jpg" alt="">
+                                        <div class="caption">531869</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr style="width:90%;">
+                        </div>
+                        <div class="catalogo-page swiper-slide" title="Pág. 20">
+                            <div class="grid-x">
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_alice/20/526060.jpg" alt="">
+                                        <div class="caption">526060</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_alice/20/531870.jpg" alt="">
+                                        <div class="caption">531870</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_alice/20/531871.jpg" alt="">
+                                        <div class="caption">531871</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr style="width:90%;">
+                        </div>
+                        <div class="catalogo-page swiper-slide" title="Pág. 21">
+                            <div class="grid-x">
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_alice/21/512576.jpg" alt="">
+                                        <div class="caption">512576</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_alice/21/512579_a.jpg" alt="">
+                                        <div class="caption">512579_a</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_alice/21/512579_b.jpg" alt="">
+                                        <div class="caption">512579_b</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_alice/21/526030_a.jpg" alt="">
+                                        <div class="caption">526030_a</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_alice/21/526030_b.jpg" alt="">
+                                        <div class="caption">526030_b</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_alice/21/526066.jpg" alt="">
+                                        <div class="caption">526066</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_alice/21/542080.jpg" alt="">
+                                        <div class="caption">542080</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr style="width:90%;">
+                        </div>
+                        <div class="catalogo-page swiper-slide" title="Pág. 22">
+                            <div class="grid-x">
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_alice/22/512562.jpg" alt="">
+                                        <div class="caption">512562</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_alice/22/512578.jpg" alt="">
+                                        <div class="caption">512578</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_alice/22/526006.jpg" alt="">
+                                        <div class="caption">526006</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_alice/22/526035.jpg" alt="">
+                                        <div class="caption">526035</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_alice/22/526063.jpg" alt="">
+                                        <div class="caption">526063</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_alice/22/526068.jpg" alt="">
+                                        <div class="caption">526068</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr style="width:90%;">
+                        </div>
+                        <div class="catalogo-page swiper-slide" title="Duda">
+                            <div class="capa capa-duda text-center" style="background-image: url(assets/img/duda.jpg);">
+                                <div class="catalogo-nome">
+                                    <h1 style="margin-top:5px;">
+                                        <img src="assets/img/assinatura-duda.png">
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="catalogo-page swiper-slide" title="Pág. 24">
+                            <div class="grid-x">
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_duda/24/512563.jpg" alt="">
+                                        <div class="caption">512563</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_duda/24/512569.jpg" alt="">
+                                        <div class="caption">512569</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_duda/24/526009.jpg" alt="">
+                                        <div class="caption">526009</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_duda/24/526011.jpg" alt="">
+                                        <div class="caption">526011</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_duda/24/526012.jpg" alt="">
+                                        <div class="caption">526012</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_duda/24/526023.jpg" alt="">
+                                        <div class="caption">526023</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_duda/24/551524.jpg" alt="">
+                                        <div class="caption">551524</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_duda/24/551529.jpg" alt="">
+                                        <div class="caption">551529</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr style="width:90%;">
+                        </div>
+                        <div class="catalogo-page swiper-slide" title="Pág. 25">
+                            <div class="grid-x">
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_duda/25/512553.jpg" alt="">
+                                        <div class="caption">512553</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_duda/25/526001.jpg" alt="">
+                                        <div class="caption">526001</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_duda/25/526014.jpg" alt="">
+                                        <div class="caption">526014</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_duda/25/526024.jpg" alt="">
+                                        <div class="caption">526024</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_duda/25/526031.jpg" alt="">
+                                        <div class="caption">526031</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_duda/25/526032.jpg" alt="">
+                                        <div class="caption">526032</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_duda/25/526054.jpg" alt="">
+                                        <div class="caption">526054</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_duda/25/526080.jpg" alt="">
+                                        <div class="caption">526080</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_duda/25/531856.jpg" alt="">
+                                        <div class="caption">531856</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_duda/25/542081.jpg" alt="">
+                                        <div class="caption">542081</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr style="width:90%;">
+                        </div>
+                        <div class="catalogo-page swiper-slide" title="Pág. 26">
+                            <div class="grid-x">
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_duda/26/531868.jpg" alt="">
+                                        <div class="caption">531868</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_duda/26/512545.jpg" alt="">
+                                        <div class="caption">512545</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_duda/26/512555.jpg" alt="">
+                                        <div class="caption">512555</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_duda/26/512566.jpg" alt="">
+                                        <div class="caption">512566</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_duda/26/512572.jpg" alt="">
+                                        <div class="caption">512572</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_duda/26/512576.jpg" alt="">
+                                        <div class="caption">512576</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_duda/26/526034.jpg" alt="">
+                                        <div class="caption">526034</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_duda/26/526066.jpg" alt="">
+                                        <div class="caption">526066</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_duda/26/531855.jpg" alt="">
+                                        <div class="caption">531855</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr style="width:90%;">
+                        </div>
+                        <div class="catalogo-page swiper-slide" title="Pág. 27">
+                            <div class="grid-x">
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_duda/27/110771.jpg" alt="">
+                                        <div class="caption">110771</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_duda/27/110773.jpg" alt="">
+                                        <div class="caption">110773</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_duda/27/110777.jpg" alt="">
+                                        <div class="caption">110777</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_duda/27/121678.jpg" alt="">
+                                        <div class="caption">121678</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_duda/27/121694.jpg" alt="">
+                                        <div class="caption">121694</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_duda/27/121695.jpg" alt="">
+                                        <div class="caption">121695</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_duda/27/140783_a.jpg" alt="">
+                                        <div class="caption">140783_a</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_duda/27/140783_b.jpg" alt="">
+                                        <div class="caption">140783_b</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_duda/27/140784.jpg" alt="">
+                                        <div class="caption">140784</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_duda/27/140786.jpg" alt="">
+                                        <div class="caption">140786</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_duda/27/140787.jpg" alt="">
+                                        <div class="caption">140787</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_duda/27/150313.jpg" alt="">
+                                        <div class="caption">150313</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr style="width:90%;">
+                        </div>
+                        <div class="catalogo-page swiper-slide" title="Débora">
+                            <div class="capa capa-debora text-center" style="background-image: url(assets/img/debora.jpg);">
+                                <div class="catalogo-nome">
+                                    <h1 style="margin-top:5px;">
+                                        <img src="assets/img/assinatura-debora.png">
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="catalogo-page swiper-slide" title="Pág. 29">
+                            <div class="grid-x">
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_debora/29/512601.jpg" alt="">
+                                        <div class="caption">512601</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_debora/29/526038.jpg" alt="">
+                                        <div class="caption">526038</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_debora/29/526077.jpg" alt="">
+                                        <div class="caption">526077</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_debora/29/531858.jpg" alt="">
+                                        <div class="caption">531858</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_debora/29/551528.jpg" alt="">
+                                        <div class="caption">551528</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr style="width:90%;">
+                        </div>
+                        <div class="catalogo-page swiper-slide" title="Pág. 30">
+                            <div class="grid-x">
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_debora/30/512570.jpg" alt="">
+                                        <div class="caption">512570</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_debora/30/526013.jpg" alt="">
+                                        <div class="caption">526013</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_debora/30/526015.jpg" alt="">
+                                        <div class="caption">526015</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_debora/30/526017.jpg" alt="">
+                                        <div class="caption">526017</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_debora/30/526022.jpg" alt="">
+                                        <div class="caption">526022</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr style="width:90%;">
+                        </div>
+                        <div class="catalogo-page swiper-slide" title="Pág. 31">
+                            <div class="grid-x">
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_debora/31/512567.jpg" alt="">
+                                        <div class="caption">512567</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_debora/31/512574.jpg" alt="">
+                                        <div class="caption">512574</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_debora/31/512575.jpg" alt="">
+                                        <div class="caption">512575</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_debora/31/526018.jpg" alt="">
+                                        <div class="caption">526018</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_debora/31/526021.jpg" alt="">
+                                        <div class="caption">526021</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_debora/31/531876.jpg" alt="">
+                                        <div class="caption">531876</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_debora/31/542086.jpg" alt="">
+                                        <div class="caption">542086</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_debora/31/551522.jpg" alt="">
+                                        <div class="caption">551522</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_debora/31/551523.jpg" alt="">
+                                        <div class="caption">551523</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr style="width:90%;">
+                        </div>
+                        <div class="catalogo-page swiper-slide" title="Pág. 32">
+                            <div class="grid-x">
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_debora/32/512587.jpg" alt="">
+                                        <div class="caption">512587</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_debora/32/512589.jpg" alt="">
+                                        <div class="caption">512589</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_debora/32/526016.jpg" alt="">
+                                        <div class="caption">526016</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_debora/32/526027.jpg" alt="">
+                                        <div class="caption">526027</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_debora/32/526057.jpg" alt="">
+                                        <div class="caption">526057</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_debora/32/526058.jpg" alt="">
+                                        <div class="caption">526058</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_debora/32/526078.jpg" alt="">
+                                        <div class="caption">526078</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_debora/32/526079.jpg" alt="">
+                                        <div class="caption">526079</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr style="width:90%;">
+                        </div>
+                        <div class="catalogo-page swiper-slide" title="Antônia">
+                            <div class="capa capa-maria-antonia text-center" style="background-image: url(assets/img/maria-antonia.jpg);">
+                                <div class="catalogo-nome">
+                                    <h1 style="margin-top:5px;">
+                                        <img src="assets/img/assinatura-maria-antonia.png">
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="catalogo-page swiper-slide" title="Pág. 34">
+                            <div class="grid-x">
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/34/531862.jpg" alt="">
+                                        <div class="caption">531862</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/34/531863.jpg" alt="">
+                                        <div class="caption">531863</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/34/542061.jpg" alt="">
+                                        <div class="caption">542061</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/34/542062.jpg" alt="">
+                                        <div class="caption">542062</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/34/542063.jpg" alt="">
+                                        <div class="caption">542063</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/34/542072.jpg" alt="">
+                                        <div class="caption">542072</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/34/542074.jpg" alt="">
+                                        <div class="caption">542074</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/34/542076.jpg" alt="">
+                                        <div class="caption">542076</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/34/542077.jpg" alt="">
+                                        <div class="caption">542077</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/34/542089.jpg" alt="">
+                                        <div class="caption">542089</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/34/542090.jpg" alt="">
+                                        <div class="caption">542090</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr style="width:90%;">
+                        </div>
+                        <div class="catalogo-page swiper-slide" title="Pág. 35">
+                            <div class="grid-x">
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/35/512558_a.jpg" alt="">
+                                        <div class="caption">512558_a</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/35/512558_b.jpg" alt="">
+                                        <div class="caption">512558_b</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/35/512558_c.jpg" alt="">
+                                        <div class="caption">512558_c</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/35/512573.jpg" alt="">
+                                        <div class="caption">512573</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/35/526020.jpg" alt="">
+                                        <div class="caption">526020</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/35/526047.jpg" alt="">
+                                        <div class="caption">526047</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/35/531872.jpg" alt="">
+                                        <div class="caption">531872</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/35/551526.jpg" alt="">
+                                        <div class="caption">551526</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr style="width:90%;">
+                        </div>
+                        <div class="catalogo-page swiper-slide" title="Pág. 36">
+                            <div class="grid-x">
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/36/512554.jpg" alt="">
+                                        <div class="caption">512554</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/36/512597.jpg" alt="">
+                                        <div class="caption">512597</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/36/512603.jpg" alt="">
+                                        <div class="caption">512603</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/36/526053.jpg" alt="">
+                                        <div class="caption">526053</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/36/531853.jpg" alt="">
+                                        <div class="caption">531853</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/36/531873.jpg" alt="">
+                                        <div class="caption">531873</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/36/531874.jpg" alt="">
+                                        <div class="caption">531874</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/36/542060.jpg" alt="">
+                                        <div class="caption">542060</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/36/542066.jpg" alt="">
+                                        <div class="caption">542066</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/36/542067.jpg" alt="">
+                                        <div class="caption">542067</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/36/542068.jpg" alt="">
+                                        <div class="caption">542068</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/36/542087.jpg" alt="">
+                                        <div class="caption">542087</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr style="width:90%;">
+                        </div>
+                        <div class="catalogo-page swiper-slide" title="Pág. 37">
+                            <div class="grid-x">
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/37/512558.jpg" alt="">
+                                        <div class="caption">512558</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/37/526052_a.jpg" alt="">
+                                        <div class="caption">526052_a</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/37/526052_b.jpg" alt="">
+                                        <div class="caption">526052_b</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/37/526052_c.jpg" alt="">
+                                        <div class="caption">526052_c</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/37/526052_d.jpg" alt="">
+                                        <div class="caption">526052_d</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/37/542075_a.jpg" alt="">
+                                        <div class="caption">542075_a</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/37/542075_b.jpg" alt="">
+                                        <div class="caption">542075_b</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/37/542075_c.jpg" alt="">
+                                        <div class="caption">542075_c</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/37/542075_d.jpg" alt="">
+                                        <div class="caption">542075_d</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/37/551533_a.jpg" alt="">
+                                        <div class="caption">551533_a</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/37/551533_b.jpg" alt="">
+                                        <div class="caption">551533_b</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/37/551533_c.jpg" alt="">
+                                        <div class="caption">551533_c</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/37/551533_d.jpg" alt="">
+                                        <div class="caption">551533_d</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr style="width:90%;">
+                        </div>
+                        <div class="catalogo-page swiper-slide" title="Pág. 38">
+                            <div class="grid-x">
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/38/512547.jpg" alt="">
+                                        <div class="caption">512547</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/38/512549_a.jpg" alt="">
+                                        <div class="caption">512549_a</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/38/512549_b.jpg" alt="">
+                                        <div class="caption">512549_b</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/38/512593_a.jpg" alt="">
+                                        <div class="caption">512593_a</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/38/512593_b.jpg" alt="">
+                                        <div class="caption">512593_b</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/38/526000.jpg" alt="">
+                                        <div class="caption">526000</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/38/526051_a.jpg" alt="">
+                                        <div class="caption">526051_a</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/38/526051_b.jpg" alt="">
+                                        <div class="caption">526051_b</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/38/531864_a.jpg" alt="">
+                                        <div class="caption">531864_a</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/38/531864_b.jpg" alt="">
+                                        <div class="caption">531864_b</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr style="width:90%;">
+                        </div>
+                        <div class="catalogo-page swiper-slide" title="Pág. 39">
+                            <div class="grid-x">
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/39/512556.jpg" alt="">
+                                        <div class="caption">512556</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/39/512577.jpg" alt="">
+                                        <div class="caption">512577</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/39/525966.jpg" alt="">
+                                        <div class="caption">525966</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/39/525999.jpg" alt="">
+                                        <div class="caption">525999</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/39/526003.jpg" alt="">
+                                        <div class="caption">526003</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/39/526005.jpg" alt="">
+                                        <div class="caption">526005</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/39/526019.jpg" alt="">
+                                        <div class="caption">526019</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/39/526048.jpg" alt="">
+                                        <div class="caption">526048</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/39/531851.jpg" alt="">
+                                        <div class="caption">531851</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/39/531859.jpg" alt="">
+                                        <div class="caption">531859</div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 margin-top-1 cell-prod">
+                                    <div>
+                                        <img src="assets/img/400x486_maria_antonia/39/542069.jpg" alt="">
+                                        <div class="caption">542069</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr style="width:90%;">
+                        </div>
+                    </div>
+                    <!-- Add Scrollbar -->
+                    <div class="share-over" (click)="hideShare()"></div>
+                    <div class="swiper-scrollbar"></div>
+                    <div class="paginacao">
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <button class="show-share-buttons show-for-small-only" (click)="showShare()">Compartilhar</button>
+        <div class="reveal text-center" id="zoom" data-reveal>
+            <img src="">
+            <div class="caption"></div>
+            <button class="close-button" data-close aria-label="Close modal" type="button">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>

@@ -1,0 +1,65 @@
+<div class="off-canvas position-left" id="offCanvasLeft" data-off-canvas>
+  <div class="user-profile">
+    <span class="sm-avatar">
+      <img *ngIf="url_imagem" src="{{ url_imagem }}" class="user-img" />
+      <i class="fas fa-user"></i>
+    </span>
+    <p>
+      <b>{{name}}</b>
+    </p>
+    <p>
+      <span>San Francisco, CA</span>
+    </p>
+  </div>
+  <ul class="vertical menu">
+    <li>
+      <a href="/compartilhe">Meu Catálogo</a>
+    </li>
+    <li>
+        <a href="/editarPerfil">Editar informações</a>
+    </li>
+    <li>
+      <a href="#" (click)="sair()">Sair</a>
+    </li>
+  </ul>
+</div>
+<header>
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x">
+      <div class="cell small-3 medium-2 logo">
+        <img src="assets/img/logo.png">
+      </div>
+      <div class="cell small-6 medium-7 text-center">
+        <img src="assets/img/rommanel-ico.png" class="show-for-small-only rommanel-ico">
+        <img src="assets/img/rommanel.png" class="hide-for-small-only">
+      </div>
+      <div class="cell small-3 medium-3">
+        <button class="float-right btn-menu show-for-small-only" data-toggle="offCanvasLeft">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="dropdown menu hide-for-small-only is-active" data-dropdown-menu>
+          <li>
+            <a href="#">
+              <span class="sm-avatar">
+                <img *ngIf="url_imagem" src="{{ url_imagem }}" class="user-img" />
+                <i class="fas fa-user"></i>
+              </span>
+              <!-- <img src="assets/img/avatar.png" class="user-img"> -->{{name | uppercase}}
+            </a>
+            <ul class="menu text-center">
+              <li>
+                <a href="/compartilhe">Meu Catálogo</a>
+              </li>
+              <li>
+                  <a href="/editarPerfil">Editar informações</a>
+              </li>
+              <li>
+                <a href="#" (click)="sair()">Sair</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>

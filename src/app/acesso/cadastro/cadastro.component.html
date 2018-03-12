@@ -1,0 +1,32 @@
+<div class="tabs-content" data-tabs-content="authentic-tabs">
+    <div class="tabs-panel is-active" id="signup">
+      <p class="font-18 color-gray margin-bottom-2 text-center">Faça o seu cadastro para responder o quiz e personalizar o seu Catálogo 2018.</p>
+      <form [formGroup]="formulario" (ngSubmit)="cadastrarUsuario()">
+        <div class="input-group">
+          <span class="input-group-label border-none">
+            <i class="fas fa-user"></i>
+          </span>
+          <input class="input-group-field border-none shadow-none" type="text" placeholder="Seu Nome" formControlName="displayName">
+        </div>
+        <div class="input-group">
+          <span class="input-group-label border-none">
+            <i class="fas fa-envelope"></i>
+          </span>
+          <input class="input-group-field border-none shadow-none" type="email" placeholder="Endereço de e-mail" formControlName="email">
+        </div>
+        <div class="input-group">
+          <span class="input-group-label border-none">
+            <i class="fas fa-lock"></i>
+          </span>
+          <input class="input-group-field border-none shadow-none" type="password" placeholder="Senha" formControlName="password">
+        </div>
+
+       <div [innerHtml]="messageError | safe: 'html' "></div>
+          
+        <button type="submit" class="button expanded rounded margin-horizontal-auto margin-top-3 s-button">Cadastre-se
+          <i class="fas fa-angle-right padding-left-1"></i>
+        </button>
+      </form>
+      <p class="text-center"><small class="help text-underline">Ao cadastrar-se, você concorda com nossos e <a href="https://www.iubenda.com/privacy-policy/38728962" target="_blank" style="color:#a2a2a2!important;"><b>Política de Privacidade</b></a>.</small></p>
+    </div>
+  </div>

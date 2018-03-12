@@ -1,0 +1,51 @@
+<div class="pagina-de-produtos" id="pagina-de-info">
+  <form [formGroup]="formulario" (ngSubmit)="atualizarUsuario()">
+    <div class="callout" data-closable>
+      <button class="close-button" aria-label="Close alert" type="button" data-close>
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <p>Clique nos campos em cinza para editar as informações que serão exibidas em seu catálogo:</p>
+    </div>
+    <div class="page margin-top-1 padding-2" style="height:auto">
+      
+      <h3 class="text-uppercase font-14 color-primary">Minhas informações pessoais</h3>
+      <div class="input-group">
+        <span class="input-group-label text-uppercase font-14 color-gray border-none bg-none">Foto</span>
+        <input type="file" class="input-group-field text-center color-primary font-14 border-none shadow-none bg-none" placeholder="Seu Nome" formControlName="displayName">
+      </div>
+      <div class="input-group">
+        <span class="input-group-label text-uppercase font-14 color-gray border-none bg-none">Nome:</span>
+        <input class="input-group-field text-center color-primary font-14 border-none shadow-none bg-none" type="text" placeholder="Seu Nome" formControlName="displayName">
+      </div>
+      <div class="input-group">
+        <span class="input-group-label text-uppercase font-14 color-gray border-none bg-none">E-mail:</span>
+        <input class="input-group-field text-center color-primary font-14 border-none shadow-none bg-none" type="email" placeholder="Endereço de e-mail" formControlName="email">
+      </div>
+      <div class="grid-x grid-padding-x">
+        <div class="large-6 cell">
+          <div class="input-group">
+            <span class="input-group-label text-uppercase font-14 color-gray border-none bg-none">Cidade:</span>
+            <input class="input-group-field text-center color-primary font-14 border-none shadow-none bg-none" type="text" placeholder="Cidade" formControlName="cidade">
+          </div>
+        </div>
+        <div class="large-6 cell">
+          <div class="input-group">
+            <span class="input-group-label text-uppercase font-14 color-gray border-none bg-none">UF:</span>
+            <input class="input-group-field text-center color-primary font-14 border-none shadow-none bg-none" type="text" placeholder="Estado" formControlName="estado">
+          </div>
+        </div>
+      </div>
+      <div class="input-group">
+        <span class="input-group-label text-uppercase font-14 color-gray border-none bg-none">Tel/Cel:</span>
+        <input class="input-group-field text-center color-primary font-14 border-none shadow-none bg-none" type="text" placeholder="Telefone ou Celular" formControlName="telefone">
+      </div>
+      <label class="text-left text-uppercase font-14">
+        Mensagem
+        <textarea class="color-primary font-14 shadow-none bg-none" maxlength="300" formControlName="mensagem"></textarea>
+      </label>
+    </div>
+    <button class="button expanded margin-top-3 rounded width-75 margin-horizontal-auto" type="submit">Visualizar/compartilhar o meu catálogo
+      <i class="fas fa-angle-right float-right"></i>
+    </button>
+  </form>
+</div>
