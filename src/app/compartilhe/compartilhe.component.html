@@ -1,4 +1,6 @@
-<app-header></app-header>
+<div class="fixar-topo">
+  <app-header></app-header>
+</div>
 <div class="form-wizard-catalogo step-active" id="step-share">
   <div class="grid-container">
     <div class="grid-x grid-padding-x align-center">
@@ -35,11 +37,13 @@
             <div class="catalogo-page swiper-slide" title="{{nome}}">
               <h3 class="margin-vertical-1">Esse catálogo Rommanel 2018 pertence à:</h3>
               <div class="padding-vertical-2 bg-dark overflow-hidden">
-                <img *ngIf="url_imagem" src="{{ url_imagem }}" class="user-img"/>
-                <div class="sm-avatar avatar margin-right-1 margin-left-2 float-left" *ngIf="!url_imagem"><i class="fas fa-user"></i></div>
+                <img *ngIf="url_imagem" src="{{ url_imagem }}" class="user-img" />
+                <div class="sm-avatar avatar margin-right-1 margin-left-2 float-left" *ngIf="!url_imagem">
+                  <i class="fas fa-user"></i>
+                </div>
                 <div class="color-white float-left margin-vertical-1 padding-left-1">
                   <p style="margin-bottom:5px;">
-                    <b>{{nome}}</b>
+                    <b>{{nome_completo}}</b>
                   </p>
                   <p class="font-14">
                     <i>{{cidade}}
@@ -78,7 +82,7 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_raquel/09/512571.jpg" alt="">
-                    <div class="caption">512571</div>
+                    <div class="caption">512571*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
@@ -119,7 +123,7 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_raquel/10/512557.jpg" alt="">
-                    <div class="caption">512557</div>
+                    <div class="caption">512557*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
@@ -137,25 +141,25 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_raquel/10/512590.jpg" alt="">
-                    <div class="caption">512590</div>
+                    <div class="caption">512590*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_raquel/10/526008.jpg" alt="">
-                    <div class="caption">526008</div>
+                    <div class="caption">526008*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_raquel/10/526041.jpg" alt="">
-                    <div class="caption">526041</div>
+                    <div class="caption">526041*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_raquel/10/526046.jpg" alt="">
-                    <div class="caption">526046</div>
+                    <div class="caption">526046*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
@@ -208,7 +212,7 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_raquel/11/512568_a.jpg" alt="">
-                    <div class="caption">512568</div>
+                    <div class="caption">512568*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
@@ -226,13 +230,13 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_raquel/11/512599.jpg" alt="">
-                    <div class="caption">512599</div>
+                    <div class="caption">512599*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_raquel/11/525983.jpg" alt="">
-                    <div class="caption">525983</div>
+                    <div class="caption">525983*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
@@ -244,7 +248,7 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_raquel/11/526096.jpg" alt="">
-                    <div class="caption">526096</div>
+                    <div class="caption">526096*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
@@ -256,7 +260,7 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_raquel/11/551537.jpg" alt="">
-                    <div class="caption">551537</div>
+                    <div class="caption">551537*</div>
                   </div>
                 </div>
               </div>
@@ -267,55 +271,55 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_raquel/12/110767.jpg" alt="">
-                    <div class="caption">110767</div>
+                    <div class="caption">110767*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_raquel/12/110769.jpg" alt="">
-                    <div class="caption">110769</div>
+                    <div class="caption">110769*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_raquel/12/110776.jpg" alt="">
-                    <div class="caption">110776</div>
+                    <div class="caption">110776*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_raquel/12/121677.jpg" alt="">
-                    <div class="caption">121677</div>
+                    <div class="caption">121677*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_raquel/12/121681.jpg" alt="">
-                    <div class="caption">121681</div>
+                    <div class="caption">121681*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_raquel/12/121684.jpg" alt="">
-                    <div class="caption">121684</div>
+                    <div class="caption">121684*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_raquel/12/121697.jpg" alt="">
-                    <div class="caption">121697</div>
+                    <div class="caption">121697*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_raquel/12/130421.jpg" alt="">
-                    <div class="caption">130421</div>
+                    <div class="caption">130421*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_raquel/12/150310.jpg" alt="">
-                    <div class="caption">150310</div>
+                    <div class="caption">150310*</div>
                   </div>
                 </div>
               </div>
@@ -335,7 +339,7 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_brenda/14/512552.jpg" alt="">
-                    <div class="caption">512552</div>
+                    <div class="caption">512552*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
@@ -365,7 +369,7 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_brenda/14/526074.jpg" alt="">
-                    <div class="caption">526074</div>
+                    <div class="caption">526074*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
@@ -388,7 +392,7 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_brenda/15/512543.jpg" alt="">
-                    <div class="caption">512543</div>
+                    <div class="caption">512543*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
@@ -412,13 +416,13 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_brenda/15/525998.jpg" alt="">
-                    <div class="caption">525998</div>
+                    <div class="caption">525998*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_brenda/15/526056.jpg" alt="">
-                    <div class="caption">526056</div>
+                    <div class="caption">526056*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
@@ -436,7 +440,7 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_brenda/15/542112.jpg" alt="">
-                    <div class="caption">542112</div>
+                    <div class="caption">542112*</div>
                   </div>
                 </div>
               </div>
@@ -506,7 +510,7 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_brenda/17/512559.jpg" alt="">
-                    <div class="caption">512559</div>
+                    <div class="caption">512559*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
@@ -524,7 +528,7 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_brenda/17/526002.jpg" alt="">
-                    <div class="caption">526002</div>
+                    <div class="caption">526002*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
@@ -548,7 +552,7 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_brenda/17/531852.jpg" alt="">
-                    <div class="caption">531852</div>
+                    <div class="caption">531852*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
@@ -592,7 +596,7 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_alice/19/526062.jpg" alt="">
-                    <div class="caption">526062</div>
+                    <div class="caption">526062*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
@@ -615,7 +619,7 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_alice/20/531870.jpg" alt="">
-                    <div class="caption">531870</div>
+                    <div class="caption">531870*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
@@ -644,7 +648,7 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_alice/21/512579_b.jpg" alt="">
-                    <div class="caption">512579</div>
+                    <div class="caption">512579*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
@@ -656,7 +660,7 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_alice/21/526030_b.jpg" alt="">
-                    <div class="caption">526030</div>
+                    <div class="caption">526030*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
@@ -729,7 +733,7 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_duda/24/512563.jpg" alt="">
-                    <div class="caption">512563</div>
+                    <div class="caption">512563*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
@@ -741,7 +745,7 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_duda/24/526009.jpg" alt="">
-                    <div class="caption">526009</div>
+                    <div class="caption">526009*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
@@ -847,7 +851,7 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_duda/26/531868.jpg" alt="">
-                    <div class="caption">531868</div>
+                    <div class="caption">531868*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
@@ -865,7 +869,7 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_duda/26/512566.jpg" alt="">
-                    <div class="caption">512566</div>
+                    <div class="caption">512566*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
@@ -906,73 +910,73 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_duda/27/110771.jpg" alt="">
-                    <div class="caption">110771</div>
+                    <div class="caption">110771*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_duda/27/110773.jpg" alt="">
-                    <div class="caption">110773</div>
+                    <div class="caption">110773*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_duda/27/110777.jpg" alt="">
-                    <div class="caption">110777</div>
+                    <div class="caption">110777*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_duda/27/121678.jpg" alt="">
-                    <div class="caption">121678</div>
+                    <div class="caption">121678*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_duda/27/121694.jpg" alt="">
-                    <div class="caption">121694</div>
+                    <div class="caption">121694*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_duda/27/121695.jpg" alt="">
-                    <div class="caption">121695</div>
+                    <div class="caption">121695*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_duda/27/140783_a.jpg" alt="">
-                    <div class="caption">140783</div>
+                    <div class="caption">140783*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_duda/27/140783_b.jpg" alt="">
-                    <div class="caption">140783</div>
+                    <div class="caption">140783*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_duda/27/140784.jpg" alt="">
-                    <div class="caption">140784</div>
+                    <div class="caption">140784*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_duda/27/140786.jpg" alt="">
-                    <div class="caption">140786</div>
+                    <div class="caption">140786*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_duda/27/140787.jpg" alt="">
-                    <div class="caption">140787</div>
+                    <div class="caption">140787*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_duda/27/150313.jpg" alt="">
-                    <div class="caption">150313</div>
+                    <div class="caption">150313*</div>
                   </div>
                 </div>
               </div>
@@ -1195,7 +1199,7 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_maria_antonia/34/542061.jpg" alt="">
-                    <div class="caption">542061</div>
+                    <div class="caption">542061*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
@@ -1278,7 +1282,7 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_maria_antonia/35/526020.jpg" alt="">
-                    <div class="caption">526020</div>
+                    <div class="caption">526020*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
@@ -1290,13 +1294,13 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_maria_antonia/35/531872.jpg" alt="">
-                    <div class="caption">531872</div>
+                    <div class="caption">531872*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_maria_antonia/35/551526.jpg" alt="">
-                    <div class="caption">551526</div>
+                    <div class="caption">551526*</div>
                   </div>
                 </div>
               </div>
@@ -1337,7 +1341,7 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_maria_antonia/36/531873.jpg" alt="">
-                    <div class="caption">531873</div>
+                    <div class="caption">531873*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
@@ -1390,13 +1394,13 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_maria_antonia/37/526052_a.jpg" alt="">
-                    <div class="caption">526052</div>
+                    <div class="caption">526052*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_maria_antonia/37/526052_b.jpg" alt="">
-                    <div class="caption">526052</div>
+                    <div class="caption">526052*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
@@ -1438,7 +1442,7 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_maria_antonia/37/551533_a.jpg" alt="">
-                    <div class="caption">551533</div>
+                    <div class="caption">551533*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
@@ -1532,7 +1536,7 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_maria_antonia/39/512556.jpg" alt="">
-                    <div class="caption">512556</div>
+                    <div class="caption">512556*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
@@ -1544,7 +1548,7 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_maria_antonia/39/525966.jpg" alt="">
-                    <div class="caption">525966</div>
+                    <div class="caption">525966*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
@@ -1562,7 +1566,7 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_maria_antonia/39/526005.jpg" alt="">
-                    <div class="caption">526005</div>
+                    <div class="caption">526005*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
@@ -1574,7 +1578,7 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_maria_antonia/39/526048.jpg" alt="">
-                    <div class="caption">526048</div>
+                    <div class="caption">526048*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
@@ -1586,7 +1590,7 @@
                 <div class="cell small-4 margin-top-1 cell-prod">
                   <div>
                     <img src="assets/img/400x486_maria_antonia/39/531859.jpg" alt="">
-                    <div class="caption">531859</div>
+                    <div class="caption">531859*</div>
                   </div>
                 </div>
                 <div class="cell small-4 margin-top-1 cell-prod">
@@ -1613,7 +1617,7 @@
       do Catálogo 2018. Compartilhe com as suas clientes e boas vendas!
     </p>
     <div class="buttons-share">
-      <button class="button f-button expanded rounded" (click)="share('https://webapprommanel.herokuapp.com/meuCatalogo')">
+      <button class="button f-button expanded rounded" (click)="share('http://df-app1-test.s3-website-sa-east-1.amazonaws.com/meuCatalogo/')">
         <i class="fab fa-facebook-f padding-right-1"></i>Compartilhar</button>
       <button class="button l-button expanded rounded" data-open="copiar_link">
         <i class="fas fa-link padding-right-1 "></i>Copiar link</button>
@@ -1634,7 +1638,7 @@
         <span class="input-group-label">
           <i class="fas fa-link"></i>
         </span>
-        <input class="input-group-field" id="share-link" type="text" value="https://webapprommanel.herokuapp.com/meuCatalogo/{{emailencrypt}}">
+        <input class="input-group-field" id="share-link" type="text" value="http://df-app1-test.s3-website-sa-east-1.amazonaws.com/meuCatalogo/{{emailencrypt}}">
         <div class="input-group-button">
           <button class="button share-copy-btn">Copiar</button>
         </div>
@@ -1644,3 +1648,4 @@
       </button>
     </div>
   </div>
+</div>

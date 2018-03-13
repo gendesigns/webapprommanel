@@ -15,6 +15,7 @@ declare let $: any
 export class CompartilheComponent implements OnInit {
 
   public nome: any
+  public nome_completo: any
   public email: any
   public emailencrypt: any
   public telefone: any
@@ -47,15 +48,20 @@ export class CompartilheComponent implements OnInit {
     })
     $('footer').hide();
     $('.swiper-container-share').append('<div class="loader-overlay"><div class="loader"></div></div>');
-    $('.paginacao').append('<div class="loader-overlay"></div>');
 
     var swiper_share;
+    var altura_tela = $(window).height() - 250;
+    if (altura_tela > 690) {
+      $('.swiper-container-share').css('max-height', altura_tela + 'px');
+    } else {
+      $('.swiper-container-share').css('max-height', '690px');
+    }
 
     function load_swiper() {
       swiper_share = new Swiper('.swiper-container-share', {
         direction: 'vertical',
         slidesPerView: 'auto',
-        spaceBetween: 30,
+        spaceBetween: 0,
         freeMode: true,
         scrollbar: {
           el: '.swiper-scrollbar',
@@ -68,10 +74,9 @@ export class CompartilheComponent implements OnInit {
         var btn = $('.pagina-thumb[data-slide=' + this.activeIndex + ']');
         $('.pagina-thumb').removeClass('ativo');
         $(btn).addClass('ativo');
-        var top = btn.offset().top - 115;
         $('.paginacao').animate({
-          scrollTop: '+=' + top
-        }, 500);
+          scrollTop: btn[0].offsetTop
+        }, 0);
       });
 
       $('.loader-overlay').remove();
@@ -93,18 +98,18 @@ export class CompartilheComponent implements OnInit {
     });
 
     $(document).on('click', '#step-share .menu a', function (e) {
-        e.preventDefault();
-        var type = $(this).attr('data-grid');
-        if (type == 'grid2') {
-          $('.catalogo-page .cell').removeClass("small-4");
-          $('.catalogo-page .cell').addClass("small-6");
-        }
-        if (type == 'grid3') {
-          $('.catalogo-page .cell').removeClass("small-6");
-          $('.catalogo-page .cell').addClass("small-4");
-        }
-        swiper_share.updateSize()
-        swiper_share.updateSlides()
+      e.preventDefault();
+      var type = $(this).attr('data-grid');
+      if (type == 'grid2') {
+        $('.catalogo-page .cell').removeClass("small-4");
+        $('.catalogo-page .cell').addClass("small-6");
+      }
+      if (type == 'grid3') {
+        $('.catalogo-page .cell').removeClass("small-6");
+        $('.catalogo-page .cell').addClass("small-4");
+      }
+      swiper_share.updateSize()
+      swiper_share.updateSlides()
     });
 
     var carregou = function () {
@@ -152,7 +157,7 @@ export class CompartilheComponent implements OnInit {
       .catch((e: any) => console.error(e));
 
   }
-  
+
 
   showShare() {
     $('.share-over, .box-paginacao,.buttons-share').show();
@@ -164,7 +169,9 @@ export class CompartilheComponent implements OnInit {
   public carregarInfos(): void {
     this.bd.consultaInfos(this.email)
       .then((infos: any) => {
-        this.nome = infos.displayName
+        var x = infos.displayName.split(' ');
+        this.nome = x[0]
+        this.nome_completo = infos.displayName
         this.email = infos.email
         this.telefone = infos.telefone
         this.cidade = infos.cidade

@@ -1,58 +1,65 @@
-<app-header></app-header>
+<div class="fixar-topo">
+  <app-header></app-header>
+</div>
 <div class="bg-overlay"></div>
-<div class="form-wizard-catalogo customize step-active" id="step-customize">
-<div class="grid-container">
-  <div class="grid-x grid-padding-x align-center">
-    <div class="cell small-12 medium-7 margin-top-2">
-      <div class="pagina-de-produtos" style="display:block">
-        <form [formGroup]="formulario" (ngSubmit)="atualizarUsuario()">    
-          <div class="callout" data-closable>
-            <button class="close-button" aria-label="Close alert" type="button" data-close>
-              <span aria-hidden="true">&times;</span>
+<div class="form-wizard-catalogo customize step-active" id="editarPerfil">
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x align-center">
+      <div class="cell small-12 medium-7 margin-top-2">
+        <div class="pagina-de-produtos" style="display:block">
+          <form [formGroup]="formulario" (ngSubmit)="atualizarUsuario()">
+            <div class="callout" data-closable>
+              <button class="close-button" aria-label="Close alert" type="button" data-close>
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <p>Clique nos campos para editar as informações que serão exibidas em seu catálogo:</p>
+            </div>
+            <div class="page margin-top-1 padding-2" style="height:auto">
+
+              <h3 class="text-uppercase font-14 color-primary text-center">Minhas informações pessoais</h3>
+              <app-foto-do-perfil></app-foto-do-perfil>
+              <div class="input-group">
+                <span class="input-group-label text-uppercase font-14 color-gray border-none bg-none">Nome:</span>
+                <input class="input-group-field text-center color-primary font-14 border-none shadow-none bg-none" type="text" placeholder="Seu Nome"
+                  formControlName="displayName">
+              </div>
+              <div class="input-group">
+                <span class="input-group-label text-uppercase font-14 color-gray border-none bg-none">E-mail:</span>
+                <input class="input-group-field text-center color-primary font-14 border-none shadow-none bg-none" type="email" placeholder="Endereço de e-mail"
+                  formControlName="email">
+              </div>
+              <div class="grid-x grid-padding-x">
+                <div class="large-6 cell">
+                  <div class="input-group">
+                    <span class="input-group-label text-uppercase font-14 color-gray border-none bg-none">Cidade:</span>
+                    <input class="input-group-field text-center color-primary font-14 border-none shadow-none bg-none" type="text" placeholder="Cidade"
+                      formControlName="cidade">
+                  </div>
+                </div>
+                <div class="large-6 cell">
+                  <div class="input-group">
+                    <span class="input-group-label text-uppercase font-14 color-gray border-none bg-none">UF:</span>
+                    <input class="input-group-field text-center color-primary font-14 border-none shadow-none bg-none" type="text" placeholder="Estado"
+                      formControlName="estado">
+                  </div>
+                </div>
+              </div>
+              <div class="input-group">
+                <span class="input-group-label text-uppercase font-14 color-gray border-none bg-none">Tel/Cel:</span>
+                <input class="input-group-field text-center color-primary font-14 border-none shadow-none bg-none" type="text" placeholder="Telefone ou Celular"
+                  formControlName="telefone">
+              </div>
+              <label class="text-left text-uppercase font-14">
+                Mensagem
+                <textarea class="color-primary font-14 shadow-none bg-none" maxlength="300" formControlName="mensagem"></textarea>
+              </label>
+            </div>
+            <button class="button expanded margin-top-3 rounded width-75 margin-horizontal-auto" type="submit">Atualizar informações
+              <i class="fas fa-angle-right float-right"></i>
             </button>
-            <p>Clique nos campos para editar as informações que serão exibidas em seu catálogo:</p>
-          </div>
-          <div class="page margin-top-1 padding-2" style="height:auto">
-            
-            <h3 class="text-uppercase font-14 color-primary text-center">Minhas informações pessoais</h3>
-            <app-foto-do-perfil></app-foto-do-perfil>
-            <div class="input-group">
-              <span class="input-group-label text-uppercase font-14 color-gray border-none bg-none">Nome:</span>
-              <input class="input-group-field text-center color-primary font-14 border-none shadow-none bg-none" type="text" placeholder="Seu Nome" formControlName="displayName">
-            </div>
-            <div class="input-group">
-              <span class="input-group-label text-uppercase font-14 color-gray border-none bg-none">E-mail:</span>
-              <input class="input-group-field text-center color-primary font-14 border-none shadow-none bg-none" type="email" placeholder="Endereço de e-mail" formControlName="email">
-            </div>
-            <div class="grid-x grid-padding-x">
-              <div class="large-6 cell">
-                <div class="input-group">
-                  <span class="input-group-label text-uppercase font-14 color-gray border-none bg-none">Cidade:</span>
-                  <input class="input-group-field text-center color-primary font-14 border-none shadow-none bg-none" type="text" placeholder="Cidade" formControlName="cidade">
-                </div>
-              </div>
-              <div class="large-6 cell">
-                <div class="input-group">
-                  <span class="input-group-label text-uppercase font-14 color-gray border-none bg-none">UF:</span>
-                  <input class="input-group-field text-center color-primary font-14 border-none shadow-none bg-none" type="text" placeholder="Estado" formControlName="estado">
-                </div>
-              </div>
-            </div>
-            <div class="input-group">
-              <span class="input-group-label text-uppercase font-14 color-gray border-none bg-none">Tel/Cel:</span>
-              <input class="input-group-field text-center color-primary font-14 border-none shadow-none bg-none" type="text" placeholder="Telefone ou Celular" formControlName="telefone">
-            </div>
-            <label class="text-left text-uppercase font-14">
-              Mensagem
-              <textarea class="color-primary font-14 shadow-none bg-none" maxlength="300" formControlName="mensagem"></textarea>
-            </label>
-          </div>
-          <button class="button expanded margin-top-3 rounded width-75 margin-horizontal-auto" type="submit">Atualizar informações
-            <i class="fas fa-angle-right float-right"></i>
-          </button>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </div>

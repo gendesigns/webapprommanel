@@ -273,6 +273,7 @@ footer img{
 .user-profile{
     padding: 30px 10px;
     background: #af94d7;
+    overflow: hidden;
 }
 .user-profile *{
     color: #fff;
@@ -288,6 +289,9 @@ footer img{
 .user-profile span{
     font-size: 12px;
     font-size: 0.75rem;
+}
+.user-profile .user-img{
+    float: left;
 }
 .margin-horizontal-auto{
     margin-left: auto !important;
@@ -611,20 +615,34 @@ ul.tabs{
     line-height: 15px;
     font-size: 8px;
 }
+.cell-prod div.box-blank-space{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: none;
+}
 .cell-prod div.blank_space{
-    height: 165px;
+    /* height: 165px; */
     border: 2px dashed #c8c8c8;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: none;
 }
+.cell-prod div.blank_space img{
+    opacity: 0;
+    visibility: hidden;
+}
 .cell-prod.small-6 div{
     max-width: 100%;
 }
-.cell-prod.small-6 div.blank_space{
+/* .cell-prod.small-6 div.blank_space{
     height: 219px;
-}
+} */
 .customize .swiper-container{
     position: absolute;
     right: 0;
@@ -763,7 +781,7 @@ ul.tabs{
 .capa-brenda .catalogo-nome{
     background: rgba(171, 29, 32, 0.9);
 }
-.capa-maria-antonia .catalogo-nome{
+.capa-maria_antonia .catalogo-nome{
     background: rgba(245, 176, 194, 0.9);
 }
 .capa-duda .catalogo-nome{
@@ -775,7 +793,7 @@ ul.tabs{
 .capa-alice .catalogo-nome{
     background: rgba(246, 197, 83, 0.9);
 }
-.capa-maria-antonia{
+.capa-maria_antonia{
     background-image: url(assets/img/maria-antonia.jpg);
 }
 .capa-duda{
@@ -858,6 +876,7 @@ ul.tabs{
 .swiper-container-share .swiper-slide{
     height: auto;
     min-height: 100%;
+    padding-bottom: 30px;
 }
 .swiper-container-share .paginacao{
     position: fixed;
@@ -1112,7 +1131,7 @@ i.perfil-ico{
     display: none;
 }
 .swiper-container-share{
-    max-height: 690px;
+    /* max-height: 690px; */
 }
 .box-paginacao{
     position: absolute;
@@ -1134,7 +1153,7 @@ i.perfil-ico{
 }
 .paginacao{
     position: absolute;
-    background: #402a5f;
+    /* background: #402a5f; */
     width: 200px;
     left: 0;
     right: auto;
@@ -1193,6 +1212,7 @@ i.perfil-ico{
     width: 20px;
     height: 20px;
     margin: 3px !important;
+    float: left;
 }
 .pagina-thumb .padding-left-1{
     padding-left: 0 !important;
@@ -1207,7 +1227,7 @@ i.perfil-ico{
     height: 13px;
     line-height: 13px;
     text-align: center;
-    margin-right: 3px !important;
+    margin-right: 5px !important;
     font-size: 4px !important;
 }
 .pagina-thumb .margin-vertical-1{
@@ -1221,7 +1241,7 @@ i.perfil-ico{
 }
 .pagina-thumb .user-info p{
     margin-bottom: 0px;
-    margin-top: 3px;
+    margin-top: 3px !important;
 }
 .pagina-thumb hr{
     margin: 0 auto;
@@ -1229,10 +1249,6 @@ i.perfil-ico{
 }
 .pagina-thumb .user-info{
     width: 100%;
-}
-.pagina-thumb .user-info p{
-    text-overflow: ellipsis;
-    white-space: pre;
 }
 .paginacao::-webkit-scrollbar{
     width: 20px;
@@ -1295,6 +1311,12 @@ i.perfil-ico{
 .close-button, .close-button.medium{
     right: 7px !important;
     top: 3px !important;
+}
+.callout.success{
+    width: 100%;
+    margin: 0;
+    background-color: #63b141 !important;
+    display: none;
 }
 @keyframes spin {
     0% { transform: rotate(0deg); }
@@ -1375,6 +1397,11 @@ i.perfil-ico{
         max-width: 92%;
         font-size: 11px;
     }
+    .callout.success p{
+        width: 100%;
+        margin: 0;
+        max-width: 100%;
+    }
     .plus-big{
         width: 27px;
         height: 27px;
@@ -1399,15 +1426,31 @@ i.perfil-ico{
         padding-bottom: 3rem;
     }
     footer{
-        display: none;
+        /* display: none; */
+        /* position: fixed; */
     }
     footer *{
         font-size: 7px;
         font-size: 0.4375rem;
     }
-    .cell-prod div.blank_space {
-        height: 90px;
+    .fixar-topo{
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 10;
     }
+    .form-wizard-catalogo{
+        float: left;
+        width: 100%;
+        margin-top: 115px;
+    }
+    #step-share,#editarPerfil{
+        margin-top: 75px;
+    }
+    /* .cell-prod div.blank_space {
+        height: 90px;
+    } */
     .bg-login{
         background-image: url(assets/img/bg-login-mobile.jpg);
         background-size: cover;
@@ -1437,11 +1480,12 @@ i.perfil-ico{
     }
     .buttons-share{
         z-index: 2;
+        height: 100px;
         right: 8px;
+        top: 50%;
+        margin-top: -50px;
     }
-    .paginacao{
-        z-index: 2;
-    }
+   
     .share-over{
         content: '';
         position: fixed;
@@ -1457,13 +1501,26 @@ i.perfil-ico{
     }
     .box-paginacao{
         top: 85px;
+        z-index: 2;
+        width: 190px;
+        /* background-color: rgba(64, 42, 95, 0.9); */
+    }
+    .paginacao{
+        width: 175px; 
     }
     .user-info{
-        width: 75%;
+        width: 95%;
     }
     .catalogo-page h3{
         font-size: 12px;
         font-size: 0.75rem;
+    }
+    .catalogo-modal{
+        background-color: rgba(255,255,255,0.9) !important;
+    }
+    .catalogo-nome h1{
+        font-size: 45px;
+        font-size: 2.8125rem;
     }
 }
 /* Media queries para tablets (.small )*/

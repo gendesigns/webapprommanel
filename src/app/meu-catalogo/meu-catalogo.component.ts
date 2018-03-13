@@ -33,54 +33,93 @@ export class MeuCatalogoComponent implements OnInit {
     // this.route.params.subscribe(res => {
     //   this.paramUrl = res.id
     // });
-   
+
   }
 
   ngOnInit() {
 
     this.paramUrl = this.route.snapshot.params['id']
-    
+
     this.carregarInfos()
     this.carregaPersonas()
     this.carregaPaginas()
     this.carregarImagem()
 
-    var altura_tela = $(window).height() - 250;
-    $('.swiper-container-share').css('max-height', altura_tela + 'px');
+    $('.swiper-container-share').append('<div class="loader-overlay"><div class="loader"></div></div>');
 
-    var swiper_share = new Swiper('.swiper-container-share', {
-      direction: 'vertical',
-      slidesPerView: 'auto',
-      spaceBetween: 10,
-      freeMode: true,
-      scrollbar: {
-        el: '.swiper-scrollbar',
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-        renderBullet: function (index, className) {
-          return '<span class="' + className + '"> Página ' + (index + 1) + '</span>';
+    var swiper_share;
+    var altura_tela = $(window).height();
+    if (altura_tela > 690) {
+      $('.swiper-container-share').css('max-height', altura_tela + 'px');
+    } else {
+      $('.swiper-container-share').css('max-height', '690px');
+    }
+
+    function load_swiper() {
+      swiper_share = new Swiper('.swiper-container-share', {
+        direction: 'vertical',
+        slidesPerView: 'auto',
+        spaceBetween: 0,
+        freeMode: true,
+        scrollbar: {
+          el: '.swiper-scrollbar',
+          draggable: false,
         },
-      },
-      mousewheel: true,
+        mousewheel: true,
+      });
+
+      swiper_share.on('slideChange', function () {
+        var btn = $('.pagina-thumb[data-slide=' + this.activeIndex + ']');
+        $('.pagina-thumb').removeClass('ativo');
+        $(btn).addClass('ativo');
+        $('.paginacao').animate({
+          scrollTop: btn[0].offsetTop
+        }, 0);
+      });
+
+      $('.loader-overlay').remove();
+      $('.catalogo-page .cell-prod').removeClass('small-6');
+      $('.catalogo-page .cell-prod').addClass('small-4');
+    }
+    $(document).on('click', '.pagina-thumb', function (e) {
+      e.preventDefault();
+      var slide = $(this).attr('data-slide');
+      swiper_share.slideTo(slide, 0);
     });
 
-
-    $(window).scroll(function () {
-      var scrolled_val = $(document).scrollTop().valueOf();
-      if (scrolled_val >= 155) {
-        $(".paginacao").css('padding-top', '50px');
-      } else {
-        $(".paginacao").css('padding-top', '160px');
+    $(document).on('click', '#step-share .menu a', function (e) {
+      e.preventDefault();
+      var type = $(this).attr('data-grid');
+      if (type == 'grid2') {
+        $('.catalogo-page .cell').removeClass("small-4");
+        $('.catalogo-page .cell').addClass("small-6");
+      }
+      if (type == 'grid3') {
+        $('.catalogo-page .cell').removeClass("small-6");
+        $('.catalogo-page .cell').addClass("small-4");
       }
     });
 
-    $('.catalogo-page .cell-prod').removeClass('small-6');
-    $('.catalogo-page .cell-prod').addClass('small-4');
+    var carregou = function () {
+      if ($('.catalogo-page').hasClass('paginas-usuario')) {
+        load_swiper();
+        load_pages_thumbs();
+        clearInterval(intervalId);
+      }
+    }
 
-    $(document).foundation();
-    
+    function load_pages_thumbs() {
+      var cont = 0;
+      $('.catalogo-page').each(function (e) {
+        $('.paginacao').append('<div class="pagina-thumb" data-slide="' + cont + '">' + $(this).html() + '</div>');
+        $('.paginacao .capa').addClass('capa-mini');
+        $('.paginacao .pagina-thumb').eq(0).addClass('ativo');
+        cont++;
+      })
+    }
+
+    var intervalId = setInterval(carregou, 1000);
+
     $(document).on('click', '.catalogo-page .cell-prod', function () {
       var image = $(this).find('img').attr('src');
       var legenda = $(this).find('.caption').html();
@@ -88,13 +127,8 @@ export class MeuCatalogoComponent implements OnInit {
       $('#zoom .caption').html(legenda);
       $('#zoom').foundation('open');
     });
-  }
+    $(document).on('click', '#zoom', function () { $('#zoom').foundation('close'); });
 
-  showShare() {
-    $('.share-over, .paginacao,.buttons-share').show();
-  }
-  hideShare() {
-    $('.share-over, .paginacao,.buttons-share').hide();
   }
 
   public carregarInfos(): void {
@@ -105,7 +139,7 @@ export class MeuCatalogoComponent implements OnInit {
         this.telefone = infos.telefone
         this.cidade = infos.cidade
         this.estado = infos.estado
-        this.mensagem = infos.mensagem      
+        this.mensagem = infos.mensagem
       })
   }
 
@@ -123,11 +157,11 @@ export class MeuCatalogoComponent implements OnInit {
       })
   }
 
-  public carregarImagem():void {
+  public carregarImagem(): void {
     this.bd.carregaImagem(this.email)
-    .then((url: string)=>{
-      this.url_imagem = url
-    })
+      .then((url: string) => {
+        this.url_imagem = url
+      })
   }
 
 }
