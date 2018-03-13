@@ -24,6 +24,7 @@ export class MeuCatalogoComponent implements OnInit {
   public paginas: any
   public paramUrl: any
   public url_imagem: string
+  public nome_completo: any
 
   constructor(
     private bd: Bd,

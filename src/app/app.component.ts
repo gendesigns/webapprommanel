@@ -2,9 +2,11 @@ import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 import * as firebase from 'firebase';
 import { FacebookService, InitParams } from 'ngx-facebook';
+import {Router, NavigationEnd} from "@angular/router";
 
 declare let jQuery:any;
 declare let $:any
+declare var ga: Function;
 
 @Component({
   selector: 'app-root',
@@ -13,6 +15,16 @@ declare let $:any
 })
 export class AppComponent implements OnInit{
   title = 'app';
+
+  constructor(public router: Router) {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        ga('set', 'page', event.urlAfterRedirects);
+        ga('send', 'pageview');
+      }
+    });
+  }
+
   ngOnInit() {
 
   // Initialize Firebase

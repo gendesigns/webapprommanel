@@ -38,6 +38,7 @@
   },
   "devDependencies": {
     "@angular/language-service": "^5.2.0",
+    "@types/google.analytics": "0.0.38",
     "@types/jasmine": "~2.8.3",
     "@types/jasminewd2": "~2.0.2",
     "@types/jquery": "^3.3.0",
