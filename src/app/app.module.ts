@@ -33,6 +33,7 @@ import { FacebookModule } from 'ngx-facebook';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { EditarPerfilComponent } from './editar-perfil/editar-perfil.component';
 import { FotoDoPerfilComponent } from './foto-do-perfil/foto-do-perfil.component';
+import { EditarColecoesComponent } from './editar-colecoes/editar-colecoes.component';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { FotoDoPerfilComponent } from './foto-do-perfil/foto-do-perfil.component
     MeuCatalogoComponent,
     NotFoundComponent,
     EditarPerfilComponent,
-    FotoDoPerfilComponent
+    FotoDoPerfilComponent,
+    EditarColecoesComponent
   ],
   imports: [
     BrowserModule,
