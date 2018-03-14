@@ -955,19 +955,11 @@ ul.tabs{
     color: #402a5f;
 }
 .buttons-share{
-    z-index: 2;
-    height: 100px;
-    right: auto;
-    top: 50%;
-    margin-top: -50px;
-    width: 220px;
-    left: 50%;
-    margin-left: -110px;
+    position: fixed;
+    top: 47%;
+    width: 160px;
+    right: 250px;
 }
-/* .buttons-share button{
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-} */
 .pronto{
     position:  fixed;
     right: 173px;
@@ -1485,9 +1477,12 @@ i.perfil-ico{
     .buttons-share{
         z-index: 2;
         height: 100px;
-        right: 8px;
+        right: auto;
         top: 50%;
         margin-top: -50px;
+        width: 220px;
+        left: 50%;
+        margin-left: -110px;
     }
    
     .share-over{
