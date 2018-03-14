@@ -29,7 +29,6 @@ export class LoginComponent implements OnInit {
     this.auth.autenticar(this.formulario.value.email, this.formulario.value.password)
     .then()
     .catch((error)=>{
-      console.log('Erros acontecem ', error.messageError)
       switch (error.code) {
         case "auth/argument-error":
             this.messageError = `
