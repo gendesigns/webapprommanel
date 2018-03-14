@@ -272,7 +272,7 @@
               </div>
             </div>
           </div>
-          <button class="button expanded margin-top-2 rounded width-75 margin-horizontal-auto" (click)="proxima('#pagina-de-pingentes')">Personalizar página de Pingentes
+          <button class="button expanded margin-top-2 rounded width-75 margin-horizontal-auto" (click)="proxima('#pagina-de-pulseiras')">Personalizar página de Pulseiras
             <i class="fas fa-angle-right float-right"></i>
           </button>
           <div class="swiper-container-shake swiper-container-custom hide-for-small-only">
@@ -341,117 +341,6 @@
             </button>
           </div>
         </div>
-        <div class="pagina-de-produtos" id="pagina-de-pingentes">
-          <div class="callout" data-closable>
-            <button class="close-button" aria-label="Close alert" type="button" data-close>
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <p>Para excluir produtos da página, clique no botão “
-              <span class="minus display-inline-block position-static">
-                <i class="fas fa-minus"></i>
-              </span> ” abaixo</p>
-          </div>
-          <div class="callout success">
-            <p>Novo item adicionado</p>
-          </div>
-          <div class="page margin-top-3 padding-2">
-            <ul class="menu">
-              <li>
-                <a href="#" (click)="changeGrid('#pagina-de-pingentes .cell-prod','grid2')">
-                  <i class="fas fa-th-large"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#" (click)="changeGrid('#pagina-de-pingentes .cell-prod','grid3')">
-                  <i class="fas fa-th"></i>
-                </a>
-              </li>
-              <li class="li-title font-14 text-uppercase">Meus pingentes favoritos</li>
-            </ul>
-            <div class="grid-x grid-padding-x box-prod">
-              <!-- onde ficarao os aneis depois de adicionados -->
-              <div class="cell small-4 margin-top-1 cell-prod">
-                <div class="blank_space">
-                  <img src="assets/img/aneis/alice/512579_a.jpg" />
-                  <div class="box-blank-space">
-                    <button class="show-for-small-only plus position-static plus-big" data-open="catalogo-modal-pingentes">
-                      <i class="fas fa-plus"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <button class="button expanded margin-top-2 rounded width-75 margin-horizontal-auto" (click)="proxima('#pagina-de-pulseiras')">Personalizar página de Pulseiras
-            <i class="fas fa-angle-right float-right"></i>
-          </button>
-          <div class="swiper-container-shake swiper-container-custom hide-for-small-only">
-            <div class="box-callout">
-              <div class="callout" data-closable>
-                <button class="close-button" aria-label="Close alert" type="button" data-close>
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                <p>Para adicionar novos produtos à sua página, clique no botão “
-                  <span class="plus display-inline-block position-static">
-                    <i class="fas fa-plus"></i>
-                  </span> ” abaixo</p>
-                <hr>
-              </div>
-            </div>
-            <div class="swiper-wrapper-shake">
-              <!-- onde ficarao os aneis para serem adicionados -->
-              <div class="swiper-slide" *ngFor="let pingente of pingentes" (click)="addImage(pingente.persona+'-pingente-'+pingente.code)"
-                id="{{pingente.persona}}-pingente-{{pingente.code}}">
-                <img src="{{pingente.img}}">
-                <div class="caption">{{pingente.legenda}}</div>
-                <a href="#">
-                  <i class="fas fa-plus"></i>
-                </a>
-              </div>
-            </div>
-            <div class="swiper-button-next">
-              <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="swiper-button-prev">
-              <i class="fas fa-chevron-up"></i>
-            </div>
-          </div>
-          <div class="reveal catalogo-modal" id="catalogo-modal-pingentes" data-reveal>
-            <ul class="menu">
-              <li>
-                <a href="#" (click)="changeGrid('#catalogo-modal-pingentes .cell-prod','grid2',1)">
-                  <i class="fas fa-th-large"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#" (click)="changeGrid('#catalogo-modal-pingentes .cell-prod','grid3',1)">
-                  <i class="fas fa-th"></i>
-                </a>
-              </li>
-            </ul>
-            <p class="text-center margin-top-1">Para adicionar novos produtos à sua página, clique no botão “
-              <span class="plus display-inline-block position-static">
-                <i class="fas fa-plus"></i>
-              </span> ” abaixo</p>
-
-            <div class="grid-x grid-padding-x">
-              <!-- onde ficarao os aneis para serem adicionados na versao mobile -->
-              <div class="cell small-4 margin-top-1 cell-prod" *ngFor="let pingente of pingentes" id="mobile-{{pingente.persona}}-pingente-{{pingente.code}}"
-                (click)="addImage('mobile-'+pingente.persona+'-pingente-'+pingente.code,1)">
-                <div>
-                  <img src="{{pingente.img}}" alt="">
-                  <div class="caption">{{pingente.legenda}}</div>
-                  <a href="#" class="plus">
-                    <i class="fas fa-plus"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <button class="close-button" data-close aria-label="Close reveal" type="button">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-        </div>
         <div class="pagina-de-produtos" id="pagina-de-pulseiras">
           <div class="callout" data-closable>
             <button class="close-button" aria-label="Close alert" type="button" data-close>
@@ -493,7 +382,7 @@
               </div>
             </div>
           </div>
-          <button class="button expanded margin-top-2 rounded width-75 margin-horizontal-auto" (click)="proxima('#pagina-de-info')">Editar informações
+          <button class="button expanded margin-top-2 rounded width-75 margin-horizontal-auto" (click)="proxima('#pagina-de-pingentes')">Personalizar página de Pingentes
             <i class="fas fa-angle-right float-right"></i>
           </button>
           <div class="swiper-container-shake swiper-container-custom hide-for-small-only">
@@ -558,8 +447,117 @@
                 </div>
               </div>
             </div>
+            <button class="close-button" data-close aria-label="Close reveal" type="button">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
+        <div class="pagina-de-produtos" id="pagina-de-pingentes">
+          <div class="callout" data-closable>
+            <button class="close-button" aria-label="Close alert" type="button" data-close>
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <p>Para excluir produtos da página, clique no botão “
+              <span class="minus display-inline-block position-static">
+                <i class="fas fa-minus"></i>
+              </span> ” abaixo</p>
+          </div>
+          <div class="callout success">
+            <p>Novo item adicionado</p>
+          </div>
+          <div class="page margin-top-3 padding-2">
+            <ul class="menu">
+              <li>
+                <a href="#" (click)="changeGrid('#pagina-de-pingentes .cell-prod','grid2')">
+                  <i class="fas fa-th-large"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" (click)="changeGrid('#pagina-de-pingentes .cell-prod','grid3')">
+                  <i class="fas fa-th"></i>
+                </a>
+              </li>
+              <li class="li-title font-14 text-uppercase">Meus pingentes favoritos</li>
+            </ul>
+            <div class="grid-x grid-padding-x box-prod">
+              <!-- onde ficarao os aneis depois de adicionados -->
+              <div class="cell small-4 margin-top-1 cell-prod">
+                <div class="blank_space">
+                  <img src="assets/img/aneis/alice/512579_a.jpg" />
+                  <div class="box-blank-space">
+                    <button class="show-for-small-only plus position-static plus-big" data-open="catalogo-modal-pingentes">
+                      <i class="fas fa-plus"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="button expanded margin-top-2 rounded width-75 margin-horizontal-auto" (click)="proxima('#pagina-de-info')">Editar Informações
+            <i class="fas fa-angle-right float-right"></i>
+          </button>
+          <div class="swiper-container-shake swiper-container-custom hide-for-small-only">
+            <div class="box-callout">
+              <div class="callout" data-closable>
+                <button class="close-button" aria-label="Close alert" type="button" data-close>
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <p>Para adicionar novos produtos à sua página, clique no botão “
+                  <span class="plus display-inline-block position-static">
+                    <i class="fas fa-plus"></i>
+                  </span> ” abaixo</p>
+                <hr>
+              </div>
+            </div>
+            <div class="swiper-wrapper-shake">
+              <!-- onde ficarao os aneis para serem adicionados -->
+              <div class="swiper-slide" *ngFor="let pingente of pingentes" (click)="addImage(pingente.persona+'-pingente-'+pingente.code)"
+                id="{{pingente.persona}}-pingente-{{pingente.code}}">
+                <img src="{{pingente.img}}">
+                <div class="caption">{{pingente.legenda}}</div>
+                <a href="#">
+                  <i class="fas fa-plus"></i>
+                </a>
+              </div>
+            </div>
+            <div class="swiper-button-next">
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="swiper-button-prev">
+              <i class="fas fa-chevron-up"></i>
+            </div>
+          </div>
+          <div class="reveal catalogo-modal" id="catalogo-modal-pingentes" data-reveal>
+            <ul class="menu">
+              <li>
+                <a href="#" (click)="changeGrid('#catalogo-modal-pingentes .cell-prod','grid2',1)">
+                  <i class="fas fa-th-large"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" (click)="changeGrid('#catalogo-modal-pingentes .cell-prod','grid3',1)">
+                  <i class="fas fa-th"></i>
+                </a>
+              </li>
+            </ul>
+            <p class="text-center margin-top-1">Para adicionar novos produtos à sua página, clique no botão “
+              <span class="plus display-inline-block position-static">
+                <i class="fas fa-plus"></i>
+              </span> ” abaixo</p>
 
-
+            <div class="grid-x grid-padding-x">
+              <!-- onde ficarao os aneis para serem adicionados na versao mobile -->
+              <div class="cell small-4 margin-top-1 cell-prod" *ngFor="let pingente of pingentes" id="mobile-{{pingente.persona}}-pingente-{{pingente.code}}"
+                (click)="addImage('mobile-'+pingente.persona+'-pingente-'+pingente.code,1)">
+                <div>
+                  <img src="{{pingente.img}}" alt="">
+                  <div class="caption">{{pingente.legenda}}</div>
+                  <a href="#" class="plus">
+                    <i class="fas fa-plus"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
             <button class="close-button" data-close aria-label="Close reveal" type="button">
               <span aria-hidden="true">&times;</span>
             </button>
