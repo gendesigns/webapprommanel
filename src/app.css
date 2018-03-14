@@ -193,6 +193,9 @@ footer img{
 .form-wizard-quiz,  .form-wizard-quiz .callout{
     display: none;
 }
+.form-wizard-quiz img{
+    width: 100%;
+}
 .form-wizard-catalogo{
     display: none;
 }
