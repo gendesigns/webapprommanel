@@ -19,13 +19,109 @@ export class EditarColecoesComponent implements OnInit {
 
   constructor(private bd: Bd) { }
 
+
   ngOnInit() {
     firebase.auth().onAuthStateChanged((user) => {
       this.email = user.email
       this.carregaPaginas()
     })
 
-    localStorage.setItem("grid-op", 'grid3');
+    function load_swiper(container) {
+      var swiper = new Swiper(container, {
+        direction: 'vertical',
+        slidesPerView: 'auto',
+        freeMode: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        mousewheel: true
+      });
+    }
+
+    var carregou = function () {
+      if ($('#pagina-de-aneis .swiper-container').find('.swiper-slide').length > 0 && $('#pagina-de-aneis').css('display') != 'none') {
+        load_swiper('#pagina-de-aneis .swiper-container');
+        clearInterval(customizeIntervalId);
+      }
+      else if ($('#pagina-de-brincos .swiper-container').find('.swiper-slide').length > 0 && $('#pagina-de-brincos').css('display') != 'none') {
+        load_swiper('#pagina-de-brincos .swiper-container');
+        clearInterval(customizeIntervalId);
+      }
+      else if ($('#pagina-de-colares .swiper-container').find('.swiper-slide').length > 0 && $('#pagina-de-colares').css('display') != 'none') {
+        load_swiper('#pagina-de-colares .swiper-container');
+        clearInterval(customizeIntervalId);
+      }
+      else if ($('#pagina-de-pulseiras .swiper-container').find('.swiper-slide').length > 0 && $('#pagina-de-pulseiras').css('display') != 'none') {
+        load_swiper('#pagina-de-pulseiras .swiper-container');
+        clearInterval(customizeIntervalId);
+      }
+      else if ($('#pagina-de-pingentes .swiper-container').find('.swiper-slide').length > 0 && $('#pagina-de-pingentes').css('display') != 'none') {
+        load_swiper('#pagina-de-pingentes .swiper-container');
+        clearInterval(customizeIntervalId);
+      }
+      else {
+        clearInterval(customizeIntervalId);
+      }
+    }
+    var carregouPages = function () {
+      if ($('#pagina-de-aneis .box-prod').find('.catalogo-edit').length > 0 && $('#pagina-de-aneis').css('display') != 'none') {
+        $('#pagina-de-aneis .catalogo-edit').append('<div class="cell small-4 margin-top-1 cell-prod"><div class="blank_space"><img src="assets/img/aneis/alice/512579_a.jpg" /><div class="box-blank-space"><button class="show-for-small-only plus position-static plus-big" data-open="catalogo-modal-aneis"><i class="fas fa-plus"></i></button></div></div></div>');
+        $('#pagina-de-aneis .catalogo-edit .cell-prod').each(function (e) {
+          var $ref = '#' + $(this).find('.remover').attr('data-ref');
+          var $refM = '#mobile-' + $(this).find('.remover').attr('data-ref');
+          $($ref).addClass('prod-disabled');
+          $($refM).addClass('prod-disabled');
+          clearInterval(customizeIntervalPages);
+        })
+      } else if ($('.box-prod').find('.catalogo-edit').length > 0 && $('#pagina-de-brincos').css('display') != 'none') {
+        $('#pagina-de-brincos .catalogo-edit').append('<div class="cell small-4 margin-top-1 cell-prod"><div class="blank_space"><img src="assets/img/aneis/alice/512579_a.jpg" /><div class="box-blank-space"><button class="show-for-small-only plus position-static plus-big" data-open="catalogo-modal-aneis"><i class="fas fa-plus"></i></button></div></div></div>');
+        $('#pagina-de-brincos .catalogo-edit .cell-prod').each(function (e) {
+          var $ref = '#' + $(this).find('.remover').attr('data-ref');
+          var $refM = '#mobile-' + $(this).find('.remover').attr('data-ref');
+          $($ref).addClass('prod-disabled');
+          $($refM).addClass('prod-disabled');
+          clearInterval(customizeIntervalPages);
+        })
+      } else if ($('.box-prod').find('.catalogo-edit').length > 0 && $('#pagina-de-colares').css('display') != 'none') {
+        $('#pagina-de-colares .catalogo-edit').append('<div class="cell small-4 margin-top-1 cell-prod"><div class="blank_space"><img src="assets/img/aneis/alice/512579_a.jpg" /><div class="box-blank-space"><button class="show-for-small-only plus position-static plus-big" data-open="catalogo-modal-aneis"><i class="fas fa-plus"></i></button></div></div></div>');
+        $('#pagina-de-colares .catalogo-edit .cell-prod').each(function (e) {
+          var $ref = '#' + $(this).find('.remover').attr('data-ref');
+          var $refM = '#mobile-' + $(this).find('.remover').attr('data-ref');
+          $($ref).addClass('prod-disabled');
+          $($refM).addClass('prod-disabled');
+          clearInterval(customizeIntervalPages);
+        })
+      } else if ($('.box-prod').find('.catalogo-edit').length > 0 && $('#pagina-de-pulseiras').css('display') != 'none') {
+        $('#pagina-de-pulseiras .catalogo-edit').append('<div class="cell small-4 margin-top-1 cell-prod"><div class="blank_space"><img src="assets/img/aneis/alice/512579_a.jpg" /><div class="box-blank-space"><button class="show-for-small-only plus position-static plus-big" data-open="catalogo-modal-aneis"><i class="fas fa-plus"></i></button></div></div></div>');
+        $('#pagina-de-pulseiras .catalogo-edit .cell-prod').each(function (e) {
+          var $ref = '#' + $(this).find('.remover').attr('data-ref');
+          var $refM = '#mobile-' + $(this).find('.remover').attr('data-ref');
+          $($ref).addClass('prod-disabled');
+          $($refM).addClass('prod-disabled');
+          clearInterval(customizeIntervalPages);
+        })
+      } else if ($('.box-prod').find('.catalogo-edit').length > 0 && $('#pagina-de-pingentes').css('display') != 'none') {
+        $('#pagina-de-pingentes .catalogo-edit').append('<div class="cell small-4 margin-top-1 cell-prod"><div class="blank_space"><img src="assets/img/aneis/alice/512579_a.jpg" /><div class="box-blank-space"><button class="show-for-small-only plus position-static plus-big" data-open="catalogo-modal-aneis"><i class="fas fa-plus"></i></button></div></div></div>');
+        $('#pagina-de-pingentes .catalogo-edit .cell-prod').each(function (e) {
+          var $ref = '#' + $(this).find('.remover').attr('data-ref');
+          var $refM = '#mobile-' + $(this).find('.remover').attr('data-ref');
+          $($ref).addClass('prod-disabled');
+          $($refM).addClass('prod-disabled');
+          clearInterval(customizeIntervalPages);
+        })
+      } else {
+      }
+
+    }
+
+    var customizeIntervalId = setInterval(carregou, 1000);
+    var customizeIntervalPages = setInterval(carregouPages, 1000);
+
+    $(document).on('click', '.nextJoia, .box-persona button', function () {
+      carregou();
+      carregouPages();
+    });
 
     $(document).on('click', '.remover', function () {
       var $ref = $(this).attr('data-ref');
@@ -34,12 +130,12 @@ export class EditarColecoesComponent implements OnInit {
       $(this).parents('.cell-prod').remove();
     });
 
-    var grid_op = 'grid3';
-    grid_op = localStorage.getItem("grid-op");
+    localStorage.setItem("grid-op", 'grid3');
+    var grid_op = localStorage.getItem("grid-op");
 
   }
   changeGrid($div, $type, modal) {
-    if(modal != 1){
+    if (modal != 1) {
       localStorage.setItem("grid-op", $type);
     }
     if ($type == 'grid2') {
@@ -89,8 +185,8 @@ export class EditarColecoesComponent implements OnInit {
       var res = $($this).parents('.catalogo-modal').attr('id').replace("catalogo-modal", "pagina-de");
       $('.catalogo-modal').foundation('close');
     }
-    $('#' + pai + ' .box-prod').prepend($html);
-    $('#' + res + ' .box-prod').prepend($html);
+    $('#' + pai + ' .box-prod .catalogo-edit').prepend($html);
+    $('#' + res + ' .box-prod .catalogo-edit').prepend($html);
     $($this).addClass('prod-disabled');
 
     $('#' + res + ' .callout.success').fadeIn('slow', function () {
@@ -101,10 +197,6 @@ export class EditarColecoesComponent implements OnInit {
     });
 
     return false;
-  }
-  editar_informacoes() {
-    $('.pagina-de-produtos').hide();
-    $('#pagina-de-info').show();
   }
 
   proxima(id) {
@@ -120,7 +212,7 @@ export class EditarColecoesComponent implements OnInit {
           this.salvarPagina()
           this.html = '';
           $('.step-info').text("Brincos");
-        
+
           break;
         }
         case "#pagina-de-colares": {
@@ -159,15 +251,15 @@ export class EditarColecoesComponent implements OnInit {
     }
   }
 
-
   public carregaPaginas(): void {
     this.bd.consultaPaginasFavoritas(this.email)
       .then((pagina: any) => {
         this.paginas = pagina
+
       })
-      
   }
-  
+
+
   public salvarPagina(): void {
     this.bd.salvarPagina({
       email: this.email,
@@ -175,6 +267,7 @@ export class EditarColecoesComponent implements OnInit {
       paginaHtml: this.html,
     })
   }
+
 
 
   public aneis: Array<object> = [
@@ -435,7 +528,7 @@ export class EditarColecoesComponent implements OnInit {
 
     { 'img': 'assets/img/pulseiras/raquel/551537.jpg', 'code': '551537', 'legenda': '551537*', 'persona': 'raquel' },
     { 'img': 'assets/img/pulseiras/raquel/150310.jpg', 'code': '150310', 'legenda': '150310*', 'persona': 'raquel' },
-    
+
   ]
   ngAfterContentInit() {
 

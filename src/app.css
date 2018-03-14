@@ -1287,6 +1287,21 @@ i.perfil-ico{
     background-color: #63b141 !important;
     display: none;
 }
+.catalogo-edit{
+    width: 100%;
+}
+.catalogo-edit .cell {
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem;
+}
+.catalogo-edit .small-4 {
+    width: 33.33333%;
+    float: left;
+}
+.catalogo-edit .small-6 {
+    width: 50%;
+    float: left;
+}
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
