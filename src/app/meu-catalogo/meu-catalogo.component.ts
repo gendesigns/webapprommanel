@@ -15,6 +15,7 @@ declare let $: any
 export class MeuCatalogoComponent implements OnInit {
 
   public nome: any
+  public nome_completo: any
   public email: any
   public telefone: any
   public cidade: any
@@ -134,7 +135,9 @@ export class MeuCatalogoComponent implements OnInit {
   public carregarInfos(): void {
     this.bd.consultaInfos(atob(this.paramUrl))
       .then((infos: any) => {
-        this.nome = infos.displayName
+        var x = infos.displayName.split(' ');
+        this.nome = x[0]
+        this.nome_completo = infos.displayName
         this.email = infos.email
         this.telefone = infos.telefone
         this.cidade = infos.cidade

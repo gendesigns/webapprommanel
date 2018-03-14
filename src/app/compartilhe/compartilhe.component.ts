@@ -166,10 +166,10 @@ export class CompartilheComponent implements OnInit {
 
 
   showShare() {
-    $('.share-over, .box-paginacao,.buttons-share').show();
+    $('.share-over,.buttons-share').show();
   }
   hideShare() {
-    $('.share-over, .box-paginacao,.buttons-share').hide();
+    $('.share-over,.buttons-share').hide();
   }
 
   public carregarInfos(): void {
