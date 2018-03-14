@@ -544,6 +544,7 @@ ul.tabs{
 .customize .box-callout{
     position: relative;
     z-index: 2;
+    display: none;
 }
 .customize .box-callout .callout::after{
     content: '';
@@ -555,8 +556,9 @@ ul.tabs{
     top: -30px;
     z-index: -1;
 }
-.customize .box-callout .callout{
-    margin-bottom: 30px;
+.customize  .callout{
+    box-sizing: border-box;
+    padding: 20px 5px;
 }
 .customize .box-callout p{
     margin-bottom: 0;
@@ -581,7 +583,7 @@ ul.tabs{
     color: #fff;
     margin-right: 2px;
 }
-.cell-prod div, .customize .swiper-container-shake .swiper-slide{
+.cell-prod div, .customize .swiper-container .swiper-slide{
     -webkit-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.1);
     -moz-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.1);
     box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.1);
@@ -592,7 +594,7 @@ ul.tabs{
 .cell-prod div img{
     width: 100%;
 }
-.cell-prod div a,.customize .swiper-container-shake .swiper-slide a, .minus, .plus{
+.cell-prod div a,.customize .swiper-container .swiper-slide a, .minus, .plus{
     position: absolute;
     width: 15px;
     height: 15px;
@@ -604,7 +606,7 @@ ul.tabs{
     text-align: center;
     line-height: 0;
 }
-.cell-prod div a i,.customize .swiper-container-shake .swiper-slide a i, .minus i, .plus i{
+.cell-prod div a i,.customize .swiper-container .swiper-slide a i, .minus i, .plus i{
     line-height: 15px;
     font-size: 8px;
 }
@@ -635,32 +637,20 @@ ul.tabs{
 .customize .swiper-container{
     position: absolute;
     right: 0;
-    height: 100%;
+    height: 79%;
     width: 165px;
     top: 200px;
     background: #f4f4f4;
     padding: 25px;
     z-index: 0;
 }
-.swiper-container-shake{
-    position: absolute;
-    right: 0;
-    height: 80%;
-    width: 200px;
-    top: 200px;
-    background: #f4f4f4;
-    padding: 25px;
-    z-index: 0;
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-.customize .swiper-container-shake .swiper-slide{
+.customize .swiper-container .swiper-slide{
     height: auto;
     margin-bottom: 10px;
     display: flex;
     align-items: center;
 }
-.customize .swiper-container-shake .swiper-slide .caption, .cell-prod div .caption{
+.customize .swiper-container .swiper-slide .caption, .cell-prod div .caption{
     position: absolute;
     width: 100%;
     padding: 5px 10px;
@@ -671,7 +661,7 @@ ul.tabs{
     font-size: 10px;
     font-size: 0.625rem;
 }
-.customize .swiper-container-shake .swiper-slide a, .plus{
+.customize .swiper-container .swiper-slide a, .plus{
     background: #38b196 !important;
 }
 .customize .swiper-button-next, .customize .swiper-button-prev{
@@ -686,7 +676,6 @@ ul.tabs{
     background-color: #664a90;
     background-image: none;
     text-align: center;
-    display: none;
 }
 .customize .swiper-button-prev{
     margin-top: 20px;

@@ -23,7 +23,52 @@ export class PersonalizeComponent implements OnInit {
       this.email = user.email
     })
 
-    localStorage.setItem("grid-op", 'grid3');
+    function load_swiper(container) {
+      var swiper = new Swiper(container, {
+        direction: 'vertical',
+        slidesPerView: 'auto',
+        freeMode: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        mousewheel: true
+      });
+    }
+
+    var customizeIntervalId = null;
+
+    var carregou = function () {
+      if ($('#pagina-de-aneis .swiper-container').find('.swiper-slide').length > 0 && $('#pagina-de-aneis').css('display') != 'none') {
+        load_swiper('#pagina-de-aneis .swiper-container');
+        clearInterval(customizeIntervalId);
+      }
+      else if($('#pagina-de-brincos .swiper-container').find('.swiper-slide').length > 0 && $('#pagina-de-brincos').css('display') != 'none'){
+        load_swiper('#pagina-de-brincos .swiper-container');    
+        clearInterval(customizeIntervalId);    
+      } 
+      else if($('#pagina-de-colares .swiper-container').find('.swiper-slide').length > 0 && $('#pagina-de-colares').css('display') != 'none'){
+        load_swiper('#pagina-de-colares .swiper-container');
+        clearInterval(customizeIntervalId);    
+      }
+      else if($('#pagina-de-pulseiras .swiper-container').find('.swiper-slide').length > 0 && $('#pagina-de-pulseiras').css('display') != 'none'){
+        load_swiper('#pagina-de-pulseiras .swiper-container');   
+        clearInterval(customizeIntervalId);    
+      }
+      else if($('#pagina-de-pingentes .swiper-container').find('.swiper-slide').length > 0 && $('#pagina-de-pingentes').css('display') != 'none'){
+        load_swiper('#pagina-de-pingentes .swiper-container');   
+        clearInterval(customizeIntervalId);    
+      }
+      else {
+        clearInterval(customizeIntervalId);
+      }
+    }
+
+    $(document).on('click', '.nextJoia, .box-persona button', function () {
+     
+      customizeIntervalId = setInterval(carregou, 1000);
+      carregou();
+    });  
 
     $(document).on('click', '.remover', function () {
       var $ref = $(this).attr('data-ref');
@@ -31,9 +76,9 @@ export class PersonalizeComponent implements OnInit {
       $('#mobile-' + $ref).removeClass('prod-disabled');
       $(this).parents('.cell-prod').remove();
     });
-
-    var grid_op = 'grid3';
-    grid_op = localStorage.getItem("grid-op");
+  
+    localStorage.setItem("grid-op", 'grid3');
+    var grid_op = localStorage.getItem("grid-op");
 
   }
   changeGrid($div, $type, modal) {
