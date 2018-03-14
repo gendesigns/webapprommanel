@@ -22,8 +22,8 @@
         "app.css",
         "./assets/css/foundation.css",
         "./assets/css/fontawesome-all.min.css",
-        "./assets/css/swiper.min.css"
-        
+        "./assets/css/swiper.min.css",
+        "./assets/css/open-sans.css"          
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.min.js",

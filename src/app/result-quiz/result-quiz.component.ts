@@ -16,7 +16,7 @@ export class ResultQuizComponent implements OnInit, OnChanges {
   public name: string
   public persona: string = ''
 
-  constructor(private auth: Auth, private bd: Bd) {}
+  constructor(private auth: Auth, private bd: Bd) { }
 
   ngOnChanges() {
 
@@ -30,14 +30,25 @@ export class ResultQuizComponent implements OnInit, OnChanges {
     $(document).on('click', '.box-persona button', function () {
 
       //$('.form-wizard-catalogo').removeClass('step-active');
-    //  $('#step-customize').addClass('step-active');
+      //  $('#step-customize').addClass('step-active');
       $('.form-wizard-catalogo').hide();
       $('#step-customize').fadeIn('slow');
       $('#step-customize-lk').addClass('is-active');
-      $( document ).scrollTop( 0 );
+      $(document).scrollTop(0);
       $('#pagina-de-aneis').show();
 
     })
+    $('footer').css('position', 'fixed');
+    var carregou = function () {
+      if ($('#step-quiz-resultado').find('.persona').length > 0) {
+        $('footer').css('position', 'absolute');
+        $('.loader-overlay').hide();
+        clearInterval(intervalId);
+      } else {
+        $('.loader-overlay').show();
+      }
+    }
+    var intervalId = setInterval(carregou, 1000);
   }
 
 

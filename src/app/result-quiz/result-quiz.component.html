@@ -1,20 +1,24 @@
-<div class="fixar-topo"><app-header></app-header>
-<div class="steps width-100">
-    <div class="step text-center is-active" id="step-quiz-lk">
-        <b>1</b>
-        <span> Quiz</span>
+<div class="fixar-topo">
+    <app-header></app-header>
+    <div class="steps width-100">
+        <div class="step text-center is-active" id="step-quiz-lk">
+            <b>1</b>
+            <span> Quiz</span>
+        </div>
+        <div class="step text-center" id="step-customize-lk">
+            <b>2</b>
+            <span> Personalize</span>
+        </div>
+        <div class="step text-center" id="step-share-lk">
+            <b>3</b>
+            <span> Compartilhe</span>
+        </div>
     </div>
-    <div class="step text-center" id="step-customize-lk">
-        <b>2</b>
-        <span> Personalize</span>
-    </div>
-    <div class="step text-center" id="step-share-lk">
-        <b>3</b>
-        <span> Compartilhe</span>
-    </div>
-</div>
 </div>
 <div class="form-wizard-catalogo step-active" id="step-quiz-resultado">
+    <div class="loader-overlay" style="z-index:1">
+        <div class="loader"></div>
+    </div>
     <div [innerHtml]="persona | safe: 'html'"></div>
 </div>
 <app-personalize></app-personalize>
