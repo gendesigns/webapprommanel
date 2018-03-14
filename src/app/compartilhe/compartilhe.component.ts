@@ -14,6 +14,8 @@ declare let $: any
 })
 export class CompartilheComponent implements OnInit {
 
+  public href: string = "";
+
   public nome: any
   public nome_completo: any
   public email: any
@@ -26,6 +28,8 @@ export class CompartilheComponent implements OnInit {
   public paginas: any
   public url_imagem: string
 
+  public url: any = ''
+
   constructor(private auth: Auth, private bd: Bd, private fb: FacebookService) {
     let initParams: InitParams = {
       appId: '1580936808840188',
@@ -37,7 +41,8 @@ export class CompartilheComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.url = window.location.origin
+    
     firebase.auth().onAuthStateChanged((user) => {
       this.email = user.email
       this.emailencrypt = btoa(user.email)
@@ -146,6 +151,7 @@ export class CompartilheComponent implements OnInit {
   }
 
   share(url: string) {
+    console.log(`${url}/meuCatalogo/${btoa(this.email)}`)
 
     let params: UIParams = {
       href: `${url}/${btoa(this.email)}`,

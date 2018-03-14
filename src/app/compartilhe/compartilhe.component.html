@@ -1617,7 +1617,7 @@
       do Catálogo 2018. Compartilhe com as suas clientes e boas vendas!
     </p>
     <div class="buttons-share">
-      <button class="button f-button expanded rounded" (click)="share('http://df-app1-test.s3-website-sa-east-1.amazonaws.com/meuCatalogo/')">
+      <button class="button f-button expanded rounded" (click)="share(url)">
         <i class="fab fa-facebook-f padding-right-1"></i>Compartilhar</button>
       <button class="button l-button expanded rounded" data-open="copiar_link">
         <i class="fas fa-link padding-right-1 "></i>Copiar link</button>
@@ -1638,7 +1638,7 @@
         <span class="input-group-label">
           <i class="fas fa-link"></i>
         </span>
-        <input class="input-group-field" id="share-link" type="text" value="http://df-app1-test.s3-website-sa-east-1.amazonaws.com/meuCatalogo/{{emailencrypt}}">
+        <input class="input-group-field" id="share-link" type="text" value="{{url}}/meuCatalogo/{{emailencrypt}}">
         <div class="input-group-button">
           <button class="button share-copy-btn">Copiar</button>
         </div>
