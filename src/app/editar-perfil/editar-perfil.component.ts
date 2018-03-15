@@ -35,6 +35,9 @@ export class EditarPerfilComponent implements OnInit {
 
 
   ngOnInit() {
+    var altura_tela = $(window).height() - 220;
+    $('.form-wizard-catalogo').css('min-height',altura_tela+'px');
+    
     firebase.auth().onAuthStateChanged((user) => {
       this.email = user.email
       this.carregarInfos()

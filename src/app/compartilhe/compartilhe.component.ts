@@ -51,6 +51,8 @@ export class CompartilheComponent implements OnInit {
       this.carregaPaginas()
       this.carregarImagem()
     })
+    
+    
     $('footer').hide();
     $('.swiper-container-share').append('<div class="loader-overlay"><div class="loader"></div></div>');
 
@@ -63,6 +65,7 @@ export class CompartilheComponent implements OnInit {
     }
 
     function load_swiper() {
+      $('html,body').scrollTop(0);
       swiper_share = new Swiper('.swiper-container-share', {
         direction: 'vertical',
         slidesPerView: 'auto',
@@ -74,6 +77,8 @@ export class CompartilheComponent implements OnInit {
         },
         mousewheel: true,
       });
+
+      swiper_share.slideTo(0, 0);
 
       swiper_share.on('slideChange', function () {
         var btn = $('.pagina-thumb[data-slide=' + this.activeIndex + ']');
@@ -118,7 +123,7 @@ export class CompartilheComponent implements OnInit {
     });
 
     var carregou = function () {
-      if ($('.catalogo-page').hasClass('paginas-usuario')) {
+      if ($('.catalogo-page').hasClass('paginas-usuario') && $('.catalogo-page').hasClass('capa-usuario')) {
         load_swiper();
         load_pages_thumbs();
         clearInterval(intervalId);
@@ -136,9 +141,7 @@ export class CompartilheComponent implements OnInit {
     }
 
     var intervalId = setInterval(carregou, 1000);
-
-
-
+    
     $(document).on('click', '.catalogo-page .cell-prod', function () {
       var image = $(this).find('img').attr('src');
       var legenda = $(this).find('.caption').html();
@@ -163,7 +166,6 @@ export class CompartilheComponent implements OnInit {
       .catch((e: any) => console.error(e));
 
   }
-
 
   showShare() {
     $('.share-over,.buttons-share').show();
