@@ -57,7 +57,6 @@ export class Auth{
 
     public atualizarUsuario(usuarioUpdate: UpdateFieldsUsuario ): Promise<any>  {
         let usuario = firebase.auth().currentUser
-        let nomeImagem = btoa(usuario.email)
         
        return firebase.database().ref(`usuario_detalhe/${btoa(usuario.email)}`)
         .update( usuarioUpdate )  

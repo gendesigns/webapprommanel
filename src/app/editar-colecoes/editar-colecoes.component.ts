@@ -18,7 +18,11 @@ export class EditarColecoesComponent implements OnInit {
   public titulo_pagina: string = ''
   public email: string
   public html: string = ''
+  public htmlCarregado: string = '' 
   public paginas: Array<any> = []
+
+  public paginasCarregadas: any
+  
 
   constructor(private bd: Bd) { }
 
@@ -27,6 +31,7 @@ export class EditarColecoesComponent implements OnInit {
     firebase.auth().onAuthStateChanged((user) => {
       this.email = user.email
       this.carregaPaginas()
+      this.pagginasCarregadas()
     })
 
     function load_swiper(container) {
@@ -212,7 +217,8 @@ export class EditarColecoesComponent implements OnInit {
       switch (id) {
         case "#pagina-de-brincos": {
           this.titulo_pagina = "Anéis"
-          this.salvarPagina()
+          this.htmlCarregado = this.paginasCarregadas[0].pagina
+          this.atualizarPagina()
           this.html = '';
           $('.step-info').text("Brincos");
 
@@ -220,28 +226,32 @@ export class EditarColecoesComponent implements OnInit {
         }
         case "#pagina-de-colares": {
           this.titulo_pagina = "Brincos"
-          this.salvarPagina()
+          this.htmlCarregado = this.paginasCarregadas[1].pagina
+          this.atualizarPagina()
           this.html = '';
           $('.step-info').text("Colares");
           break;
         }
         case "#pagina-de-pulseiras": {
           this.titulo_pagina = "Pingentes"
-          this.salvarPagina()
+          this.htmlCarregado = this.paginasCarregadas[2].pagina
+          this.atualizarPagina()
           this.html = '';
           $('.step-info').text("Pulseiras");
           break;
         }
         case "#pagina-de-pingentes": {
           this.titulo_pagina = "Colares"
-          this.salvarPagina()
+          this.htmlCarregado = this.paginasCarregadas[3].pagina
+          this.atualizarPagina()
           this.html = '';
           $('.step-info').text("Pingentes");
           break;
         }
         case "#pagina-de-info": {
           this.titulo_pagina = "Pulseiras"
-          this.salvarPagina()
+          this.htmlCarregado = this.paginasCarregadas[4].pagina
+          this.atualizarPagina()
           this.html = '';
           $('.step-info').text("Editar Informações");
           break;
@@ -261,12 +271,18 @@ export class EditarColecoesComponent implements OnInit {
       })   
   }
 
+  public pagginasCarregadas():void{
+    this.bd.consultaPaginasSalva(this.email)
+      .then((pagina: any) => {
+        this.paginasCarregadas = pagina
+      })   
+  }
 
-  public salvarPagina(): void {
-    this.bd.salvarPagina({
+  public atualizarPagina(): void {
+    this.bd.atualizarPagina({
       email: this.email,
       tituloPagina: this.titulo_pagina,
-      paginaHtml: this.html,
+      paginaHtml: this.html + this.htmlCarregado,
     })
   }
   public aneis: Joia[] = Aneis

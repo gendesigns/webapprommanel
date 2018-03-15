@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ChangeDetectionStrategy } from '@angular/core';
 import * as firebase from 'firebase'
 import { Router } from '@angular/router';
 import { resolve } from 'url';
@@ -24,6 +24,28 @@ export class Bd {
             .then((pagina)=>{
                 
             })
+    }
+    public atualizarPagina(pagina: any): void{
+        firebase.database().ref(`paginas_favoritas/${btoa(pagina.email)}`)
+            .once('value')
+            .then((snapshot:any)=>{
+                snapshot.forEach((childSnapshot: any) =>{
+                    firebase.database().ref()
+                    .child(`paginas_favoritas/${childSnapshot.key}`)
+                    .once('value')
+                    .then((chave: any)=>{
+                        if (childSnapshot.val().tituloPagina === pagina.tituloPagina) {
+                            
+                            let titulo = pagina.tituloPagina
+                            let html = pagina.paginaHtml
+                            
+                            firebase.database().ref(`paginas_favoritas/${btoa(pagina.email)}/${chave.key}`)
+                            .update({ pagina: html, tituloPagina: titulo })
+                        }
+                    })
+                })
+            })   
+     
     }
 
     public salvarImagemDoPerfil(imagemDePerfil: any):void{
@@ -131,6 +153,23 @@ export class Bd {
                         })
                     })
                 resolve(paginas)
+            })
+        })
+    }
+
+    public consultaPaginasSalva(emaillUsuario: string): Promise<any> {
+        
+        return new Promise((resolve, reject) => {
+
+            firebase.database().ref(`paginas_favoritas/${btoa(emaillUsuario)}`)
+            .once('value')
+            .then((snapshot: any) => {
+                let paginas: Array<any> = []
+                snapshot.forEach((childSnapshot: any) => {
+                        let pagina = childSnapshot.val()
+                        paginas.push(pagina)
+                        resolve(paginas)
+                    })
             })
         })
     }
