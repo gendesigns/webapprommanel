@@ -42,7 +42,7 @@ export class CompartilheComponent implements OnInit {
 
   ngOnInit() {
     this.url = window.location.origin
-    
+
     firebase.auth().onAuthStateChanged((user) => {
       this.email = user.email
       this.emailencrypt = btoa(user.email)
@@ -51,17 +51,34 @@ export class CompartilheComponent implements OnInit {
       this.carregaPaginas()
       this.carregarImagem()
     })
-    
-    
+
     $('footer').hide();
     $('.swiper-container-share').append('<div class="loader-overlay"><div class="loader"></div></div>');
 
+    function doOnOrientationChange() {   
+      if (screen.height < screen.width && ('ontouchstart' in document.documentElement)) {
+        $('.fixar-topo').addClass('fixar-topo-landscape');
+        $('#step-share .menu').addClass('menu-fixo');
+        $('#step-share .show-share-buttons,.rommanel-ico,.btn-menu').css('display','inline-block');
+        $('#step-share').css('margin-top', '110px');
+        $('.buttons-share,.share-over,.box-paginacao,.dropdown.menu,.logo-rommanel-desk').hide();
+      } else if(('ontouchstart' in document.documentElement)) {
+        $('.fixar-topo').removeClass('fixar-topo-landscape');
+        $('#step-share .menu').removeClass('menu-fixo');
+        $('.buttons-share,.share-over,.box-paginacao').hide();   
+      }
+    }
+    window.addEventListener('orientationchange', doOnOrientationChange);
+    doOnOrientationChange();
+
     var swiper_share;
-    var altura_tela = $(window).height() - 250;
-    if (altura_tela > 690) {
-      $('.swiper-container-share').css('max-height', altura_tela + 'px');
-    } else {
-      $('.swiper-container-share').css('max-height', '690px');
+    if (!('ontouchstart' in document.documentElement)) {
+      var altura_tela = $(window).height() - 250;
+      if (altura_tela > 690) {
+        $('.swiper-container-share').css('max-height', altura_tela + 'px');
+      } else {
+        $('.swiper-container-share').css('max-height', '690px');
+      }
     }
 
     function load_swiper() {
@@ -90,8 +107,14 @@ export class CompartilheComponent implements OnInit {
       });
 
       $('.loader-overlay').remove();
+      $('#step-share .menu,.show-share-buttons').css('z-index','5');
       $('.catalogo-page .cell-prod').removeClass('small-6');
       $('.catalogo-page .cell-prod').addClass('small-4');
+
+      if (('ontouchstart' in document.documentElement)) {
+        $('.swiper-container-share .swiper-wrapper').removeClass('swiper-wrapper');
+        swiper_share.destroy();
+      }
     }
     $(document).on('click', '.pagina-thumb', function (e) {
       e.preventDefault();
@@ -141,7 +164,7 @@ export class CompartilheComponent implements OnInit {
     }
 
     var intervalId = setInterval(carregou, 1000);
-    
+
     $(document).on('click', '.catalogo-page .cell-prod', function () {
       var image = $(this).find('img').attr('src');
       var legenda = $(this).find('.caption').html();
