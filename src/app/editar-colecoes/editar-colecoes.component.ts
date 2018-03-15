@@ -15,7 +15,7 @@ export class EditarColecoesComponent implements OnInit {
   public titulo_pagina: string = ''
   public email: string
   public html: string = ''
-  public paginas: any
+  public paginas: Array<any> = []
 
   constructor(private bd: Bd) { }
 
@@ -164,8 +164,7 @@ export class EditarColecoesComponent implements OnInit {
     this.bd.consultaPaginasFavoritas(this.email)
       .then((pagina: any) => {
         this.paginas = pagina
-      })
-      
+      })   
   }
   
   public salvarPagina(): void {
