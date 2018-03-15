@@ -65,7 +65,6 @@ export class PersonalizeComponent implements OnInit {
     }
 
     $(document).on('click', '.nextJoia, .box-persona button', function () {
-     
       customizeIntervalId = setInterval(carregou, 1000);
       carregou();
     });  

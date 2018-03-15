@@ -1,6 +1,5 @@
 <app-header></app-header>
-
-<div class="form-wizard-catalogo customize step-active" id="step-customize">
+<div class="customize">
   <div class="bg-overlay"></div>
   <div class="grid-container">
     <div class="grid-x grid-padding-x align-center">
@@ -40,33 +39,20 @@
               </li>
               <li class="li-title font-14 text-uppercase">Meus anéis favoritos</li>
             </ul>
-            <div *ngFor="let pagina of paginas" class="catalogo-page swiper-slide paginas-usuario" title="{{pagina.tituloPagina}}">
-              <div class="grid-x">
-                <h3 class="margin-vertical-1 text-center width-100">{{pagina.tituloPagina == 'Pulseiras' ? "Minhas " + pagina.tituloPagina : "Meus " + pagina.tituloPagina}}</h3>
-                <div [innerHtml]="pagina.pagina | safe: 'html'" style="width:100%;"></div>
-              </div>
-              <hr style="width:90%;">
-            </div>
             <div class="grid-x grid-padding-x box-prod">
               <!-- onde ficarao os aneis depois de adicionados -->
-              <div class="cell small-4 margin-top-1 cell-prod">
-                <div class="blank_space">
-                  <img src="assets/img/aneis/alice/512579_a.jpg" />
-                  <div class="box-blank-space">
-                    <button class="show-for-small-only plus position-static plus-big" data-open="catalogo-modal-aneis">
-                      <i class="fas fa-plus"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
+              <ng-container *ngFor="let pagina of paginas">
+                <div class="catalogo-edit" [innerHtml]="pagina.pagina | safe: 'html'" title="{{pagina.tituloPagina}}" *ngIf="pagina.tituloPagina == 'Anéis'"></div>
+              </ng-container>
             </div>
           </div>
-          <button class="button expanded margin-top-2 rounded width-75 margin-horizontal-auto" (click)="proxima('#pagina-de-brincos')">Personalizar página de Brincos
+          <button class="button expanded margin-top-2 rounded width-75 margin-horizontal-auto nextJoia" (click)="proxima('#pagina-de-brincos')">Personalizar página de Brincos
             <i class="fas fa-angle-right float-right"></i>
           </button>
-          <div class="swiper-container-shake swiper-container-custom hide-for-small-only">
-            <div class="box-callout">
-              <div class="callout" data-closable>
+          <div class="swiper-container swiper-container-custom hide-for-small-only">
+            <div class="swiper-wrapper">
+              <!-- onde ficarao os aneis para serem adicionados -->
+              <div class="callout swiper-slide" data-closable>
                 <button class="close-button" aria-label="Close alert" type="button" data-close>
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -76,9 +62,6 @@
                   </span> ” abaixo</p>
                 <hr>
               </div>
-            </div>
-            <div class="swiper-wrapper-shake">
-              <!-- onde ficarao os aneis para serem adicionados -->
               <div class="swiper-slide" *ngFor="let anel of aneis" (click)="addImage(anel.persona+'-anel-'+anel.code)" id="{{anel.persona}}-anel-{{anel.code}}">
                 <img src="{{anel.img}}">
                 <div class="caption">{{anel.legenda}}</div>
@@ -159,24 +142,18 @@
             </ul>
             <div class="grid-x grid-padding-x box-prod">
               <!-- onde ficarao os aneis depois de adicionados -->
-              <div class="cell small-4 margin-top-1 cell-prod">
-                <div class="blank_space">
-                  <img src="assets/img/aneis/alice/512579_a.jpg" />
-                  <div class="box-blank-space">
-                    <button class="show-for-small-only plus position-static plus-big" data-open="catalogo-modal-brincos">
-                      <i class="fas fa-plus"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
+              <ng-container *ngFor="let pagina of paginas">
+                <div class="catalogo-edit" [innerHtml]="pagina.pagina | safe: 'html'" title="{{pagina.tituloPagina}}" *ngIf="pagina.tituloPagina == 'Brincos'"></div>
+              </ng-container>
             </div>
           </div>
-          <button class="button expanded margin-top-2 rounded width-75 margin-horizontal-auto" (click)="proxima('#pagina-de-colares')">Personalizar página de Colares
+          <button class="button expanded margin-top-2 rounded width-75 margin-horizontal-auto nextJoia" (click)="proxima('#pagina-de-colares')">Personalizar página de Colares
             <i class="fas fa-angle-right float-right"></i>
           </button>
-          <div class="swiper-container-shake swiper-container-custom hide-for-small-only">
-            <div class="box-callout">
-              <div class="callout" data-closable>
+          <div class="swiper-container swiper-container-custom hide-for-small-only">
+            <div class="swiper-wrapper">
+              <!-- onde ficarao os aneis para serem adicionados -->
+              <div class="callout swiper-slide" data-closable>
                 <button class="close-button" aria-label="Close alert" type="button" data-close>
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -186,9 +163,6 @@
                   </span> ” abaixo</p>
                 <hr>
               </div>
-            </div>
-            <div class="swiper-wrapper-shake">
-              <!-- onde ficarao os aneis para serem adicionados -->
               <div class="swiper-slide" *ngFor="let brinco of brincos" (click)="addImage(brinco.persona+'-brinco-'+brinco.code)" id="{{brinco.persona}}-brinco-{{brinco.code}}">
                 <img src="{{brinco.img}}">
                 <div class="caption">{{brinco.legenda}}</div>
@@ -269,24 +243,17 @@
             </ul>
             <div class="grid-x grid-padding-x box-prod">
               <!-- onde ficarao os aneis depois de adicionados -->
-              <div class="cell small-4 margin-top-1 cell-prod">
-                <div class="blank_space">
-                  <img src="assets/img/aneis/alice/512579_a.jpg" />
-                  <div class="box-blank-space">
-                    <button class="show-for-small-only plus position-static plus-big" data-open="catalogo-modal-colares">
-                      <i class="fas fa-plus"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
+              <ng-container *ngFor="let pagina of paginas">
+                <div class="catalogo-edit" [innerHtml]="pagina.pagina | safe: 'html'" title="{{pagina.tituloPagina}}" *ngIf="pagina.tituloPagina == 'Colares'"></div>
+              </ng-container>
             </div>
           </div>
-          <button class="button expanded margin-top-2 rounded width-75 margin-horizontal-auto" (click)="proxima('#pagina-de-pulseiras')">Personalizar página de Pulseiras
+          <button class="button expanded margin-top-2 rounded width-75 margin-horizontal-auto nextJoia" (click)="proxima('#pagina-de-pulseiras')">Personalizar página de Pulseiras
             <i class="fas fa-angle-right float-right"></i>
           </button>
-          <div class="swiper-container-shake swiper-container-custom hide-for-small-only">
-            <div class="box-callout">
-              <div class="callout" data-closable>
+          <div class="swiper-container swiper-container-custom hide-for-small-only">
+            <div class="swiper-wrapper">
+              <div class="callout swiper-slide" data-closable>
                 <button class="close-button" aria-label="Close alert" type="button" data-close>
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -296,8 +263,6 @@
                   </span> ” abaixo</p>
                 <hr>
               </div>
-            </div>
-            <div class="swiper-wrapper-shake">
               <!-- onde ficarao os aneis para serem adicionados -->
               <div class="swiper-slide" *ngFor="let colar of colares" (click)="addImage(colar.persona+'-colar-'+colar.code)" id="{{colar.persona}}-colar-{{colar.code}}">
                 <img src="{{colar.img}}">
@@ -379,24 +344,17 @@
             </ul>
             <div class="grid-x grid-padding-x box-prod">
               <!-- onde ficarao os aneis depois de adicionados -->
-              <div class="cell small-4 margin-top-1 cell-prod">
-                <div class="blank_space">
-                  <img src="assets/img/aneis/alice/512579_a.jpg" />
-                  <div class="box-blank-space">
-                    <button class="show-for-small-only plus position-static plus-big" data-open="catalogo-modal-pulseiras">
-                      <i class="fas fa-plus"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
+              <ng-container *ngFor="let pagina of paginas">
+                <div class="catalogo-edit" [innerHtml]="pagina.pagina | safe: 'html'" title="{{pagina.tituloPagina}}" *ngIf="pagina.tituloPagina == 'Pulseiras'"></div>
+              </ng-container>
             </div>
           </div>
-          <button class="button expanded margin-top-2 rounded width-75 margin-horizontal-auto" (click)="proxima('#pagina-de-pingentes')">Personalizar página de Pingentes
+          <button class="button expanded margin-top-2 rounded width-75 margin-horizontal-auto nextJoia" (click)="proxima('#pagina-de-pingentes')">Personalizar página de Pingentes
             <i class="fas fa-angle-right float-right"></i>
           </button>
-          <div class="swiper-container-shake swiper-container-custom hide-for-small-only">
-            <div class="box-callout">
-              <div class="callout" data-closable>
+          <div class="swiper-container swiper-container-custom hide-for-small-only">
+            <div class="swiper-wrapper">
+              <div class="callout swiper-slide" data-closable>
                 <button class="close-button" aria-label="Close alert" type="button" data-close>
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -406,8 +364,6 @@
                   </span> ” abaixo</p>
                 <hr>
               </div>
-            </div>
-            <div class="swiper-wrapper-shake">
               <!-- onde ficarao os aneis para serem adicionados -->
               <div class="swiper-slide" *ngFor="let pulseira of pulseiras" (click)="addImage(pulseira.persona+'-pulseira-'+pulseira.code)"
                 id="{{pulseira.persona}}-pulseira-{{pulseira.code}}">
@@ -490,24 +446,17 @@
             </ul>
             <div class="grid-x grid-padding-x box-prod">
               <!-- onde ficarao os aneis depois de adicionados -->
-              <div class="cell small-4 margin-top-1 cell-prod">
-                <div class="blank_space">
-                  <img src="assets/img/aneis/alice/512579_a.jpg" />
-                  <div class="box-blank-space">
-                    <button class="show-for-small-only plus position-static plus-big" data-open="catalogo-modal-pingentes">
-                      <i class="fas fa-plus"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
+              <ng-container *ngFor="let pagina of paginas">
+                <div class="catalogo-edit" [innerHtml]="pagina.pagina | safe: 'html'" title="{{pagina.tituloPagina}}" *ngIf="pagina.tituloPagina == 'Pingentes'"></div>
+              </ng-container>
             </div>
           </div>
-          <button class="button expanded margin-top-2 rounded width-75 margin-horizontal-auto" (click)="proxima('#pagina-de-info')">Editar Informações
+          <button class="button expanded margin-top-2 rounded width-75 margin-horizontal-auto" (click)="proxima('#pagina-de-info')">Atualizar
             <i class="fas fa-angle-right float-right"></i>
           </button>
-          <div class="swiper-container-shake swiper-container-custom hide-for-small-only">
-            <div class="box-callout">
-              <div class="callout" data-closable>
+          <div class="swiper-container swiper-container-custom hide-for-small-only">
+            <div class="swiper-wrapper">
+              <div class="callout swiper-slide" data-closable>
                 <button class="close-button" aria-label="Close alert" type="button" data-close>
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -517,8 +466,6 @@
                   </span> ” abaixo</p>
                 <hr>
               </div>
-            </div>
-            <div class="swiper-wrapper-shake">
               <!-- onde ficarao os aneis para serem adicionados -->
               <div class="swiper-slide" *ngFor="let pingente of pingentes" (click)="addImage(pingente.persona+'-pingente-'+pingente.code)"
                 id="{{pingente.persona}}-pingente-{{pingente.code}}">
@@ -572,11 +519,7 @@
             </button>
           </div>
         </div>
-        <app-usuario></app-usuario>
       </div>
     </div>
   </div>
 </div>
-
-
-<app-footer></app-footer>
