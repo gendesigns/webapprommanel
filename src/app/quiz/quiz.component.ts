@@ -113,6 +113,10 @@ export class QuizComponent implements OnInit {
     firebase.auth().onAuthStateChanged((user) => {
       this.email = user.email
     })
+
+    var altura_tela = $(window).height() - 250;
+    $('.form-wizard-catalogo').css('min-height',altura_tela+'px');
+
     $('.nextBtn').click(function () {
       var next_fs = $(this).parents('.form-wizard-quiz').next();
       var next_id = "#" + $(this).parents('.form-wizard-quiz').attr('id');

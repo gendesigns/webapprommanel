@@ -22,7 +22,7 @@
         </ul>
         <div class="swiper-container swiper-container-share">
           <div class="swiper-wrapper">
-            <div class="catalogo-page swiper-slide capa-usuario" title="{{nome_persona}}">
+            <div class="catalogo-page swiper-slide capa-usuario" title="{{nome_persona}}" *ngIf="nome_persona">
               <div class="capa capa-{{nome_persona}} text-center">
                 <div class="padding-top-1">
                   <img src="assets/img/logo-rommanel-capa-mobile.png" class="show-for-small-only" />
@@ -1603,12 +1603,8 @@
               <hr style="width:90%;">
             </div>
           </div>
-          <!-- Add Scrollbar -->
-          <div class="share-over" (click)="hideShare()"></div>
+        <!-- Add Scrollbar -->    
           <div class="swiper-scrollbar"></div>
-          <div class=" hide">
-            <div class="swiper-pagination"></div>
-          </div>
         </div>
       </div>
     </div>
@@ -1616,6 +1612,8 @@
       <b>Pronto! ; )</b> Agora o catálogo está completo, com a sua coleção personalizada e também com as coleções das 6 mulheres
       do Catálogo 2018. Compartilhe com as suas clientes e boas vendas!
     </p>
+    <div class="share-over" (click)="hideShare()"></div>
+    <button class="show-share-buttons" (click)="showShare()">Compartilhar</button>
     <div class="buttons-share">
       <button class="button f-button expanded rounded" (click)="share(url)">
         <i class="fab fa-facebook-f padding-right-1"></i>Compartilhar</button>
@@ -1624,7 +1622,6 @@
       <!-- <button class="button d-button expanded">
         <i class="fas fa-download padding-right-1 "></i>Baixar PDF</button> -->
     </div>
-    <button class="show-share-buttons show-for-small-only" (click)="showShare()">Compartilhar</button>
     <div class="reveal text-center" id="zoom" data-reveal>
       <img src="">
       <div class="caption"></div>

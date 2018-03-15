@@ -27,10 +27,9 @@ export class ResultQuizComponent implements OnInit, OnChanges {
       this.email = user.email
       this.carregarPersona()
     })
+    var altura_tela = $(window).height() - 280;
+    $('.form-wizard-catalogo').css('min-height',altura_tela+'px');
     $(document).on('click', '.box-persona button', function () {
-
-      //$('.form-wizard-catalogo').removeClass('step-active');
-      //  $('#step-customize').addClass('step-active');
       $('.form-wizard-catalogo').hide();
       $('#step-customize').fadeIn('slow');
       $('#step-customize-lk').addClass('is-active');
