@@ -162,7 +162,7 @@ export class PersonalizeComponent implements OnInit {
       switch (id) {
         case "#pagina-de-brincos": {
           this.titulo_pagina = "Anéis"
-          //this.salvarPagina()
+          this.salvarPagina()
           this.html = '';
           $('.step-info').text("Brincos");
         
@@ -170,28 +170,28 @@ export class PersonalizeComponent implements OnInit {
         }
         case "#pagina-de-colares": {
           this.titulo_pagina = "Brincos"
-          //this.salvarPagina()
+          this.salvarPagina()
           this.html = '';
           $('.step-info').text("Colares");
           break;
         }
         case "#pagina-de-pulseiras": {
           this.titulo_pagina = "Pingentes"
-          //this.salvarPagina()
+          this.salvarPagina()
           this.html = '';
           $('.step-info').text("Pulseiras");
           break;
         }
         case "#pagina-de-pingentes": {
           this.titulo_pagina = "Colares"
-          //this.salvarPagina()
+          this.salvarPagina()
           this.html = '';
           $('.step-info').text("Pingentes");
           break;
         }
         case "#pagina-de-info": {
           this.titulo_pagina = "Pulseiras"
-          //this.salvarPagina()
+          this.salvarPagina()
           this.html = '';
           $('.step-info').text("Editar Informações");
           break;
