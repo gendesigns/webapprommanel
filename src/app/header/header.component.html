@@ -5,7 +5,7 @@
       <i class="fas fa-user"></i>
     </span>
     <p>
-      <b>{{name}}</b>
+      <b>{{username}}</b>
     </p>
     <p>
       <span>{{cidade}}<span *ngIf="cidade && estado">, </span>{{estado}}</span>
@@ -44,7 +44,7 @@
               <span class="sm-avatar" *ngIf="!url_imagem">
                 <i class="fas fa-user"></i>
               </span>
-              {{name | uppercase}}
+              {{username | uppercase}}
             </a>
             <ul class="menu text-center">
               <li>

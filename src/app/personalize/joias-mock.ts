@@ -218,6 +218,9 @@ export const Pulseiras: Joia[] = [
     { 'img': 'assets/img/pulseiras/maria-antonia/551533_d.jpg', 'code': '551533_d', 'legenda': '551533', 'persona': 'maria-antonia' },
 
     { 'img': 'assets/img/pulseiras/raquel/551537.jpg', 'code': '551537', 'legenda': '551537*', 'persona': 'raquel' },
+    { 'img': 'assets/img/pulseiras/raquel/551545.jpg', 'code': '551545', 'legenda': '551545', 'persona': 'raquel' },
+    { 'img': 'assets/img/pulseiras/raquel/551530.jpg', 'code': '551530', 'legenda': '551530', 'persona': 'raquel' },
+    { 'img': 'assets/img/pulseiras/raquel/551525.jpg', 'code': '551525', 'legenda': '551525', 'persona': 'raquel' },
     { 'img': 'assets/img/pulseiras/raquel/150310.jpg', 'code': '150310', 'legenda': '150310*', 'persona': 'raquel' }
 ]
 export const Pingentes: Joia[] = [

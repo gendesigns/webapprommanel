@@ -15,6 +15,7 @@ export class HeaderComponent implements OnInit {
 
   public email: string
   public name: string
+  public username: string
   public url_imagem: string
 
   constructor(
@@ -36,6 +37,8 @@ export class HeaderComponent implements OnInit {
   public carregarInfos(): void{
     this.bd.consultaInfos(this.email)
       .then((infos: any) => {
+        var x = infos.displayName.split(' ');
+        this.username = x[0]
         this.name = infos.displayName
       })
   }

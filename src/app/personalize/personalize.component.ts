@@ -164,8 +164,7 @@ export class PersonalizeComponent implements OnInit {
           this.titulo_pagina = "Anéis"
           this.salvarPagina()
           this.html = '';
-          $('.step-info').text("Brincos");
-        
+          $('.step-info').text("Brincos");    
           break;
         }
         case "#pagina-de-colares": {
@@ -176,21 +175,21 @@ export class PersonalizeComponent implements OnInit {
           break;
         }
         case "#pagina-de-pulseiras": {
-          this.titulo_pagina = "Pingentes"
+          this.titulo_pagina = "Colares"
           this.salvarPagina()
           this.html = '';
           $('.step-info').text("Pulseiras");
           break;
         }
         case "#pagina-de-pingentes": {
-          this.titulo_pagina = "Colares"
+          this.titulo_pagina = "Pulseiras"
           this.salvarPagina()
           this.html = '';
           $('.step-info').text("Pingentes");
           break;
         }
         case "#pagina-de-info": {
-          this.titulo_pagina = "Pulseiras"
+          this.titulo_pagina = "Pingentes"
           this.salvarPagina()
           this.html = '';
           $('.step-info').text("Editar Informações");
