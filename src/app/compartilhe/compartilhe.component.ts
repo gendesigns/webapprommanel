@@ -177,8 +177,6 @@ export class CompartilheComponent implements OnInit {
   }
 
   share(url: string) {
-    console.log(`${url}/meuCatalogo/${btoa(this.email)}`)
-
     let params: UIParams = {
       href: `${url}/meuCatalogo/${btoa(this.email)}`,
       method: 'share'

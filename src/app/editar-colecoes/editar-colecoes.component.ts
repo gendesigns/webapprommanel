@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Bd } from '../bd.service'
 import * as firebase from 'firebase'
+import { Router } from '@angular/router';
 
 import { Joia } from '../shared/joia.model'
 import { Aneis, Brincos, Colares, Pulseiras, Pingentes } from '../personalize/joias-mock'
@@ -24,7 +25,7 @@ export class EditarColecoesComponent implements OnInit {
   public paginasCarregadas: any
   
 
-  constructor(private bd: Bd) { }
+  constructor(private bd: Bd, private router: Router) { }
 
 
   ngOnInit() {
@@ -257,8 +258,13 @@ export class EditarColecoesComponent implements OnInit {
           $('#pagina-de-pingentes .catalogo-edit .blank_space').parent().remove();
           this.htmlCarregado = $('#pagina-de-pingentes .catalogo-edit').html()
           this.atualizarPagina()
+<<<<<<< HEAD
+          this.html = '';
+          this.router.navigate(['/compartilhe/'])
+=======
           this.htmlCarregado = '';
           $('.step-info').text("Editar Informações");
+>>>>>>> ded15b9567521c235fe2a95c63effc6516d4324d
           break;
         }
         default: {
