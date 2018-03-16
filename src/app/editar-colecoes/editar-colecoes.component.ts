@@ -266,6 +266,7 @@ export class EditarColecoesComponent implements OnInit {
           break;
         }
       }
+      console.log(this.htmlCarregado);
     }
   }
 
@@ -287,7 +288,7 @@ export class EditarColecoesComponent implements OnInit {
     this.bd.atualizarPagina({
       email: this.email,
       tituloPagina: this.titulo_pagina,
-      paginaHtml: this.html + this.htmlCarregado,
+      paginaHtml: this.htmlCarregado,
     })
   }
   public aneis: Joia[] = Aneis
