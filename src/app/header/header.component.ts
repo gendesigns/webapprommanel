@@ -17,6 +17,8 @@ export class HeaderComponent implements OnInit {
   public name: string
   public username: string
   public url_imagem: string
+  public cidade: any
+  public estado: any
 
   constructor(
     private auth: Auth, 
@@ -40,6 +42,8 @@ export class HeaderComponent implements OnInit {
         var x = infos.displayName.split(' ');
         this.username = x[0]
         this.name = infos.displayName
+        this.cidade = infos.cidade
+        this.estado = infos.estado
       })
   }
 
