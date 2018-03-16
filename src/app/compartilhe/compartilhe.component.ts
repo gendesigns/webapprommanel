@@ -191,7 +191,8 @@ export class CompartilheComponent implements OnInit {
   }
 
   showShare() {
-    $('.share-over,.buttons-share').show();
+    $('.share-over,.buttons-share').css('display','block');
+    $('.buttons-share').css('z-index','12');
   }
   hideShare() {
     $('.share-over,.buttons-share').hide();
