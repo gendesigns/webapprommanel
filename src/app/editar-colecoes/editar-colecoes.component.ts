@@ -217,42 +217,47 @@ export class EditarColecoesComponent implements OnInit {
       switch (id) {
         case "#pagina-de-brincos": {
           this.titulo_pagina = "Anéis"
-          this.htmlCarregado = this.paginasCarregadas[0].pagina
+          var blank = '<div class="cell small-4 margin-top-1 cell-prod"><div class="blank_space"><img src="assets/img/aneis/alice/512579_a.jpg" /><div class="box-blank-space"><button class="show-for-small-only plus position-static plus-big" data-open="catalogo-modal-aneis"><i class="fas fa-plus"></i></button></div></div></div>'
+          this.htmlCarregado = $('#pagina-de-aneis .catalogo-edit:first-child').html().replace(blank , " ");
           this.atualizarPagina()
-          this.html = '';
+          this.htmlCarregado = '';
           $('.step-info').text("Brincos");
 
           break;
         }
         case "#pagina-de-colares": {
           this.titulo_pagina = "Brincos"
-          this.htmlCarregado = this.paginasCarregadas[1].pagina
+          var blank = '<div class="cell small-4 margin-top-1 cell-prod"><div class="blank_space"><img src="assets/img/aneis/alice/512579_a.jpg" /><div class="box-blank-space"><button class="show-for-small-only plus position-static plus-big" data-open="catalogo-modal-aneis"><i class="fas fa-plus"></i></button></div></div></div>'
+          this.htmlCarregado = $('#pagina-de-brincos .catalogo-edit:first-child').html().replace(blank , " ");
           this.atualizarPagina()
-          this.html = '';
+          this.htmlCarregado = '';
           $('.step-info').text("Colares");
           break;
         }
         case "#pagina-de-pulseiras": {
-          this.titulo_pagina = "Pingentes"
-          this.htmlCarregado = this.paginasCarregadas[2].pagina
+          this.titulo_pagina = "Colares"
+          var blank = '<div class="cell small-4 margin-top-1 cell-prod"><div class="blank_space"><img src="assets/img/aneis/alice/512579_a.jpg" /><div class="box-blank-space"><button class="show-for-small-only plus position-static plus-big" data-open="catalogo-modal-aneis"><i class="fas fa-plus"></i></button></div></div></div>'
+          this.htmlCarregado = $('#pagina-de-colares .catalogo-edit:first-child').html().replace(blank , " ");
           this.atualizarPagina()
-          this.html = '';
+          this.htmlCarregado = '';
           $('.step-info').text("Pulseiras");
           break;
         }
         case "#pagina-de-pingentes": {
-          this.titulo_pagina = "Colares"
-          this.htmlCarregado = this.paginasCarregadas[3].pagina
+          this.titulo_pagina = "Pulseiras"
+          var blank = '<div class="cell small-4 margin-top-1 cell-prod"><div class="blank_space"><img src="assets/img/aneis/alice/512579_a.jpg" /><div class="box-blank-space"><button class="show-for-small-only plus position-static plus-big" data-open="catalogo-modal-aneis"><i class="fas fa-plus"></i></button></div></div></div>'
+          this.htmlCarregado = $('#pagina-de-pulseiras .catalogo-edit:first-child').html().replace(blank , " ");
           this.atualizarPagina()
-          this.html = '';
+          this.htmlCarregado = '';
           $('.step-info').text("Pingentes");
           break;
         }
         case "#pagina-de-info": {
-          this.titulo_pagina = "Pulseiras"
-          this.htmlCarregado = this.paginasCarregadas[4].pagina
+          this.titulo_pagina = "Pingentes"
+          var blank = '<div class="cell small-4 margin-top-1 cell-prod"><div class="blank_space"><img src="assets/img/aneis/alice/512579_a.jpg" /><div class="box-blank-space"><button class="show-for-small-only plus position-static plus-big" data-open="catalogo-modal-aneis"><i class="fas fa-plus"></i></button></div></div></div>'
+          this.htmlCarregado = $('#pagina-de-pingentes .catalogo-edit:first-child').html().replace(blank , " ");
           this.atualizarPagina()
-          this.html = '';
+          this.htmlCarregado = '';
           $('.step-info').text("Editar Informações");
           break;
         }
