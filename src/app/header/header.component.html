@@ -8,12 +8,16 @@
       <b>{{username}}</b>
     </p>
     <p>
-      <span>{{cidade}}<span *ngIf="cidade && estado">, </span>{{estado}}</span>
+      <span>{{cidade}}
+        <span *ngIf="cidade && estado">, </span>{{estado}}</span>
     </p>
   </div>
   <ul class="vertical menu">
     <li>
       <a href="/compartilhe">Meu Catálogo</a>
+    </li>
+    <li>
+      <a href="/editarMeuCatalogo">Editar Meu Catálogo</a>
     </li>
     <li>
       <a href="/editarPerfil">Editar informações</a>
@@ -49,6 +53,9 @@
             <ul class="menu text-center">
               <li>
                 <a href="/compartilhe">Meu Catálogo</a>
+              </li>
+              <li>
+                <a href="/editarMeuCatalogo">Editar Meu Catálogo</a>
               </li>
               <li>
                 <a href="/editarPerfil">Editar informações</a>

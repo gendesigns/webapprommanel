@@ -218,43 +218,53 @@ export class EditarColecoesComponent implements OnInit {
       switch (id) {
         case "#pagina-de-brincos": {
           this.titulo_pagina = "Anéis"
-          this.htmlCarregado = this.paginasCarregadas[0].pagina
+          $('#pagina-de-aneis .catalogo-edit .blank_space').parent().remove();
+          this.htmlCarregado = $('#pagina-de-aneis .catalogo-edit').html()
           this.atualizarPagina()
-          this.html = '';
+          this.htmlCarregado = '';
           $('.step-info').text("Brincos");
 
           break;
         }
         case "#pagina-de-colares": {
           this.titulo_pagina = "Brincos"
-          this.htmlCarregado = this.paginasCarregadas[1].pagina
+          $('#pagina-de-brincos .catalogo-edit .blank_space').parent().remove();
+          this.htmlCarregado = $('#pagina-de-brincos .catalogo-edit').html()
           this.atualizarPagina()
-          this.html = '';
+          this.htmlCarregado = '';
           $('.step-info').text("Colares");
           break;
         }
         case "#pagina-de-pulseiras": {
-          this.titulo_pagina = "Pingentes"
-          this.htmlCarregado = this.paginasCarregadas[2].pagina
+          this.titulo_pagina = "Colares"
+          $('#pagina-de-colares .catalogo-edit .blank_space').parent().remove();
+          this.htmlCarregado = $('#pagina-de-colares .catalogo-edit').html()
           this.atualizarPagina()
-          this.html = '';
+          this.htmlCarregado = '';
           $('.step-info').text("Pulseiras");
           break;
         }
         case "#pagina-de-pingentes": {
-          this.titulo_pagina = "Colares"
-          this.htmlCarregado = this.paginasCarregadas[3].pagina
+          this.titulo_pagina = "Pulseiras"
+          $('#pagina-de-pulseiras .catalogo-edit .blank_space').parent().remove();
+          this.htmlCarregado = $('#pagina-de-pulseiras .catalogo-edit').html()
           this.atualizarPagina()
-          this.html = '';
+          this.htmlCarregado = '';
           $('.step-info').text("Pingentes");
           break;
         }
         case "#pagina-de-info": {
-          this.titulo_pagina = "Pulseiras"
-          this.htmlCarregado = this.paginasCarregadas[4].pagina
+          this.titulo_pagina = "Pingentes"
+          $('#pagina-de-pingentes .catalogo-edit .blank_space').parent().remove();
+          this.htmlCarregado = $('#pagina-de-pingentes .catalogo-edit').html()
           this.atualizarPagina()
+<<<<<<< HEAD
           this.html = '';
           this.router.navigate(['/compartilhe/'])
+=======
+          this.htmlCarregado = '';
+          $('.step-info').text("Editar Informações");
+>>>>>>> ded15b9567521c235fe2a95c63effc6516d4324d
           break;
         }
         default: {
@@ -262,6 +272,7 @@ export class EditarColecoesComponent implements OnInit {
           break;
         }
       }
+      console.log(this.htmlCarregado);
     }
   }
 
@@ -283,7 +294,7 @@ export class EditarColecoesComponent implements OnInit {
     this.bd.atualizarPagina({
       email: this.email,
       tituloPagina: this.titulo_pagina,
-      paginaHtml: this.html + this.htmlCarregado,
+      paginaHtml: this.htmlCarregado,
     })
   }
   public aneis: Joia[] = Aneis
