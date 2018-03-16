@@ -17,8 +17,6 @@ export class Auth{
     constructor(private router: Router, private bd: Bd) {}
 
     public cadastrarUsuario(usuario: Usuario) :Promise<any> {
-        
-        // console.log('Chegamos até o serviço: ', usuario)
 
         return firebase.auth().createUserWithEmailAndPassword(usuario.email, usuario.password)
             .then((resposta: any) => {
