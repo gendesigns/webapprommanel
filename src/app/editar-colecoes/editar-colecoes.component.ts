@@ -258,13 +258,8 @@ export class EditarColecoesComponent implements OnInit {
           $('#pagina-de-pingentes .catalogo-edit .blank_space').parent().remove();
           this.htmlCarregado = $('#pagina-de-pingentes .catalogo-edit').html()
           this.atualizarPagina()
-<<<<<<< HEAD
           this.html = '';
           this.router.navigate(['/compartilhe/'])
-=======
-          this.htmlCarregado = '';
-          $('.step-info').text("Editar Informações");
->>>>>>> ded15b9567521c235fe2a95c63effc6516d4324d
           break;
         }
         default: {
