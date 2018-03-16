@@ -17,7 +17,7 @@ export const ROUTES: Routes = [
     { path: 'quizResultado', component: ResultQuizComponent, canActivate: [ AuthGuard ] },
     { path: 'compartilhe', component: CompartilheComponent, canActivate: [ AuthGuard ] },
     { path: 'editarPerfil', component: EditarPerfilComponent, canActivate: [ AuthGuard ] },
-    { path: 'editarColecoesFavoritas', component: EditarColecoesComponent, canActivate: [ AuthGuard ] },
+    { path: 'editarMeuCatalogo', component: EditarColecoesComponent, canActivate: [ AuthGuard ] },
     { path: 'meuCatalogo', component: HomeComponent},
     { path: 'meuCatalogo/:id', component: MeuCatalogoComponent},
     { path: '**', component: NotFoundComponent }

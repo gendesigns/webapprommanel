@@ -217,8 +217,8 @@ export class EditarColecoesComponent implements OnInit {
       switch (id) {
         case "#pagina-de-brincos": {
           this.titulo_pagina = "Anéis"
-          var blank = '<div class="cell small-4 margin-top-1 cell-prod"><div class="blank_space"><img src="assets/img/aneis/alice/512579_a.jpg" /><div class="box-blank-space"><button class="show-for-small-only plus position-static plus-big" data-open="catalogo-modal-aneis"><i class="fas fa-plus"></i></button></div></div></div>'
-          this.htmlCarregado = $('#pagina-de-aneis .catalogo-edit:first-child').html().replace(blank , " ");
+          $('#pagina-de-aneis .catalogo-edit .blank_space').parent().remove();
+          this.htmlCarregado = $('#pagina-de-aneis .catalogo-edit').html()
           this.atualizarPagina()
           this.htmlCarregado = '';
           $('.step-info').text("Brincos");
@@ -227,8 +227,8 @@ export class EditarColecoesComponent implements OnInit {
         }
         case "#pagina-de-colares": {
           this.titulo_pagina = "Brincos"
-          var blank = '<div class="cell small-4 margin-top-1 cell-prod"><div class="blank_space"><img src="assets/img/aneis/alice/512579_a.jpg" /><div class="box-blank-space"><button class="show-for-small-only plus position-static plus-big" data-open="catalogo-modal-aneis"><i class="fas fa-plus"></i></button></div></div></div>'
-          this.htmlCarregado = $('#pagina-de-brincos .catalogo-edit:first-child').html().replace(blank , " ");
+          $('#pagina-de-brincos .catalogo-edit .blank_space').parent().remove();
+          this.htmlCarregado = $('#pagina-de-brincos .catalogo-edit').html()
           this.atualizarPagina()
           this.htmlCarregado = '';
           $('.step-info').text("Colares");
@@ -236,8 +236,8 @@ export class EditarColecoesComponent implements OnInit {
         }
         case "#pagina-de-pulseiras": {
           this.titulo_pagina = "Colares"
-          var blank = '<div class="cell small-4 margin-top-1 cell-prod"><div class="blank_space"><img src="assets/img/aneis/alice/512579_a.jpg" /><div class="box-blank-space"><button class="show-for-small-only plus position-static plus-big" data-open="catalogo-modal-aneis"><i class="fas fa-plus"></i></button></div></div></div>'
-          this.htmlCarregado = $('#pagina-de-colares .catalogo-edit:first-child').html().replace(blank , " ");
+          $('#pagina-de-colares .catalogo-edit .blank_space').parent().remove();
+          this.htmlCarregado = $('#pagina-de-colares .catalogo-edit').html()
           this.atualizarPagina()
           this.htmlCarregado = '';
           $('.step-info').text("Pulseiras");
@@ -245,8 +245,8 @@ export class EditarColecoesComponent implements OnInit {
         }
         case "#pagina-de-pingentes": {
           this.titulo_pagina = "Pulseiras"
-          var blank = '<div class="cell small-4 margin-top-1 cell-prod"><div class="blank_space"><img src="assets/img/aneis/alice/512579_a.jpg" /><div class="box-blank-space"><button class="show-for-small-only plus position-static plus-big" data-open="catalogo-modal-aneis"><i class="fas fa-plus"></i></button></div></div></div>'
-          this.htmlCarregado = $('#pagina-de-pulseiras .catalogo-edit:first-child').html().replace(blank , " ");
+          $('#pagina-de-pulseiras .catalogo-edit .blank_space').parent().remove();
+          this.htmlCarregado = $('#pagina-de-pulseiras .catalogo-edit').html()
           this.atualizarPagina()
           this.htmlCarregado = '';
           $('.step-info').text("Pingentes");
@@ -254,8 +254,8 @@ export class EditarColecoesComponent implements OnInit {
         }
         case "#pagina-de-info": {
           this.titulo_pagina = "Pingentes"
-          var blank = '<div class="cell small-4 margin-top-1 cell-prod"><div class="blank_space"><img src="assets/img/aneis/alice/512579_a.jpg" /><div class="box-blank-space"><button class="show-for-small-only plus position-static plus-big" data-open="catalogo-modal-aneis"><i class="fas fa-plus"></i></button></div></div></div>'
-          this.htmlCarregado = $('#pagina-de-pingentes .catalogo-edit:first-child').html().replace(blank , " ");
+          $('#pagina-de-pingentes .catalogo-edit .blank_space').parent().remove();
+          this.htmlCarregado = $('#pagina-de-pingentes .catalogo-edit').html()
           this.atualizarPagina()
           this.htmlCarregado = '';
           $('.step-info').text("Editar Informações");
