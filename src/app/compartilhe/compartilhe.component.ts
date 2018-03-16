@@ -106,7 +106,6 @@ export class CompartilheComponent implements OnInit {
         }, 0);
       });
 
-      $('.loader-overlay').remove();
       $('#step-share .menu,.show-share-buttons').css('z-index','5');
       $('.catalogo-page .cell-prod').removeClass('small-6');
       $('.catalogo-page .cell-prod').addClass('small-4');
@@ -115,6 +114,7 @@ export class CompartilheComponent implements OnInit {
         $('.swiper-container-share .swiper-wrapper').removeClass('swiper-wrapper');
         swiper_share.destroy();
       }
+      $('.loader-overlay').remove();
     }
     $(document).on('click', '.pagina-thumb', function (e) {
       e.preventDefault();
