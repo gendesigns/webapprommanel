@@ -179,7 +179,9 @@ export class CompartilheComponent implements OnInit {
   share(url: string) {
     let params: UIParams = {
       href: `${url}/meuCatalogo/${btoa(this.email)}`,
-      method: 'share'
+      method: 'share',
+      message: 'Rommanel - Meu Catálogo 2018',
+      picture: 'https://webapprommanel-staging.herokuapp.com/assets/img/fb_catalogo_2018_995.jpg'
     };
 
     this.fb.ui(params)
