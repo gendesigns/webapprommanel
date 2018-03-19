@@ -34,6 +34,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { EditarPerfilComponent } from './editar-perfil/editar-perfil.component';
 import { FotoDoPerfilComponent } from './foto-do-perfil/foto-do-perfil.component';
 import { EditarColecoesComponent } from './editar-colecoes/editar-colecoes.component';
+import { NotificacoesComponent } from './notificacoes/notificacoes.component';
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import { EditarColecoesComponent } from './editar-colecoes/editar-colecoes.compo
     NotFoundComponent,
     EditarPerfilComponent,
     FotoDoPerfilComponent,
-    EditarColecoesComponent
+    EditarColecoesComponent,
+    NotificacoesComponent
   ],
   imports: [
     BrowserModule,
