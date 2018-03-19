@@ -19,11 +19,11 @@ export class EditarColecoesComponent implements OnInit {
   public titulo_pagina: string = ''
   public email: string
   public html: string = ''
-  public htmlCarregado: string = '' 
+  public htmlCarregado: string = ''
   public paginas: Array<any> = []
 
   public paginasCarregadas: any
-  
+
 
   constructor(private bd: Bd, private router: Router) { }
 
@@ -77,46 +77,51 @@ export class EditarColecoesComponent implements OnInit {
       if ($('#pagina-de-aneis .box-prod').find('.catalogo-edit').length > 0 && $('#pagina-de-aneis').css('display') != 'none') {
         $('#pagina-de-aneis .catalogo-edit').append('<div class="cell small-4 margin-top-1 cell-prod"><div class="blank_space"><img src="assets/img/aneis/alice/512579_a.jpg" /><div class="box-blank-space"><button class="show-for-small-only plus position-static plus-big" data-open="catalogo-modal-aneis"><i class="fas fa-plus"></i></button></div></div></div>');
         $('#pagina-de-aneis .catalogo-edit .cell-prod').each(function (e) {
-          var $ref = '#' + $(this).find('.remover').attr('data-ref');
-          var $refM = '#mobile-' + $(this).find('.remover').attr('data-ref');
-          $($ref).addClass('prod-disabled');
-          $($refM).addClass('prod-disabled');
+          if ($(this).find('.remover').attr('data-ref') != null) {
+            var $ref = $(this).find('.remover').attr('data-ref').replace('mobile-','')
+            $('#' + $ref).addClass('prod-disabled');
+            $('#mobile-' + $ref).addClass('prod-disabled');
+          }
           clearInterval(customizeIntervalPages);
         })
       } else if ($('.box-prod').find('.catalogo-edit').length > 0 && $('#pagina-de-brincos').css('display') != 'none') {
         $('#pagina-de-brincos .catalogo-edit').append('<div class="cell small-4 margin-top-1 cell-prod"><div class="blank_space"><img src="assets/img/aneis/alice/512579_a.jpg" /><div class="box-blank-space"><button class="show-for-small-only plus position-static plus-big" data-open="catalogo-modal-aneis"><i class="fas fa-plus"></i></button></div></div></div>');
         $('#pagina-de-brincos .catalogo-edit .cell-prod').each(function (e) {
-          var $ref = '#' + $(this).find('.remover').attr('data-ref');
-          var $refM = '#mobile-' + $(this).find('.remover').attr('data-ref');
-          $($ref).addClass('prod-disabled');
-          $($refM).addClass('prod-disabled');
+          if ($(this).find('.remover').attr('data-ref') != null) {
+            var $ref = $(this).find('.remover').attr('data-ref').replace('mobile-','')
+            $('#' + $ref).addClass('prod-disabled');
+            $('#mobile-' + $ref).addClass('prod-disabled');
+          }
           clearInterval(customizeIntervalPages);
         })
       } else if ($('.box-prod').find('.catalogo-edit').length > 0 && $('#pagina-de-colares').css('display') != 'none') {
         $('#pagina-de-colares .catalogo-edit').append('<div class="cell small-4 margin-top-1 cell-prod"><div class="blank_space"><img src="assets/img/aneis/alice/512579_a.jpg" /><div class="box-blank-space"><button class="show-for-small-only plus position-static plus-big" data-open="catalogo-modal-aneis"><i class="fas fa-plus"></i></button></div></div></div>');
         $('#pagina-de-colares .catalogo-edit .cell-prod').each(function (e) {
-          var $ref = '#' + $(this).find('.remover').attr('data-ref');
-          var $refM = '#mobile-' + $(this).find('.remover').attr('data-ref');
-          $($ref).addClass('prod-disabled');
-          $($refM).addClass('prod-disabled');
+          if ($(this).find('.remover').attr('data-ref') != null) {
+            var $ref = $(this).find('.remover').attr('data-ref').replace('mobile-','')
+            $('#' + $ref).addClass('prod-disabled');
+            $('#mobile-' + $ref).addClass('prod-disabled');
+          }
           clearInterval(customizeIntervalPages);
         })
       } else if ($('.box-prod').find('.catalogo-edit').length > 0 && $('#pagina-de-pulseiras').css('display') != 'none') {
         $('#pagina-de-pulseiras .catalogo-edit').append('<div class="cell small-4 margin-top-1 cell-prod"><div class="blank_space"><img src="assets/img/aneis/alice/512579_a.jpg" /><div class="box-blank-space"><button class="show-for-small-only plus position-static plus-big" data-open="catalogo-modal-aneis"><i class="fas fa-plus"></i></button></div></div></div>');
         $('#pagina-de-pulseiras .catalogo-edit .cell-prod').each(function (e) {
-          var $ref = '#' + $(this).find('.remover').attr('data-ref');
-          var $refM = '#mobile-' + $(this).find('.remover').attr('data-ref');
-          $($ref).addClass('prod-disabled');
-          $($refM).addClass('prod-disabled');
+          if ($(this).find('.remover').attr('data-ref') != null) {
+            var $ref = $(this).find('.remover').attr('data-ref').replace('mobile-','')
+            $('#' + $ref).addClass('prod-disabled');
+            $('#mobile-' + $ref).addClass('prod-disabled');
+          }
           clearInterval(customizeIntervalPages);
         })
       } else if ($('.box-prod').find('.catalogo-edit').length > 0 && $('#pagina-de-pingentes').css('display') != 'none') {
         $('#pagina-de-pingentes .catalogo-edit').append('<div class="cell small-4 margin-top-1 cell-prod"><div class="blank_space"><img src="assets/img/aneis/alice/512579_a.jpg" /><div class="box-blank-space"><button class="show-for-small-only plus position-static plus-big" data-open="catalogo-modal-aneis"><i class="fas fa-plus"></i></button></div></div></div>');
         $('#pagina-de-pingentes .catalogo-edit .cell-prod').each(function (e) {
-          var $ref = '#' + $(this).find('.remover').attr('data-ref');
-          var $refM = '#mobile-' + $(this).find('.remover').attr('data-ref');
-          $($ref).addClass('prod-disabled');
-          $($refM).addClass('prod-disabled');
+          if ($(this).find('.remover').attr('data-ref') != null) {
+            var $ref = $(this).find('.remover').attr('data-ref').replace('mobile-','')
+            $('#' + $ref).addClass('prod-disabled');
+            $('#mobile-' + $ref).addClass('prod-disabled');
+          }
           clearInterval(customizeIntervalPages);
         })
       } else {
@@ -275,14 +280,14 @@ export class EditarColecoesComponent implements OnInit {
     this.bd.consultaPaginasFavoritas(this.email)
       .then((pagina: any) => {
         this.paginas = pagina
-      })   
+      })
   }
 
-  public pagginasCarregadas():void{
+  public pagginasCarregadas(): void {
     this.bd.consultaPaginasSalva(this.email)
       .then((pagina: any) => {
         this.paginasCarregadas = pagina
-      })   
+      })
   }
 
   public atualizarPagina(): void {
