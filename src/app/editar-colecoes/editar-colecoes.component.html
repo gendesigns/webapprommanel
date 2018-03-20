@@ -20,9 +20,6 @@
                 <i class="fas fa-minus"></i>
               </span> ” abaixo</p>
           </div>
-          <div class="callout success">
-            <p>Novo item adicionado</p>
-          </div>
           <div class="snackbar">Novo item adicionado.</div>
           <div class="page margin-top-3 padding-2">
             <ul class="menu">
@@ -45,9 +42,18 @@
               </ng-container>
             </div>
           </div>
-          <button class="button expanded margin-top-2 rounded width-75 margin-horizontal-auto nextJoia" (click)="proxima('#pagina-de-brincos')">Editar página de Brincos
-            <i class="fas fa-angle-right float-right"></i>
-          </button>
+          <div class="grid-x grid-padding-x">
+            <div class="cell small-12 medium-6">
+              <button class="button expanded margin-top-1 rounded margin-horizontal-auto l-button" (click)="salvar('#pagina-de-aneis')">Salvar</button>
+            </div>
+            <div class="cell small-12 medium-6">
+              <button class="button expanded margin-top-1 rounded margin-horizontal-auto nextJoia" (click)="proxima('#pagina-de-brincos')">Editar Brincos
+                <i class="fas fa-angle-right float-right"></i>
+              </button>
+            </div>
+          </div>
+
+
           <div class="swiper-container swiper-container-custom hide-for-small-only">
             <div class="swiper-wrapper">
               <!-- onde ficarao os aneis para serem adicionados -->
@@ -123,9 +129,6 @@
                 <i class="fas fa-minus"></i>
               </span> ” abaixo</p>
           </div>
-          <div class="callout success">
-            <p>Novo item adicionado</p>
-          </div>
           <div class="snackbar">Novo item adicionado.</div>
           <div class="page margin-top-3 padding-2">
             <ul class="menu">
@@ -148,13 +151,26 @@
               </ng-container>
             </div>
           </div>
-          <button class="button expanded margin-top-2 rounded width-75 margin-horizontal-auto nextJoia" (click)="proxima('#pagina-de-colares')">Editar página de Colares
-            <i class="fas fa-angle-right float-right"></i>
-          </button>
+          <div class="grid-x grid-padding-x">
+            <div class="cell small-12 medium-4">
+              <button class="button expanded margin-top-1 rounded margin-horizontal-auto prevJoia" (click)="voltar('#pagina-de-aneis')">
+                <i class="fas fa-angle-left float-left"></i> Editar Anéis
+              </button>
+            </div>
+            <div class="cell small-12 medium-4">
+              <button class="button expanded margin-top-1 rounded l-button margin-horizontal-auto" (click)="salvar('#pagina-de-brincos')">Salvar</button>
+            </div>
+            <div class="cell small-12 medium-4">
+              <button class="button expanded margin-top-1 rounded nextJoia margin-horizontal-auto nextJoia" (click)="proxima('#pagina-de-colares')">Editar Colares
+                <i class="fas fa-angle-right float-right"></i>
+              </button>
+            </div>
+          </div>
+
           <div class="swiper-container swiper-container-custom hide-for-small-only">
             <div class="swiper-wrapper">
               <!-- onde ficarao os aneis para serem adicionados -->
-              <div class="callout swiper-slide" style="max-height: 150px;"  data-closable>
+              <div class="callout swiper-slide" style="max-height: 150px;" data-closable>
                 <button class="close-button" aria-label="Close alert" type="button" data-close>
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -251,9 +267,21 @@
               </ng-container>
             </div>
           </div>
-          <button class="button expanded margin-top-2 rounded width-75 margin-horizontal-auto nextJoia" (click)="proxima('#pagina-de-pulseiras')">Editar página de Pulseiras
-            <i class="fas fa-angle-right float-right"></i>
-          </button>
+          <div class="grid-x grid-padding-x">
+            <div class="cell small-12 medium-4">
+              <button class="button expanded margin-top-1 rounded margin-horizontal-auto prevJoia" (click)="voltar('#pagina-de-brincos')">
+                <i class="fas fa-angle-left float-left"></i> Editar Brincos
+              </button>
+            </div>
+            <div class="cell small-12 medium-4">
+              <button class="button expanded margin-top-1 rounded margin-horizontal-auto l-button" (click)="salvar('#pagina-de-colares')">Salvar</button>
+            </div>
+            <div class="cell small-12 medium-4">
+              <button class="button expanded margin-top-1 rounded margin-horizontal-auto nextJoia" (click)="proxima('#pagina-de-pulseiras')">Editar Pulseiras
+                <i class="fas fa-angle-right float-right"></i>
+              </button>
+            </div>
+          </div>
           <div class="swiper-container swiper-container-custom hide-for-small-only">
             <div class="swiper-wrapper">
               <div class="callout swiper-slide" style="max-height: 150px;" data-closable>
@@ -354,9 +382,21 @@
               </ng-container>
             </div>
           </div>
-          <button class="button expanded margin-top-2 rounded width-75 margin-horizontal-auto nextJoia" (click)="proxima('#pagina-de-pingentes')">Editar página de Pingentes
-            <i class="fas fa-angle-right float-right"></i>
-          </button>
+          <div class="grid-x grid-padding-x">
+            <div class="cell small-12 medium-4">
+              <button class="button expanded margin-top-1 rounded margin-horizontal-auto prevJoia" (click)="voltar('#pagina-de-colares')">
+                <i class="fas fa-angle-left float-left"></i> Editar Colares
+              </button>
+            </div>
+            <div class="cell small-12 medium-4">
+              <button class="button expanded margin-top-1 rounded margin-horizontal-auto l-button" (click)="salvar('#pagina-de-pulseiras')">Salvar</button>
+            </div>
+            <div class="cell small-12 medium-4">
+              <button class="button expanded margin-top-1 rounded margin-horizontal-auto nextJoia" (click)="proxima('#pagina-de-pingentes')">Editar Pingentes
+                <i class="fas fa-angle-right float-right"></i>
+              </button>
+            </div>
+          </div>
           <div class="swiper-container swiper-container-custom hide-for-small-only">
             <div class="swiper-wrapper">
               <div class="callout swiper-slide" style="max-height: 150px;" data-closable>
@@ -458,9 +498,16 @@
               </ng-container>
             </div>
           </div>
-          <button class="button expanded margin-top-2 rounded width-75 margin-horizontal-auto" (click)="proxima('#pagina-de-info')">Atualizar
-            <i class="fas fa-angle-right float-right"></i>
-          </button>
+          <div class="grid-x grid-padding-x">
+            <div class="cell small-12 medium-6">
+              <button class="button expanded margin-top-1 rounded margin-horizontal-auto prevJoia" (click)="voltar('#pagina-de-pulseiras')">
+                <i class="fas fa-angle-left float-left"></i> Editar Pulseiras
+              </button>
+            </div>
+            <div class="cell small-12 medium-6">
+              <button class="button expanded margin-top-1 rounded margin-horizontal-auto l-button" (click)="proxima('#pagina-de-info')">Salvar</button>
+            </div>
+          </div>
           <div class="swiper-container swiper-container-custom hide-for-small-only">
             <div class="swiper-wrapper">
               <div class="callout swiper-slide" style="max-height: 150px;" data-closable>
