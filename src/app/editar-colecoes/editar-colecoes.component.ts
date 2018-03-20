@@ -78,47 +78,47 @@ export class EditarColecoesComponent implements OnInit {
         $('#pagina-de-aneis .catalogo-edit').append('<div class="cell small-4 margin-top-1 cell-prod"><div class="blank_space"><img src="assets/img/aneis/alice/512579_a.jpg" /><div class="box-blank-space"><button class="show-for-small-only plus position-static plus-big" data-open="catalogo-modal-aneis"><i class="fas fa-plus"></i></button></div></div></div>');
         $('#pagina-de-aneis .catalogo-edit .cell-prod').each(function (e) {
           if ($(this).find('.remover').attr('data-ref') != null) {
-            var $ref = $(this).find('.remover').attr('data-ref').replace('mobile-','')
+            var $ref = $(this).find('.remover').attr('data-ref').replace('mobile-', '')
             $('#' + $ref).addClass('prod-disabled');
             $('#mobile-' + $ref).addClass('prod-disabled');
           }
           clearInterval(customizeIntervalPages);
         })
       } else if ($('.box-prod').find('.catalogo-edit').length > 0 && $('#pagina-de-brincos').css('display') != 'none') {
-        $('#pagina-de-brincos .catalogo-edit').append('<div class="cell small-4 margin-top-1 cell-prod"><div class="blank_space"><img src="assets/img/aneis/alice/512579_a.jpg" /><div class="box-blank-space"><button class="show-for-small-only plus position-static plus-big" data-open="catalogo-modal-aneis"><i class="fas fa-plus"></i></button></div></div></div>');
+        $('#pagina-de-brincos .catalogo-edit').append('<div class="cell small-4 margin-top-1 cell-prod"><div class="blank_space"><img src="assets/img/aneis/alice/512579_a.jpg" /><div class="box-blank-space"><button class="show-for-small-only plus position-static plus-big" data-open="catalogo-modal-brincos"><i class="fas fa-plus"></i></button></div></div></div>');
         $('#pagina-de-brincos .catalogo-edit .cell-prod').each(function (e) {
           if ($(this).find('.remover').attr('data-ref') != null) {
-            var $ref = $(this).find('.remover').attr('data-ref').replace('mobile-','')
+            var $ref = $(this).find('.remover').attr('data-ref').replace('mobile-', '')
             $('#' + $ref).addClass('prod-disabled');
             $('#mobile-' + $ref).addClass('prod-disabled');
           }
           clearInterval(customizeIntervalPages);
         })
       } else if ($('.box-prod').find('.catalogo-edit').length > 0 && $('#pagina-de-colares').css('display') != 'none') {
-        $('#pagina-de-colares .catalogo-edit').append('<div class="cell small-4 margin-top-1 cell-prod"><div class="blank_space"><img src="assets/img/aneis/alice/512579_a.jpg" /><div class="box-blank-space"><button class="show-for-small-only plus position-static plus-big" data-open="catalogo-modal-aneis"><i class="fas fa-plus"></i></button></div></div></div>');
+        $('#pagina-de-colares .catalogo-edit').append('<div class="cell small-4 margin-top-1 cell-prod"><div class="blank_space"><img src="assets/img/aneis/alice/512579_a.jpg" /><div class="box-blank-space"><button class="show-for-small-only plus position-static plus-big" data-open="catalogo-modal-colares"><i class="fas fa-plus"></i></button></div></div></div>');
         $('#pagina-de-colares .catalogo-edit .cell-prod').each(function (e) {
           if ($(this).find('.remover').attr('data-ref') != null) {
-            var $ref = $(this).find('.remover').attr('data-ref').replace('mobile-','')
+            var $ref = $(this).find('.remover').attr('data-ref').replace('mobile-', '')
             $('#' + $ref).addClass('prod-disabled');
             $('#mobile-' + $ref).addClass('prod-disabled');
           }
           clearInterval(customizeIntervalPages);
         })
       } else if ($('.box-prod').find('.catalogo-edit').length > 0 && $('#pagina-de-pulseiras').css('display') != 'none') {
-        $('#pagina-de-pulseiras .catalogo-edit').append('<div class="cell small-4 margin-top-1 cell-prod"><div class="blank_space"><img src="assets/img/aneis/alice/512579_a.jpg" /><div class="box-blank-space"><button class="show-for-small-only plus position-static plus-big" data-open="catalogo-modal-aneis"><i class="fas fa-plus"></i></button></div></div></div>');
+        $('#pagina-de-pulseiras .catalogo-edit').append('<div class="cell small-4 margin-top-1 cell-prod"><div class="blank_space"><img src="assets/img/aneis/alice/512579_a.jpg" /><div class="box-blank-space"><button class="show-for-small-only plus position-static plus-big" data-open="catalogo-modal-pulseiras"><i class="fas fa-plus"></i></button></div></div></div>');
         $('#pagina-de-pulseiras .catalogo-edit .cell-prod').each(function (e) {
           if ($(this).find('.remover').attr('data-ref') != null) {
-            var $ref = $(this).find('.remover').attr('data-ref').replace('mobile-','')
+            var $ref = $(this).find('.remover').attr('data-ref').replace('mobile-', '')
             $('#' + $ref).addClass('prod-disabled');
             $('#mobile-' + $ref).addClass('prod-disabled');
           }
           clearInterval(customizeIntervalPages);
         })
       } else if ($('.box-prod').find('.catalogo-edit').length > 0 && $('#pagina-de-pingentes').css('display') != 'none') {
-        $('#pagina-de-pingentes .catalogo-edit').append('<div class="cell small-4 margin-top-1 cell-prod"><div class="blank_space"><img src="assets/img/aneis/alice/512579_a.jpg" /><div class="box-blank-space"><button class="show-for-small-only plus position-static plus-big" data-open="catalogo-modal-aneis"><i class="fas fa-plus"></i></button></div></div></div>');
+        $('#pagina-de-pingentes .catalogo-edit').append('<div class="cell small-4 margin-top-1 cell-prod"><div class="blank_space"><img src="assets/img/aneis/alice/512579_a.jpg" /><div class="box-blank-space"><button class="show-for-small-only plus position-static plus-big" data-open="catalogo-modal-pingentes"><i class="fas fa-plus"></i></button></div></div></div>');
         $('#pagina-de-pingentes .catalogo-edit .cell-prod').each(function (e) {
           if ($(this).find('.remover').attr('data-ref') != null) {
-            var $ref = $(this).find('.remover').attr('data-ref').replace('mobile-','')
+            var $ref = $(this).find('.remover').attr('data-ref').replace('mobile-', '')
             $('#' + $ref).addClass('prod-disabled');
             $('#mobile-' + $ref).addClass('prod-disabled');
           }
@@ -132,7 +132,7 @@ export class EditarColecoesComponent implements OnInit {
     var customizeIntervalId = setInterval(carregou, 1000);
     var customizeIntervalPages = setInterval(carregouPages, 1000);
 
-    $(document).on('click', '.nextJoia, .box-persona button', function () {
+    $(document).on('click', '.nextJoia, .prevJoia, .box-persona button', function () {
       carregou();
       carregouPages();
     });
@@ -197,27 +197,125 @@ export class EditarColecoesComponent implements OnInit {
     if (mobile == 1) {
       var qual_pai = $($this).parents('.catalogo-modal');
       var res = $($this).parents('.catalogo-modal').attr('id').replace("catalogo-modal", "pagina-de");
-      $('.catalogo-modal').foundation('close');
     }
     $('#' + pai + ' .box-prod .catalogo-edit').prepend($html);
     $('#' + res + ' .box-prod .catalogo-edit').prepend($html);
-    $($this).addClass('prod-disabled');
 
-    $('#' + res + ' .callout.success').fadeIn('slow', function () {
-      $(this).delay(1000).fadeOut('slow');
-    });
-    $('#' + pai + ' .callout.success').show(function () {
-      $(this).delay(1000).fadeOut('slow');
-    });
+    $('#' + ref).addClass('prod-disabled');
+    $('#mobile-' + ref).addClass('prod-disabled');
+
+    if (!$('.snackbar').hasClass("show")) {
+      $('.snackbar').addClass("show");
+      setTimeout(function () { $('.snackbar').removeClass('show') }, 3000);
+    }
 
     return false;
   }
 
+  voltar(id) {
+    $('.pagina-de-produtos').hide();
+    $(id).fadeIn('slow');
+    $(document).scrollTop(0);
+    localStorage.setItem("grid-op", '');
+    $('.snackbar').removeClass('show');
+    switch (id) {
+      case "#pagina-de-aneis": {
+        this.titulo_pagina = "Brincos"
+        $('#pagina-de-brincos .catalogo-edit .blank_space').parent().remove();
+        this.htmlCarregado = $('#pagina-de-brincos .catalogo-edit').html()
+        this.atualizarPagina()
+        this.htmlCarregado = '';
+        $('.step-info').text("Anéis");
+        break;
+      }
+      case "#pagina-de-brincos": {
+        this.titulo_pagina = "Colares"
+        $('#pagina-de-colares .catalogo-edit .blank_space').parent().remove();
+        this.htmlCarregado = $('#pagina-de-colares .catalogo-edit').html()
+        this.atualizarPagina()
+        this.htmlCarregado = '';
+        $('.step-info').text("Brincos");
+        break;
+      }
+      case "#pagina-de-colares": {
+        this.titulo_pagina = "Pulseiras"
+        $('#pagina-de-pulseiras .catalogo-edit .blank_space').parent().remove();
+        this.htmlCarregado = $('#pagina-de-pulseiras .catalogo-edit').html()
+        this.atualizarPagina()
+        this.htmlCarregado = '';
+        $('.step-info').text("Colares");
+        break;
+      }
+      case "#pagina-de-pulseiras": {
+        this.titulo_pagina = "Pingentes"
+        $('#pagina-de-pingentes .catalogo-edit .blank_space').parent().remove();
+        this.htmlCarregado = $('#pagina-de-pingentes .catalogo-edit').html()
+        this.atualizarPagina()
+        this.htmlCarregado = '';
+        $('.step-info').text("Pulseiras");
+        break;
+      }
+      default: {
+        console.log("Invalid choice");
+        break;
+      }
+    }
+  }
+  salvar(id) {
+    switch (id) {
+      case "#pagina-de-aneis": {
+        this.titulo_pagina = "Anéis"
+        var teaser = $(id + ' .catalogo-edit').clone();
+        teaser.find(".blank_space").parent().remove()
+        this.htmlCarregado = teaser.html();
+        this.atualizarPagina()
+        break;
+      }
+      case "#pagina-de-brincos": {
+        this.titulo_pagina = "Brincos"
+        var teaser = $(id + ' .catalogo-edit').clone();
+        teaser.find(".blank_space").parent().remove()
+        this.htmlCarregado = teaser.html();
+        this.atualizarPagina()
+        break;
+      }
+      case "#pagina-de-colares": {
+        this.titulo_pagina = "Colares"
+        var teaser = $(id + ' .catalogo-edit').clone();
+        teaser.find(".blank_space").parent().remove()
+        this.htmlCarregado = teaser.html();
+        this.atualizarPagina()
+        break;
+      }
+      case "#pagina-de-pulseiras": {
+        this.titulo_pagina = "Pulseiras"
+        var teaser = $(id + ' .catalogo-edit').clone();
+        teaser.find(".blank_space").parent().remove()
+        this.htmlCarregado = teaser.html();
+        this.atualizarPagina()
+        break;
+      }
+      case "#pagina-de-pingentes": {
+        this.titulo_pagina = "Pingentes"
+        var teaser = $(id + ' .catalogo-edit').clone();
+        teaser.find(".blank_space").parent().remove()
+        this.htmlCarregado = teaser.html();
+        this.atualizarPagina()
+        break;
+      }
+    }
+    //this.router.navigate(['/compartilhe/'])
+    $('.snackbar').text('Alterações salvas com sucesso!');
+    $('.snackbar').addClass('show');
+    setTimeout(function () { $('.snackbar').removeClass('show'); $('.snackbar').text('Novo item adicionado.'); }, 3000);
+
+  }
   proxima(id) {
     $('.pagina-de-produtos').hide();
     $(id).fadeIn('slow');
     $(document).scrollTop(0);
     localStorage.setItem("grid-op", '');
+    $('.snackbar').removeClass('show');
 
     if (this.html != undefined) {
       switch (id) {
@@ -263,7 +361,7 @@ export class EditarColecoesComponent implements OnInit {
           $('#pagina-de-pingentes .catalogo-edit .blank_space').parent().remove();
           this.htmlCarregado = $('#pagina-de-pingentes .catalogo-edit').html()
           this.atualizarPagina()
-          this.html = '';
+          this.htmlCarregado = '';
           this.router.navigate(['/compartilhe/'])
           break;
         }
@@ -272,7 +370,6 @@ export class EditarColecoesComponent implements OnInit {
           break;
         }
       }
-      console.log(this.htmlCarregado);
     }
   }
 

@@ -4,13 +4,11 @@
   <div class="grid-container">
     <div class="grid-x grid-padding-x align-center">
       <div class="cell small-12 medium-7 question margin-top-2 text-center">
-        <h5 class="font-20">Passo 2 |
+        <h5 class="font-20">Edição |
           <span class="step-info">Anéis</span>
         </h5>
-        <h6 class="font-20 text-light">Chegou a hora de personalizar o seu catálogo!</h6>
-        <p>Aqui serão 6 etapas de personalização. Você terá 5 páginas divididas nas seguintes categorias: anéis, brincos, colares,
-          pulseiras e pingentes. Nessas páginas você poderá escolher as joias que quiser. Em seguida, poderá personalizar
-          as suas informações pessoais, para deixar o catálogo ainda mais com a sua cara.</p>
+        <h6 class="font-20 text-light">Chegou a hora de editar o seu catálogo!</h6>
+        <p>Aqui você poderá editar o seu catálogo personalizado de acordo com as joias da sua maleta.</p>
         <hr>
         <div class="pagina-de-produtos" id="pagina-de-aneis" style="display:block;">
           <div class="callout" data-closable>
@@ -22,9 +20,7 @@
                 <i class="fas fa-minus"></i>
               </span> ” abaixo</p>
           </div>
-          <div class="callout success">
-            <p>Novo item adicionado</p>
-          </div>
+          <div class="snackbar">Novo item adicionado.</div>
           <div class="page margin-top-3 padding-2">
             <ul class="menu">
               <li>
@@ -46,13 +42,31 @@
               </ng-container>
             </div>
           </div>
-          <button class="button expanded margin-top-2 rounded width-75 margin-horizontal-auto nextJoia" (click)="proxima('#pagina-de-brincos')">Editar página de Brincos
+<<<<<<< HEAD
+<<<<<<< HEAD
+          <div class="grid-x grid-padding-x">
+            <div class="cell small-12 medium-6">
+              <button class="button expanded margin-top-1 rounded margin-horizontal-auto l-button" (click)="salvar('#pagina-de-aneis')">Salvar</button>
+            </div>
+            <div class="cell small-12 medium-6">
+              <button class="button expanded margin-top-1 rounded margin-horizontal-auto nextJoia" (click)="proxima('#pagina-de-brincos')">Editar Brincos
+                <i class="fas fa-angle-right float-right"></i>
+              </button>
+            </div>
+          </div>
+
+
+=======
+=======
+>>>>>>> parent of f03ddec... Troca dos textos dos botões de 'Personalizar' para 'Editar'.
+          <button class="button expanded margin-top-2 rounded width-75 margin-horizontal-auto nextJoia" (click)="proxima('#pagina-de-brincos')">Personalizar página de Brincos
             <i class="fas fa-angle-right float-right"></i>
           </button>
+>>>>>>> parent of f03ddec... Troca dos textos dos botões de 'Personalizar' para 'Editar'.
           <div class="swiper-container swiper-container-custom hide-for-small-only">
             <div class="swiper-wrapper">
               <!-- onde ficarao os aneis para serem adicionados -->
-              <div class="callout swiper-slide" data-closable>
+              <div class="callout swiper-slide" style="max-height: 150px;" data-closable>
                 <button class="close-button" aria-label="Close alert" type="button" data-close>
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -78,6 +92,7 @@
             </div>
           </div>
           <div class="reveal catalogo-modal" id="catalogo-modal-aneis" data-reveal>
+            <div class="snackbar">Novo item adicionado.</div>
             <ul class="menu">
               <li>
                 <a href="#" (click)="changeGrid('#catalogo-modal-aneis .cell-prod','grid2',1)">
@@ -123,9 +138,7 @@
                 <i class="fas fa-minus"></i>
               </span> ” abaixo</p>
           </div>
-          <div class="callout success">
-            <p>Novo item adicionado</p>
-          </div>
+          <div class="snackbar">Novo item adicionado.</div>
           <div class="page margin-top-3 padding-2">
             <ul class="menu">
               <li>
@@ -147,13 +160,35 @@
               </ng-container>
             </div>
           </div>
-          <button class="button expanded margin-top-2 rounded width-75 margin-horizontal-auto nextJoia" (click)="proxima('#pagina-de-colares')">Editar página de Colares
+<<<<<<< HEAD
+<<<<<<< HEAD
+          <div class="grid-x grid-padding-x">
+            <div class="cell small-12 medium-4">
+              <button class="button expanded margin-top-1 rounded margin-horizontal-auto prevJoia" (click)="voltar('#pagina-de-aneis')">
+                <i class="fas fa-angle-left float-left"></i> Editar Anéis
+              </button>
+            </div>
+            <div class="cell small-12 medium-4">
+              <button class="button expanded margin-top-1 rounded l-button margin-horizontal-auto" (click)="salvar('#pagina-de-brincos')">Salvar</button>
+            </div>
+            <div class="cell small-12 medium-4">
+              <button class="button expanded margin-top-1 rounded nextJoia margin-horizontal-auto nextJoia" (click)="proxima('#pagina-de-colares')">Editar Colares
+                <i class="fas fa-angle-right float-right"></i>
+              </button>
+            </div>
+          </div>
+
+=======
+=======
+>>>>>>> parent of f03ddec... Troca dos textos dos botões de 'Personalizar' para 'Editar'.
+          <button class="button expanded margin-top-2 rounded width-75 margin-horizontal-auto nextJoia" (click)="proxima('#pagina-de-colares')">Personalizar página de Colares
             <i class="fas fa-angle-right float-right"></i>
           </button>
+>>>>>>> parent of f03ddec... Troca dos textos dos botões de 'Personalizar' para 'Editar'.
           <div class="swiper-container swiper-container-custom hide-for-small-only">
             <div class="swiper-wrapper">
               <!-- onde ficarao os aneis para serem adicionados -->
-              <div class="callout swiper-slide" data-closable>
+              <div class="callout swiper-slide" style="max-height: 150px;" data-closable>
                 <button class="close-button" aria-label="Close alert" type="button" data-close>
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -179,6 +214,7 @@
             </div>
           </div>
           <div class="reveal catalogo-modal" id="catalogo-modal-brincos" data-reveal>
+            <div class="snackbar">Novo item adicionado.</div>
             <ul class="menu">
               <li>
                 <a href="#" (click)="changeGrid('#catalogo-modal-brincos .cell-prod','grid2',1)">
@@ -227,6 +263,7 @@
           <div class="callout success">
             <p>Novo item adicionado</p>
           </div>
+          <div class="snackbar">Novo item adicionado.</div>
           <div class="page margin-top-3 padding-2">
             <ul class="menu">
               <li>
@@ -248,12 +285,33 @@
               </ng-container>
             </div>
           </div>
-          <button class="button expanded margin-top-2 rounded width-75 margin-horizontal-auto nextJoia" (click)="proxima('#pagina-de-pulseiras')">Editar página de Pulseiras
+<<<<<<< HEAD
+<<<<<<< HEAD
+          <div class="grid-x grid-padding-x">
+            <div class="cell small-12 medium-4">
+              <button class="button expanded margin-top-1 rounded margin-horizontal-auto prevJoia" (click)="voltar('#pagina-de-brincos')">
+                <i class="fas fa-angle-left float-left"></i> Editar Brincos
+              </button>
+            </div>
+            <div class="cell small-12 medium-4">
+              <button class="button expanded margin-top-1 rounded margin-horizontal-auto l-button" (click)="salvar('#pagina-de-colares')">Salvar</button>
+            </div>
+            <div class="cell small-12 medium-4">
+              <button class="button expanded margin-top-1 rounded margin-horizontal-auto nextJoia" (click)="proxima('#pagina-de-pulseiras')">Editar Pulseiras
+                <i class="fas fa-angle-right float-right"></i>
+              </button>
+            </div>
+          </div>
+=======
+=======
+>>>>>>> parent of f03ddec... Troca dos textos dos botões de 'Personalizar' para 'Editar'.
+          <button class="button expanded margin-top-2 rounded width-75 margin-horizontal-auto nextJoia" (click)="proxima('#pagina-de-pulseiras')">Personalizar página de Pulseiras
             <i class="fas fa-angle-right float-right"></i>
           </button>
+>>>>>>> parent of f03ddec... Troca dos textos dos botões de 'Personalizar' para 'Editar'.
           <div class="swiper-container swiper-container-custom hide-for-small-only">
             <div class="swiper-wrapper">
-              <div class="callout swiper-slide" data-closable>
+              <div class="callout swiper-slide" style="max-height: 150px;" data-closable>
                 <button class="close-button" aria-label="Close alert" type="button" data-close>
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -280,6 +338,7 @@
             </div>
           </div>
           <div class="reveal catalogo-modal" id="catalogo-modal-colares" data-reveal>
+            <div class="snackbar">Novo item adicionado.</div>
             <ul class="menu">
               <li>
                 <a href="#" (click)="changeGrid('#catalogo-modal-colares .cell-prod','grid2',1)">
@@ -328,6 +387,7 @@
           <div class="callout success">
             <p>Novo item adicionado</p>
           </div>
+          <div class="snackbar">Novo item adicionado.</div>
           <div class="page margin-top-3 padding-2">
             <ul class="menu">
               <li>
@@ -349,12 +409,33 @@
               </ng-container>
             </div>
           </div>
-          <button class="button expanded margin-top-2 rounded width-75 margin-horizontal-auto nextJoia" (click)="proxima('#pagina-de-pingentes')">Editar página de Pingentes
+<<<<<<< HEAD
+<<<<<<< HEAD
+          <div class="grid-x grid-padding-x">
+            <div class="cell small-12 medium-4">
+              <button class="button expanded margin-top-1 rounded margin-horizontal-auto prevJoia" (click)="voltar('#pagina-de-colares')">
+                <i class="fas fa-angle-left float-left"></i> Editar Colares
+              </button>
+            </div>
+            <div class="cell small-12 medium-4">
+              <button class="button expanded margin-top-1 rounded margin-horizontal-auto l-button" (click)="salvar('#pagina-de-pulseiras')">Salvar</button>
+            </div>
+            <div class="cell small-12 medium-4">
+              <button class="button expanded margin-top-1 rounded margin-horizontal-auto nextJoia" (click)="proxima('#pagina-de-pingentes')">Editar Pingentes
+                <i class="fas fa-angle-right float-right"></i>
+              </button>
+            </div>
+          </div>
+=======
+=======
+>>>>>>> parent of f03ddec... Troca dos textos dos botões de 'Personalizar' para 'Editar'.
+          <button class="button expanded margin-top-2 rounded width-75 margin-horizontal-auto nextJoia" (click)="proxima('#pagina-de-pingentes')">Personalizar página de Pingentes
             <i class="fas fa-angle-right float-right"></i>
           </button>
+>>>>>>> parent of f03ddec... Troca dos textos dos botões de 'Personalizar' para 'Editar'.
           <div class="swiper-container swiper-container-custom hide-for-small-only">
             <div class="swiper-wrapper">
-              <div class="callout swiper-slide" data-closable>
+              <div class="callout swiper-slide" style="max-height: 150px;" data-closable>
                 <button class="close-button" aria-label="Close alert" type="button" data-close>
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -382,6 +463,7 @@
             </div>
           </div>
           <div class="reveal catalogo-modal" id="catalogo-modal-pulseiras" data-reveal>
+            <div class="snackbar">Novo item adicionado.</div>
             <ul class="menu">
               <li>
                 <a href="#" (click)="changeGrid('#catalogo-modal-pulseiras .cell-prod','grid2',1)">
@@ -430,6 +512,7 @@
           <div class="callout success">
             <p>Novo item adicionado</p>
           </div>
+          <div class="snackbar">Novo item adicionado.</div>
           <div class="page margin-top-3 padding-2">
             <ul class="menu">
               <li>
@@ -451,12 +534,19 @@
               </ng-container>
             </div>
           </div>
-          <button class="button expanded margin-top-2 rounded width-75 margin-horizontal-auto" (click)="proxima('#pagina-de-info')">Atualizar
-            <i class="fas fa-angle-right float-right"></i>
-          </button>
+          <div class="grid-x grid-padding-x">
+            <div class="cell small-12 medium-6">
+              <button class="button expanded margin-top-1 rounded margin-horizontal-auto prevJoia" (click)="voltar('#pagina-de-pulseiras')">
+                <i class="fas fa-angle-left float-left"></i> Editar Pulseiras
+              </button>
+            </div>
+            <div class="cell small-12 medium-6">
+              <button class="button expanded margin-top-1 rounded margin-horizontal-auto l-button" (click)="proxima('#pagina-de-info')">Salvar</button>
+            </div>
+          </div>
           <div class="swiper-container swiper-container-custom hide-for-small-only">
             <div class="swiper-wrapper">
-              <div class="callout swiper-slide" data-closable>
+              <div class="callout swiper-slide" style="max-height: 150px;" data-closable>
                 <button class="close-button" aria-label="Close alert" type="button" data-close>
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -484,6 +574,7 @@
             </div>
           </div>
           <div class="reveal catalogo-modal" id="catalogo-modal-pingentes" data-reveal>
+            <div class="snackbar">Novo item adicionado.</div>
             <ul class="menu">
               <li>
                 <a href="#" (click)="changeGrid('#catalogo-modal-pingentes .cell-prod','grid2',1)">

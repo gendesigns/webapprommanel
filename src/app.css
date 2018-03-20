@@ -157,8 +157,11 @@ footer img{
     transform: scale(0.5);
     margin-top: 10px;
 }
-.dropdown.menu > li.opens-right > .is-dropdown-submenu{
-    top: 150%;
+header .is-dropdown-submenu{
+    min-width: 250px;
+}
+header .dropdown.menu > li.opens-right > .is-dropdown-submenu{
+    left: -25px;
 }
 [type="radio"]:checked,
 [type="radio"]:not(:checked) {
@@ -315,16 +318,16 @@ footer img{
 .color-primary{
     color: #664a90 !important;
 }
-.color-primary::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+.color-primary::-webkit-input-placeholder {
     color: #664a90 !important;
 }
-.color-primary::-moz-placeholder { /* Firefox 19+ */
+.color-primary::-moz-placeholder {
     color: #664a90 !important;
 }
-.color-primary:-ms-input-placeholder { /* IE 10+ */
+.color-primary:-ms-input-placeholder {
     color: #664a90 !important;
 }
-.color-primary:-moz-placeholder { /* Firefox 18- */
+.color-primary:-moz-placeholder {
     color: #664a90 !important;
 }
 .bg-login p{
@@ -527,6 +530,7 @@ ul.tabs{
     background: #f4f4f4;
     height: 550px;
     overflow: auto;
+    position: relative;
 }
 .callout{
     background: #e2cc71 !important;
@@ -639,7 +643,7 @@ ul.tabs{
 }
 .customize .swiper-container{
     position: absolute;
-    right: 0;
+    left: 0;
     height: 79%;
     width: 165px;
     top: 200px;
@@ -672,7 +676,7 @@ ul.tabs{
     margin-top: 100px;
     left: auto;
     position: fixed;
-    right: 155px;
+    left: 155px;
     width: 39px;
     height: 39px;
     border-radius: 39px;
@@ -982,7 +986,7 @@ ul.tabs{
     color: #664a90;
 }
 .catalogo-modal{
-    margin-top: 100px;
+    /* margin-top: 100px; */
     width: 96%;
     margin-left: auto;
     margin-right: auto;
@@ -1012,9 +1016,13 @@ ul.tabs{
     font-weight: 600;
 }
 .catalogo-modal .close-button{
-    font-size: 30px;
-    font-size: 1.875rem;
-    color: #664a90;
+    position: fixed;
+    background: #664a90;
+    color: #fff;
+    width: 22px;
+    height: 22px;
+    border-radius: 25px;
+    top: 15px !important;
 }
 a.btn-verde,a.btn-verde:hover,a.btn-verde:focus,a.btn-verde:active{
     background: #63b141;
@@ -1226,16 +1234,12 @@ i.perfil-ico{
     background: #af94d7;
     border-radius: 10px;
 }
-
-/* Handle */
 .paginacao::-webkit-scrollbar-thumb{
     background: #664a90;
     border-radius: 10px;
     top: 15px;
     position: relative;
 }
-
-/* Handle on hover */
 .paginacao::-webkit-scrollbar-thumb:hover {
     background: #664a90;
 }
@@ -1350,12 +1354,50 @@ i.perfil-ico{
     left: 0;
     display: none;
 }
+.snackbar {
+    display: none;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 10px 16px;
+    min-width: 250px;
+    margin-left: -125px;
+    position: fixed;
+    bottom: 65px;
+    left: 50%;
+    z-index: 11;
+    font-size: 12px;
+}
+.snackbar.show {
+    display: block;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+@-webkit-keyframes fadein {
+    from {bottom: 0px; opacity: 0;} 
+    to {bottom: 65px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0px; opacity: 0;}
+    to {bottom: 65px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 65px; opacity: 1;} 
+    to {bottom: 0px; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 65px; opacity: 1;}
+    to {bottom: 0px; opacity: 0;}
+}
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
-/* Media queries para celulares (.small )*/
-
+/* Media queries para celulares */
 @media screen and (max-width: 39.9375em) {
     header {
         height: 85px;
@@ -1556,8 +1598,42 @@ i.perfil-ico{
     .show-share-buttons{
         display: block;
     }
+    .snackbar {
+        min-width: 250px;
+        margin-left: -125px;
+        position: fixed;
+        bottom: 30px;
+        top: auto;
+        left: 50%;
+    }
+    .pagina-de-produtos .button{
+        margin-bottom: 15px;
+        margin-top: 0px !important;
+    }
+    .pagina-de-produtos .page{
+        margin-bottom: 15px;
+    }
+    @-webkit-keyframes fadein {
+        from {bottom: 0; opacity: 0;} 
+        to {bottom: 30px; opacity: 1;}
+    }
+
+    @keyframes fadein {
+        from {bottom: 0; opacity: 0;}
+        to {bottom: 30px; opacity: 1;}
+    }
+
+    @-webkit-keyframes fadeout {
+        from {bottom: 30px; opacity: 1;} 
+        to {bottom: 0; opacity: 0;}
+    }
+
+    @keyframes fadeout {
+        from {bottom: 30px; opacity: 1;}
+        to {bottom: 0; opacity: 0;}
+    }   
 }
-/* Media queries para tablets (.small )*/
+/* Media queries para tablets */
 @media screen and (min-width: 40em) and (max-width: 63.9375em) {
     .form-wizard-quiz .button{
         width: 85% !important;

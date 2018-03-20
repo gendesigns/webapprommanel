@@ -46,21 +46,21 @@ export class PersonalizeComponent implements OnInit {
         load_swiper('#pagina-de-aneis .swiper-container');
         clearInterval(customizeIntervalId);
       }
-      else if($('#pagina-de-brincos .swiper-container').find('.swiper-slide').length > 0 && $('#pagina-de-brincos').css('display') != 'none'){
-        load_swiper('#pagina-de-brincos .swiper-container');    
-        clearInterval(customizeIntervalId);    
-      } 
-      else if($('#pagina-de-colares .swiper-container').find('.swiper-slide').length > 0 && $('#pagina-de-colares').css('display') != 'none'){
+      else if ($('#pagina-de-brincos .swiper-container').find('.swiper-slide').length > 0 && $('#pagina-de-brincos').css('display') != 'none') {
+        load_swiper('#pagina-de-brincos .swiper-container');
+        clearInterval(customizeIntervalId);
+      }
+      else if ($('#pagina-de-colares .swiper-container').find('.swiper-slide').length > 0 && $('#pagina-de-colares').css('display') != 'none') {
         load_swiper('#pagina-de-colares .swiper-container');
-        clearInterval(customizeIntervalId);    
+        clearInterval(customizeIntervalId);
       }
-      else if($('#pagina-de-pulseiras .swiper-container').find('.swiper-slide').length > 0 && $('#pagina-de-pulseiras').css('display') != 'none'){
-        load_swiper('#pagina-de-pulseiras .swiper-container');   
-        clearInterval(customizeIntervalId);    
+      else if ($('#pagina-de-pulseiras .swiper-container').find('.swiper-slide').length > 0 && $('#pagina-de-pulseiras').css('display') != 'none') {
+        load_swiper('#pagina-de-pulseiras .swiper-container');
+        clearInterval(customizeIntervalId);
       }
-      else if($('#pagina-de-pingentes .swiper-container').find('.swiper-slide').length > 0 && $('#pagina-de-pingentes').css('display') != 'none'){
-        load_swiper('#pagina-de-pingentes .swiper-container');   
-        clearInterval(customizeIntervalId);    
+      else if ($('#pagina-de-pingentes .swiper-container').find('.swiper-slide').length > 0 && $('#pagina-de-pingentes').css('display') != 'none') {
+        load_swiper('#pagina-de-pingentes .swiper-container');
+        clearInterval(customizeIntervalId);
       }
       else {
         clearInterval(customizeIntervalId);
@@ -70,7 +70,7 @@ export class PersonalizeComponent implements OnInit {
     $(document).on('click', '.nextJoia, .box-persona button', function () {
       customizeIntervalId = setInterval(carregou, 1000);
       carregou();
-    });  
+    });
 
     $(document).on('click', '.remover', function () {
       var $ref = $(this).attr('data-ref');
@@ -78,13 +78,13 @@ export class PersonalizeComponent implements OnInit {
       $('#mobile-' + $ref).removeClass('prod-disabled');
       $(this).parents('.cell-prod').remove();
     });
-  
+
     localStorage.setItem("grid-op", 'grid3');
     var grid_op = localStorage.getItem("grid-op");
 
   }
   changeGrid($div, $type, modal) {
-    if(modal != 1){
+    if (modal != 1) {
       localStorage.setItem("grid-op", $type);
     }
     if ($type == 'grid2') {
@@ -132,18 +132,25 @@ export class PersonalizeComponent implements OnInit {
     if (mobile == 1) {
       var qual_pai = $($this).parents('.catalogo-modal');
       var res = $($this).parents('.catalogo-modal').attr('id').replace("catalogo-modal", "pagina-de");
-      $('.catalogo-modal').foundation('close');
+      //$('.catalogo-modal').foundation('close');
     }
     $('#' + pai + ' .box-prod').prepend($html);
     $('#' + res + ' .box-prod').prepend($html);
-    $($this).addClass('prod-disabled');
+    //$($this).addClass('prod-disabled');
 
-    $('#' + res + ' .callout.success').fadeIn('slow', function () {
+    $('#' + ref).addClass('prod-disabled');
+    $('#mobile-' + ref).addClass('prod-disabled');
+
+    /* $('#' + res + ' .callout.success').fadeIn('slow', function () {
       $(this).delay(1000).fadeOut('slow');
     });
     $('#' + pai + ' .callout.success').show(function () {
       $(this).delay(1000).fadeOut('slow');
-    });
+    }); */
+    if (!$('.snackbar').hasClass("show")) {
+      $('.snackbar').addClass("show");
+      setTimeout(function () { $('.snackbar').removeClass('show') }, 3000);
+    }
 
     return false;
   }
@@ -157,6 +164,7 @@ export class PersonalizeComponent implements OnInit {
     $(id).fadeIn('slow');
     $(document).scrollTop(0);
     localStorage.setItem("grid-op", '');
+    $('.snackbar').removeClass('show');
 
     if (this.html != undefined) {
       switch (id) {
@@ -164,7 +172,7 @@ export class PersonalizeComponent implements OnInit {
           this.titulo_pagina = "Anéis"
           this.salvarPagina()
           this.html = '';
-          $('.step-info').text("Brincos");    
+          $('.step-info').text("Brincos");
           break;
         }
         case "#pagina-de-colares": {
@@ -210,7 +218,7 @@ export class PersonalizeComponent implements OnInit {
       paginaHtml: this.html,
     })
   }
-  
+
   public aneis: Joia[] = Aneis
   public brincos: Joia[] = Brincos
   public colares: Joia[] = Colares

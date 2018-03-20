@@ -1,0 +1,38 @@
+.notification .fa-bell{
+    color: #FFF;
+    font-size: 20px;
+}
+.notification .badge {
+    min-width: 17px;
+    border-radius: 14px;
+    font-size: 8px;
+    font-weight: bold;
+    position: absolute;
+    right: -8px;
+    top: -8px;
+    min-height: 15px;
+}
+.notification .is-dropdown-submenu{
+    left: -100px !important;
+    top: 45px !important;
+    color: #fff;
+    text-align: left;
+    padding: 10px;
+}
+.notification .is-dropdown-submenu a{
+    border-bottom: 1px solid #fff;
+    font-size: 12px;
+    font-size: 0.75rem;
+    padding: 10px 0;
+    line-height: normal;
+}
+@media screen and (max-width: 39.9375em) {
+    .notification .is-dropdown-submenu{
+        left: -70px !important;
+        top: 45px !important;
+        color: #fff;
+        text-align: left;
+        padding: 10px;
+        min-width: 150px;
+    }
+}
