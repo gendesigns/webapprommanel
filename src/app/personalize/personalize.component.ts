@@ -132,21 +132,11 @@ export class PersonalizeComponent implements OnInit {
     if (mobile == 1) {
       var qual_pai = $($this).parents('.catalogo-modal');
       var res = $($this).parents('.catalogo-modal').attr('id').replace("catalogo-modal", "pagina-de");
-      //$('.catalogo-modal').foundation('close');
     }
     $('#' + pai + ' .box-prod').prepend($html);
     $('#' + res + ' .box-prod').prepend($html);
-    //$($this).addClass('prod-disabled');
-
     $('#' + ref).addClass('prod-disabled');
     $('#mobile-' + ref).addClass('prod-disabled');
-
-    /* $('#' + res + ' .callout.success').fadeIn('slow', function () {
-      $(this).delay(1000).fadeOut('slow');
-    });
-    $('#' + pai + ' .callout.success').show(function () {
-      $(this).delay(1000).fadeOut('slow');
-    }); */
     if (!$('.snackbar').hasClass("show")) {
       $('.snackbar').addClass("show");
       setTimeout(function () { $('.snackbar').removeClass('show') }, 3000);
