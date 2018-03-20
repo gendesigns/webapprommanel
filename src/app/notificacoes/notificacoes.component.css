@@ -1,0 +1,17 @@
+.notification {
+    float: right;
+}
+.notification .fa-bell{
+    color: #FFF;
+    font-size: 20px;
+}
+.notification .badge {
+    min-width: 2.1em;
+    padding: 0.3em;
+    border-radius: 37%;
+    font-size: 0.5rem;
+    font-weight: bold;
+    position: relative;
+    right: -10px;
+    top: -9px;
+}

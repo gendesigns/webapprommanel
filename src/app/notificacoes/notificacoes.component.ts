@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotificacoesComponent implements OnInit {
 
-  constructor() { }
+  public contadorMsg: any = 0
+  public msg: Array<string> = [
+      'Olá, veja a nova funcionalidade para editar seu catálogo',
+      'Estamos ajustando tudo por aqui, em breve terá novidade. Aguarde!',
+      'Estamos ajustando tudo por aqui, em breve terá novidade. Aguarde!',
+    ]
+
+  constructor() { 
+    this.contador()
+  }
 
   ngOnInit() {
+  }
+
+  public contador() {
+    this.contadorMsg = this.msg.length
+    console.log(this.contadorMsg)
   }
 
 }
