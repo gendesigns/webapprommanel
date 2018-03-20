@@ -643,7 +643,7 @@ ul.tabs{
 }
 .customize .swiper-container{
     position: absolute;
-    right: 0;
+    left: 0;
     height: 79%;
     width: 165px;
     top: 200px;
@@ -676,7 +676,7 @@ ul.tabs{
     margin-top: 100px;
     left: auto;
     position: fixed;
-    right: 155px;
+    left: 155px;
     width: 39px;
     height: 39px;
     border-radius: 39px;
@@ -1605,6 +1605,13 @@ i.perfil-ico{
         bottom: 30px;
         top: auto;
         left: 50%;
+    }
+    .pagina-de-produtos .button{
+        margin-bottom: 15px;
+        margin-top: 0px !important;
+    }
+    .pagina-de-produtos .page{
+        margin-bottom: 15px;
     }
     @-webkit-keyframes fadein {
         from {bottom: 0; opacity: 0;} 
