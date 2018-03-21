@@ -168,8 +168,8 @@ export class Bd {
                 snapshot.forEach((childSnapshot: any) => {
                         let pagina = childSnapshot.val()
                         paginas.push(pagina)
-                        resolve(paginas)
                     })
+                resolve(paginas)
             })
         })
     }

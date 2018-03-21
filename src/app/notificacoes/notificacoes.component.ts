@@ -23,7 +23,6 @@ export class NotificacoesComponent implements OnInit {
 
   public contador() {
     this.contadorMsg = this.msg.length
-    console.log(this.contadorMsg)
   }
 
 }
