@@ -46,6 +46,8 @@ export class MeuCatalogoComponent implements OnInit {
     this.carregaPaginas()
     this.carregarImagem()
 
+    $(document).foundation();
+
     $('.swiper-container-share').append('<div class="loader-overlay"><div class="loader"></div></div>');
 
     function doOnOrientationChange() {
