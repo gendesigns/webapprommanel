@@ -7,23 +7,14 @@
           <span class="step-info">Anéis</span>
         </h5>
         <h6 class="font-20 text-light">Chegou a hora de personalizar o seu catálogo!</h6>
-        <p>Aqui serão 6 etapas de personalização. Você terá 5 páginas divididas nas seguintes categorias: anéis, brincos, colares,
+        <p style="margin:0;">Aqui serão 6 etapas de personalização. Você terá 5 páginas divididas nas seguintes categorias: anéis, brincos, colares,
           pulseiras e pingentes. Nessas páginas você poderá escolher as joias que quiser. Em seguida, poderá personalizar
-          as suas informações pessoais, para deixar o catálogo ainda mais com a sua cara.</p>
+          as suas informações pessoais, para deixar o catálogo ainda mais com a sua cara.
+        </p>
+        <p><b>Lembrete:</b> apenas os lançamentos do Catálogo 2018 estão disponíveis para personalização. A linha permanente ainda não está disponível, aguarde novidades.</p>
         <hr>
         <div class="pagina-de-produtos" id="pagina-de-aneis">
-          <div class="callout" data-closable>
-            <button class="close-button" aria-label="Close alert" type="button" data-close>
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <p>Para excluir produtos da página, clique no botão “
-              <span class="minus display-inline-block position-static">
-                <i class="fas fa-minus"></i>
-              </span> ” abaixo</p>
-          </div>
-          <div class="callout success">
-            <p>Novo item adicionado</p>
-          </div>
+          <div [innerHtml]="callout | safe: 'html'"></div>
           <div class="snackbar">Novo item adicionado.</div>
           <div class="page margin-top-3 padding-2">
             <ul class="menu">
@@ -122,18 +113,7 @@
           </div>
         </div>
         <div class="pagina-de-produtos" id="pagina-de-brincos">
-          <div class="callout" data-closable>
-            <button class="close-button" aria-label="Close alert" type="button" data-close>
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <p>Para excluir produtos da página, clique no botão “
-              <span class="minus display-inline-block position-static">
-                <i class="fas fa-minus"></i>
-              </span> ” abaixo</p>
-          </div>
-          <div class="callout success">
-            <p>Novo item adicionado</p>
-          </div>
+          <div [innerHtml]="callout | safe: 'html'"></div>
           <div class="snackbar">Novo item adicionado.</div>
           <div class="page margin-top-3 padding-2">
             <ul class="menu">
@@ -232,18 +212,7 @@
           </div>
         </div>
         <div class="pagina-de-produtos" id="pagina-de-colares">
-          <div class="callout" data-closable>
-            <button class="close-button" aria-label="Close alert" type="button" data-close>
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <p>Para excluir produtos da página, clique no botão “
-              <span class="minus display-inline-block position-static">
-                <i class="fas fa-minus"></i>
-              </span> ” abaixo</p>
-          </div>
-          <div class="callout success">
-            <p>Novo item adicionado</p>
-          </div>
+          <div [innerHtml]="callout | safe: 'html'"></div>
           <div class="snackbar">Novo item adicionado.</div>
           <div class="page margin-top-3 padding-2">
             <ul class="menu">
@@ -342,18 +311,7 @@
           </div>
         </div>
         <div class="pagina-de-produtos" id="pagina-de-pulseiras">
-          <div class="callout" data-closable>
-            <button class="close-button" aria-label="Close alert" type="button" data-close>
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <p>Para excluir produtos da página, clique no botão “
-              <span class="minus display-inline-block position-static">
-                <i class="fas fa-minus"></i>
-              </span> ” abaixo</p>
-          </div>
-          <div class="callout success">
-            <p>Novo item adicionado</p>
-          </div>
+          <div [innerHtml]="callout | safe: 'html'"></div>
           <div class="snackbar">Novo item adicionado.</div>
           <div class="page margin-top-3 padding-2">
             <ul class="menu">
@@ -453,18 +411,7 @@
           </div>
         </div>
         <div class="pagina-de-produtos" id="pagina-de-pingentes">
-          <div class="callout" data-closable>
-            <button class="close-button" aria-label="Close alert" type="button" data-close>
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <p>Para excluir produtos da página, clique no botão “
-              <span class="minus display-inline-block position-static">
-                <i class="fas fa-minus"></i>
-              </span> ” abaixo</p>
-          </div>
-          <div class="callout success">
-            <p>Novo item adicionado</p>
-          </div>
+          <div [innerHtml]="callout | safe: 'html'"></div>
           <div class="snackbar">Novo item adicionado.</div>
           <div class="page margin-top-3 padding-2">
             <ul class="menu">
