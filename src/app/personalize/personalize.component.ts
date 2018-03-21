@@ -19,6 +19,8 @@ export class PersonalizeComponent implements OnInit {
   public email: string
   public html: string = ''
 
+  public callout: string = ''
+
   constructor(private bd: Bd) { }
 
   ngOnInit() {
@@ -38,6 +40,20 @@ export class PersonalizeComponent implements OnInit {
         mousewheel: true
       });
     }
+
+    this.callout = `<div class="callout" data-closable>
+    <button class="close-button" aria-label="Close alert" type="button" data-close>
+    <span aria-hidden="true">&times;</span>
+    </button>
+    <p>Clique no botão “
+    <span class="plus display-inline-block position-static">
+    <i class="fas fa-plus"></i>
+    </span> ” para adicionar um novo produto.</p>
+    <p>Clique no botão “
+    <span class="minus display-inline-block position-static">
+    <i class="fas fa-minus"></i>
+    </span> ” para excluir um  produto.</p>
+    </div>`;
 
     var customizeIntervalId = null;
 

@@ -23,7 +23,7 @@ export class EditarColecoesComponent implements OnInit {
   public paginas: Array<any> = []
 
   public paginasCarregadas: any
-
+  public callout: string = ''
 
   constructor(private bd: Bd, private router: Router) { }
 
@@ -47,7 +47,20 @@ export class EditarColecoesComponent implements OnInit {
         mousewheel: true
       });
     }
-
+    this.callout = `<div class="callout" data-closable>
+    <button class="close-button" aria-label="Close alert" type="button" data-close>
+    <span aria-hidden="true">&times;</span>
+    </button>
+    <p>Clique no botão “
+    <span class="plus display-inline-block position-static">
+    <i class="fas fa-plus"></i>
+    </span> ” para adicionar um novo produto.</p>
+    <p>Clique no botão “
+    <span class="minus display-inline-block position-static">
+    <i class="fas fa-minus"></i>
+    </span> ” para excluir um  produto.</p>
+    </div>`;
+    
     var carregou = function () {
       if ($('#pagina-de-aneis .swiper-container').find('.swiper-slide').length > 0 && $('#pagina-de-aneis').css('display') != 'none') {
         load_swiper('#pagina-de-aneis .swiper-container');
