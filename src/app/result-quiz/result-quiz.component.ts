@@ -1,5 +1,6 @@
 import { Component, OnInit, OnChanges, Input } from '@angular/core';
 import { Auth } from '../auth.service';
+import { Router } from '@angular/router';
 import { Bd } from '../bd.service';
 import * as firebase from 'firebase';
 
@@ -15,8 +16,9 @@ export class ResultQuizComponent implements OnInit, OnChanges {
   public email: string
   public name: string
   public persona: string = ''
+  public paginas:any
 
-  constructor(private auth: Auth, private bd: Bd) { }
+  constructor(private auth: Auth, private bd: Bd, private router: Router) { }
 
   ngOnChanges() {
 
@@ -25,6 +27,16 @@ export class ResultQuizComponent implements OnInit, OnChanges {
   ngOnInit() {
     firebase.auth().onAuthStateChanged((user) => {
       this.email = user.email
+      this.bd.consultaPaginasSalva(this.email)
+      .then((pagina) => {
+          this.paginas = pagina.length
+          
+          if(this.paginas === 5){
+              this.router.navigate(['/editarMeuCatalogo'])
+          }
+          
+      })  
+        
       this.carregarPersona()
     })
     var altura_tela = $(window).height() - 280;
@@ -49,7 +61,6 @@ export class ResultQuizComponent implements OnInit, OnChanges {
     }
     var intervalId = setInterval(carregou, 1000);
   }
-
 
   public carregarPersona(): void {
     this.bd.consultaPersona(this.email)

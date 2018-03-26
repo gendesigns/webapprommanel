@@ -16,7 +16,7 @@ import { UpdateFieldsUsuario } from '../usuario/updateFieldsUsuario.model';
 
 export class EditarPerfilComponent implements OnInit {
   
-  private formulario: FormGroup = new FormGroup({
+  public formulario: FormGroup = new FormGroup({
     'email': new FormControl({value: null,  disabled: true}),
     'displayName': new FormControl(null),
     'cidade': new FormControl(null),

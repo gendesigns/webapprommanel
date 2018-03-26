@@ -16,7 +16,7 @@ export class CadastroComponent implements OnInit {
 
   public messageError: string = ''
 
-  private formulario: FormGroup = new FormGroup({
+  public formulario: FormGroup = new FormGroup({
     'email': new FormControl(null),
     'fotoPerfil': new FormControl(null),
     'displayName': new FormControl(null),

@@ -63,6 +63,8 @@ export class QuizComponent implements OnInit {
   public selectedQuestion
   public personaResult: string
 
+  public paginas: any
+
   getResult() {
     if ($("#quiz-4 input[type='radio']").is(":checked")) {
       $("#quiz-4 .callout").hide();
@@ -111,7 +113,20 @@ export class QuizComponent implements OnInit {
   ngOnInit() {
     this.shuffle()
     firebase.auth().onAuthStateChanged((user) => {
-      this.email = user.email
+      this.email = user.email  
+      this.bd.consultaPersona(this.email)
+      .then((persona)=>{
+          this.bd.consultaPaginasSalva(this.email)
+          .then((pagina) => {
+              this.paginas = pagina.length
+              if(persona.nome_persona && this.paginas < 5){
+                  this.router.navigate(['/quizResultado'])
+              }else if(persona.nome_persona && this.paginas == 5){
+                  this.router.navigate(['/compartilhe'])
+              }
+          })  
+      })
+    
     })
 
     var altura_tela = $(window).height() - 250;

@@ -20,6 +20,10 @@ export class HeaderComponent implements OnInit {
   public cidade: any
   public estado: any
 
+  public paginas: any
+
+  public mostraConteudo: any = false
+
   constructor(
     private auth: Auth, 
     private bd: Bd
@@ -31,6 +35,7 @@ export class HeaderComponent implements OnInit {
       this.email = user.email
       this.carregarInfos()
       this.carregarImagem()
+      this.carregaPaginas()
     })
 
     $(document).foundation();
@@ -52,6 +57,20 @@ export class HeaderComponent implements OnInit {
     .then((url: string)=>{
       this.url_imagem = url
     })
+  }
+
+  public carregaPaginas(): void {
+    this.bd.consultaPaginasSalva(this.email)
+      .then((pagina: any) => {
+        this.paginas = pagina.length
+
+        if(this.paginas > 0){
+          this.mostraConteudo = true
+        }else{
+          this.mostraConteudo = false
+        }
+
+      })
   }
 
   public sair() {
