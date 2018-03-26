@@ -55,7 +55,7 @@ export class CompartilheComponent implements OnInit {
     $('footer').hide();
     $('.swiper-container-share').append('<div class="loader-overlay"><div class="loader"></div></div>');
 
-    function doOnOrientationChange() {   
+    function doOnOrientationChange() {
       if (screen.height < screen.width && ('ontouchstart' in document.documentElement)) {
         $('.fixar-topo').addClass('fixar-topo-landscape');
         $('#step-share .menu').addClass('menu-fixo');
@@ -65,7 +65,8 @@ export class CompartilheComponent implements OnInit {
       } else if(('ontouchstart' in document.documentElement)) {
         $('.fixar-topo').removeClass('fixar-topo-landscape');
         $('#step-share .menu').removeClass('menu-fixo');
-        $('.buttons-share,.share-over,.box-paginacao').hide();   
+        $('.buttons-share,.share-over,.box-paginacao').hide();
+        $('#step-share .show-share-buttons').css('display', 'inline-block');
       }
     }
     window.addEventListener('orientationchange', doOnOrientationChange);
@@ -106,7 +107,7 @@ export class CompartilheComponent implements OnInit {
         }, 0);
       });
 
-      $('#step-share .menu,.show-share-buttons').css('z-index','5');
+      $('#step-share .menu,.show-share-buttons').css('z-index', '5');
       $('.catalogo-page .cell-prod').removeClass('small-6');
       $('.catalogo-page .cell-prod').addClass('small-4');
 
@@ -191,8 +192,8 @@ export class CompartilheComponent implements OnInit {
   }
 
   showShare() {
-    $('.share-over,.buttons-share').css('display','block');
-    $('.buttons-share').css('z-index','12');
+    $('.share-over,.buttons-share').css('display', 'block');
+    $('.buttons-share').css('z-index', '12');
   }
   hideShare() {
     $('.share-over,.buttons-share').hide();
