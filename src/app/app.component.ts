@@ -3,6 +3,7 @@ import { OnInit } from '@angular/core';
 import * as firebase from 'firebase';
 import { FacebookService, InitParams } from 'ngx-facebook';
 import {Router, NavigationEnd} from "@angular/router";
+import { FirebaseConfig } from './../environments/firebase.config';
 
 declare let jQuery:any;
 declare let $:any
@@ -27,18 +28,8 @@ export class AppComponent implements OnInit{
 
   ngOnInit() {
 
-  // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyBIFtE1wbHL3ygRXHSNlqTCmOjz15ZOdNg",
-      authDomain: "catalogo2018-26fdc.firebaseapp.com",
-      databaseURL: "https://catalogo2018-26fdc.firebaseio.com",
-      projectId: "catalogo2018-26fdc",
-      storageBucket: "catalogo2018-26fdc.appspot.com",
-      messagingSenderId: "403989062683"
-    
-    };
-
-    firebase.initializeApp(config);
+  
+    firebase.initializeApp(FirebaseConfig);
     $(document).foundation();
   }
 }

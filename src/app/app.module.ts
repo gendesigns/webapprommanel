@@ -4,6 +4,10 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { NgPipesModule } from 'ngx-pipes';
 import { RouterModule } from '@angular/router';
 
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireModule } from 'angularfire2/index';
+import { FirebaseConfig } from './../environments/firebase.config';
+
 import { SafePipeModule } from 'safe-pipe';
 
 import { ROUTES } from './app.routes';
@@ -65,7 +69,9 @@ import { NotificacoesComponent } from './notificacoes/notificacoes.component';
     NgPipesModule,
     ReactiveFormsModule,
     RouterModule.forRoot(ROUTES),
-    FacebookModule.forRoot()
+    FacebookModule.forRoot(),
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(FirebaseConfig)
   ],
   providers: [ Auth, AuthGuard, Bd ],
   bootstrap: [AppComponent]

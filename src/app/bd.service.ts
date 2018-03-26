@@ -55,21 +55,17 @@ export class Bd {
             .push({ imagem_url: '' })
             .then((resposta: any)=>{
                 let nomeImagem = resposta.key
-                // console.log('resposta',resposta)
                 firebase.storage().ref()
                 .child(`imagens/${nomeImagem}`)
                 .put(imagemDePerfil.imagem)
                 .on(firebase.storage.TaskEvent.STATE_CHANGED,
                     //acompanhamento do progreesso do upload
                     (snapshot: any) => {
-                        // console.log('snapshot', snapshot)
                     },
                     (error) => {
-                        // console.log(error)
                     },
                     () => {
                         // finalizacao do progresso
-                        // console.log('upload completo:', imagemDePerfil.imagem)
                         
                     }
                 )
@@ -172,5 +168,23 @@ export class Bd {
                 resolve(paginas)
             })
         })
+    }
+
+    public getNotificacoes(): Promise<any> {
+
+        return new Promise((resolve, reject) => {
+            firebase.database().ref(`notificacoes`)
+            .once('value')
+            .then((snapshot: any) => {
+                let notificacoes: Array<any> = []
+                snapshot.forEach((childSnapshot: any) => {
+                        let notificacao = childSnapshot.val()
+                        notificacoes.push(notificacao)
+                    })
+                resolve(notificacoes)
+            })
+
+        })
+            
     }
 }

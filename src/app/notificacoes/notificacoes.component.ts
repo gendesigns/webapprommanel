@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Bd } from '../bd.service'
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/Rx';
 
 @Component({
   selector: 'app-notificacoes',
@@ -7,22 +12,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotificacoesComponent implements OnInit {
 
-  public contadorMsg: any = 0
-  public msg: Array<string> = [
-      'Olá, veja a nova funcionalidade para editar seu catálogo',
-      'Estamos ajustando tudo por aqui, em breve terá novidade. Aguarde!',
-      'Estamos ajustando tudo por aqui, em breve terá novidade. Aguarde!',
-    ]
+  public contadorMsg: any
+  public notificacoes: Observable<any[]>
+  // item: Observable<any>;
 
-  constructor() { 
-    this.contador()
+  constructor(db: AngularFireDatabase) { 
+    // this.contador()
+    this.notificacoes = db.list('notificacoes').valueChanges();
+    this.notificacoes.subscribe(result => { this.contadorMsg = result.length});
+    this.notificacoes.subscribe(result => { console.log( result)});
   }
 
   ngOnInit() {
+    
+    // let tempo = Observable.interval(500)
+
+    // tempo.subscribe((intervalo: any) => {
+    //   // console.log(intervalo)
+    // })
+  }
+  public notificacaoLida(event):void{
+    // console.log(htm)
   }
 
-  public contador() {
-    this.contadorMsg = this.msg.length
-  }
 
 }
