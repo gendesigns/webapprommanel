@@ -3,14 +3,17 @@
     font-size: 20px;
 }
 .notification .badge {
-    min-width: 17px;
-    border-radius: 14px;
-    font-size: 8px;
-    font-weight: bold;
     position: absolute;
-    right: -8px;
-    top: -8px;
-    min-height: 15px;
+    top: -7px;
+    right: -11px;
+    min-width: 22px;
+    min-height: 5px;
+    border-radius: 20px;
+    font-size: 9px;
+    font-weight: 700;    
+}
+.badge.alert {
+    border: 2px solid #664a90;
 }
 .notification .is-dropdown-submenu{
     left: -120px !important;
@@ -26,9 +29,7 @@
     padding: 10px 0;
     line-height: normal;
 }
-.notification p { 
-    font-size: 11px;
-}
+
 @media screen and (max-width: 39.9375em) {
     .notification .is-dropdown-submenu{
         left: -70px !important;
