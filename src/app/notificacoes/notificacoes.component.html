@@ -4,7 +4,12 @@
     <i class="fas fa-bell"></i>
     <ul class="menu text-center">
       <li *ngFor="let notificacao of notificacoes | async">
-        <a href="#" (click)="notificacaoLida(event)">{{ notificacao.texto }}</a>
+        <span *ngIf="notificacao.lida==false">
+            {{ notificacao.texto }} 
+            <button (click)="notificacaoLida($event)" [value]="notificacao.titulo">
+              [x]
+            </button>
+      </span>
       </li>
     </ul>
   </li>
