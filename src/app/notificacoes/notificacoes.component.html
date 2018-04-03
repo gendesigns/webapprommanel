@@ -6,10 +6,8 @@
       <li *ngFor="let notificacao of notificacoes | async">
         <span *ngIf="notificacao.lida==false">
             {{ notificacao.texto }} 
-            <button (click)="notificacaoLida($event)" [value]="notificacao.titulo">
-              [x]
-            </button>
-      </span>
+            <button (click)="notificacaoLida($event)" [value]="notificacao.titulo" class="fas fa-times"></button>
+        </span>
       </li>
     </ul>
   </li>

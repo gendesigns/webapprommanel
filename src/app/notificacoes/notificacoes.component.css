@@ -21,15 +21,47 @@
     color: #fff;
     text-align: left;
     padding: 10px;
+    max-height: 274px;
+    overflow: auto;
 }
-.notification .is-dropdown-submenu a{
+.notification .is-dropdown-submenu span{
     border-bottom: 1px solid #fff;
-    font-size: 12px;
-    font-size: 0.75rem;
+    font-size: 11px;
+    font-size: 0.6875rem;
     padding: 10px 0;
     line-height: normal;
+    padding-right: 15px;
+    font-weight: lighter;
+    display: block;
 }
-
+.notification .is-dropdown-submenu li:last-child span{
+    border: none;
+}
+.is-dropdown-submenu > li{
+    position: relative;
+}
+button.fas{
+    color: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    right: 0;
+    top: 13px;
+}
+.notification .is-dropdown-submenu::-webkit-scrollbar{
+    width: 8px;
+}
+.notification .is-dropdown-submenu::-webkit-scrollbar-track{
+    background: #af94d7;
+    border-radius: 10px;
+}
+.notification .is-dropdown-submenu::-webkit-scrollbar-thumb{
+    background: #664a90;
+    border-radius: 10px;
+    top: 15px;
+    position: relative;
+}
+.notification .is-dropdown-submenu::-webkit-scrollbar-thumb:hover {
+    background: #664a90;
+}
 @media screen and (max-width: 39.9375em) {
     .notification .is-dropdown-submenu{
         left: -70px !important;
