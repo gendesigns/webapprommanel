@@ -189,7 +189,7 @@ export class MeuCatalogoComponent implements OnInit {
   }
 
   public carregarImagem(): void {
-    this.bd.carregaImagem(this.email)
+    this.bd.carregaImagem(atob(this.paramUrl))
       .then((url: string) => {
         this.url_imagem = url
       })
