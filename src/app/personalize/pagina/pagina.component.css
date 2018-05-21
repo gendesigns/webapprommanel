@@ -1,0 +1,30 @@
+.btn-acoes {
+    display: flex;
+}
+.prevJoia{
+    margin-right: 5px !important;
+}
+.saveJoia{
+    margin-right: 5px !important;
+}
+.nextJoia{
+    max-width: 90% !important;
+    width: 100% !important;
+}
+@media screen and (max-width: 39.9375em) {
+    .btn-acoes {
+        flex-direction: column;
+    }
+    .prevJoia{
+        margin-right: 0px !important;
+        width: 100% !important;
+    }
+    .saveJoia{
+        margin-right: 0px !important;
+        width: 100% !important;
+    }
+    .nextJoia{
+        margin-right: 0px !important;
+        width: 100% !important;
+    }
+}

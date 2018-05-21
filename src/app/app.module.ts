@@ -39,6 +39,7 @@ import { EditarPerfilComponent } from './editar-perfil/editar-perfil.component';
 import { FotoDoPerfilComponent } from './foto-do-perfil/foto-do-perfil.component';
 import { EditarColecoesComponent } from './editar-colecoes/editar-colecoes.component';
 import { NotificacoesComponent } from './notificacoes/notificacoes.component';
+import { PaginaComponent } from './personalize/pagina/pagina.component';
 
 
 @NgModule({
@@ -61,7 +62,8 @@ import { NotificacoesComponent } from './notificacoes/notificacoes.component';
     EditarPerfilComponent,
     FotoDoPerfilComponent,
     EditarColecoesComponent,
-    NotificacoesComponent
+    NotificacoesComponent,
+    PaginaComponent
   ],
   imports: [
     BrowserModule,

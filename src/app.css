@@ -597,7 +597,7 @@ ul.tabs{
     -webkit-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.1);
     -moz-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.1);
     box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.1);
-    max-width: 138px;
+    /* max-width: 138px; */
     margin: 0 auto;
     position: relative;
 }
@@ -1653,4 +1653,10 @@ i.perfil-ico{
     .detalhe{
         display: none;
     }
+}
+html.is-reveal-open, html.is-reveal-open body{
+    width: 100%;
+}
+#pagina-de-aneis{
+    display: block;
 }
