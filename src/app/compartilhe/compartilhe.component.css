@@ -1,0 +1,6 @@
+.cell-prod img{
+    display: none;
+}
+.cell-prod img:first-child{
+    display: block;
+}

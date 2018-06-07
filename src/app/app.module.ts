@@ -40,7 +40,7 @@ import { FotoDoPerfilComponent } from './foto-do-perfil/foto-do-perfil.component
 import { EditarColecoesComponent } from './editar-colecoes/editar-colecoes.component';
 import { NotificacoesComponent } from './notificacoes/notificacoes.component';
 import { PaginaComponent } from './personalize/pagina/pagina.component';
-
+import { CatalogoComponent } from './catalogo/catalogo.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +63,8 @@ import { PaginaComponent } from './personalize/pagina/pagina.component';
     FotoDoPerfilComponent,
     EditarColecoesComponent,
     NotificacoesComponent,
-    PaginaComponent
+    PaginaComponent,
+    CatalogoComponent
   ],
   imports: [
     BrowserModule,

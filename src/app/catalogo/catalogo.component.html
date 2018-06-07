@@ -1,0 +1,134 @@
+<div class="form-wizard-catalogo step-active" id="step-share">
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x align-center">
+      <div class="box-paginacao">
+        <div class="paginacao"></div>
+      </div>
+      <div class="cell small-12 medium-7 margin-top-2">
+        <ul class="menu">
+          <li>
+            <a href="#" data-grid="grid2">
+              <i class="fas fa-th-large"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" data-grid="grid3">
+              <i class="fas fa-th"></i>
+            </a>
+          </li>
+        </ul>
+        <div class="swiper-container swiper-container-share">
+          <div class="swiper-wrapper">
+            <div class="catalogo-page swiper-slide capa-usuario" title="{{nome_persona}}" *ngIf="nome_persona">
+              <div class="capa capa-{{nome_persona}} text-center">
+                <div class="padding-top-1">
+                  <img src="assets/img/logo-rommanel-capa-mobile.png" class="show-for-small-only" />
+                  <img src="assets/img/logo-rommanel-capa.png" class="hide-for-small-only" />
+                </div>
+                <div class="catalogo-nome">
+                  <p>Catálogo Rommanel 2018 da</p>
+                  <h1>{{nome}}</h1>
+                </div>
+              </div>
+            </div>
+            <div class="catalogo-page swiper-slide" title="{{nome}}">
+              <h3 class="margin-vertical-1">Esse catálogo Rommanel 2018 pertence à:</h3>
+              <div class="padding-vertical-2 bg-dark overflow-hidden">
+                <img *ngIf="url_imagem" src="{{ url_imagem }}" class="user-img" />
+                <div class="sm-avatar avatar margin-right-1 margin-left-2 float-left" *ngIf="!url_imagem">
+                  <i class="fas fa-user"></i>
+                </div>
+                <div class="color-white float-left margin-vertical-1 padding-left-1">
+                  <p style="margin-bottom:5px;">
+                    <b>{{nome_completo}}</b>
+                  </p>
+                  <p class="font-14">
+                    <i>{{cidade}}
+                      <i *ngIf="cidade && estado">, </i>{{estado}}</i>
+                  </p>
+                </div>
+              </div>
+              <div class="box-user-info">
+                <div class="padding-top-2  margin-horizontal-auto user-info">
+                  <p class="color-primary">
+                    <i class="fas fa-envelope margin-right-1 perfil-ico"></i>{{email}}</p>
+                  <p class="color-primary" *ngIf="telefone">
+                    <i class="fas fa-phone margin-right-1 perfil-ico"></i>{{telefone}}</p>
+                </div>
+                <p class="color-gray text-center font-12 padding-3 margin-0">{{mensagem}}</p>
+              </div>
+            </div>
+            <div *ngFor="let pagina of paginas" class="catalogo-page swiper-slide paginas-usuario" title="{{pagina.tituloPagina}}">
+              <div class="grid-x">
+                <h3 class="margin-vertical-1 text-center width-100">{{pagina.tituloPagina == 'Pulseiras' ? "Minhas " + pagina.tituloPagina : "Meus " + pagina.tituloPagina}}</h3>
+                <div [innerHtml]="pagina.pagina | safe: 'html'" style="width:100%;"></div>
+              </div>
+              <hr style="width:90%;">
+            </div>
+            <div *ngFor="let catalogo of catalogo2018" class="catalogo-page swiper-slide" [title]="catalogo.title">
+              <div *ngIf="catalogo.capa" class="capa capa-{{catalogo.capa}} text-center">
+                <div class="catalogo-nome">
+                  <h1 style="margin-top:5px;">
+                    <img src="assets/img/assinatura-{{catalogo.capa}}.png">
+                  </h1>
+                </div>
+              </div>
+              <div *ngIf="!catalogo.capa">
+                <div class="grid-x">
+                  <div class="cell small-4 margin-top-1 cell-prod" *ngFor="let joia of catalogo.joias">
+                    <div>
+                      <img *ngFor="let image of joia.images" [src]="image.url" [alt]="joia.caption">
+                      <div class="caption">{{joia.caption}}</div>
+                    </div>
+                  </div>
+                  <hr style="width:90%;">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Add Scrollbar -->
+          <div class="swiper-scrollbar"></div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="acoes">
+      <p class="pronto show-for-large">
+        <b>Pronto! ; )</b> Agora o catálogo está completo, com a sua coleção personalizada e também com as coleções das 6 mulheres
+        do Catálogo 2018. Compartilhe com as suas clientes e boas vendas!
+      </p>
+      <div class="share-over" (click)="hideShare()"></div>
+      <button class="show-share-buttons" (click)="showShare()">Compartilhar</button>
+      <div class="buttons-share">
+        <button class="button f-button expanded rounded" (click)="share(url)">
+          <i class="fab fa-facebook-f padding-right-1"></i>Compartilhar</button>
+        <button class="button l-button expanded rounded" data-open="copiar_link">
+          <i class="fas fa-link padding-right-1 "></i>Copiar link</button>
+      </div>
+    </div>
+
+    <div class="reveal text-center" id="zoom" data-reveal>
+      <div class="caption"></div>
+      <img src="" id="img-atual">
+      <div class="bullets"></div>
+      <button class="close-button" data-close aria-label="Close modal" type="button">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="reveal text-center" id="copiar_link" data-reveal>
+      <p>Selecione o link para copiar</p>
+      <div class="input-group margin-vertical-1">
+        <span class="input-group-label">
+          <i class="fas fa-link"></i>
+        </span>
+        <input class="input-group-field" id="share-link" type="text" value="{{url}}/meuCatalogo/{{emailencrypt}}">
+        <div class="input-group-button">
+          <button class="button share-copy-btn">Copiar</button>
+        </div>
+      </div>
+      <button class="close-button" data-close aria-label="Close modal" type="button">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  </div>
+</div>

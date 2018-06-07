@@ -768,7 +768,7 @@ ul.tabs{
 .capa-brenda .catalogo-nome{
     background: rgba(171, 29, 32, 0.9);
 }
-.capa-maria_antonia .catalogo-nome{
+.capa-maria-antonia .catalogo-nome{
     background: rgba(245, 176, 194, 0.9);
 }
 .capa-duda .catalogo-nome{
@@ -780,7 +780,7 @@ ul.tabs{
 .capa-alice .catalogo-nome{
     background: rgba(246, 197, 83, 0.9);
 }
-.capa-maria_antonia{
+.capa-maria-antonia{
     background-image: url(assets/img/maria-antonia.jpg);
 }
 .capa-duda{
@@ -857,15 +857,15 @@ ul.tabs{
     margin: 0;
     margin-top: -10px;
 }
-.swiper-container-share .swiper-wrapper{
-    height: 80%;
+.swiper-container .swiper-wrapper{
+    max-height: 900px;
 }
-.swiper-container-share .swiper-slide{
+.swiper-container .swiper-slide{
     height: auto;
     min-height: 100%;
     padding-bottom: 30px;
 }
-.swiper-container-share .paginacao{
+.swiper-container .paginacao{
     position: fixed;
     background: #664a90;
     width: 210px;
@@ -880,13 +880,13 @@ ul.tabs{
     padding-right: 1rem;
     padding-top: 10rem;
 }
-.swiper-container-share .swiper-pagination{
+.swiper-container .swiper-pagination{
     height: 80%;
     overflow: auto;
     padding-right: 32px;
     padding-right: 2rem;
 }
-.swiper-container.swiper-container-share .swiper-pagination-bullets .swiper-pagination-bullet{
+.swiper-container .swiper-pagination-bullets .swiper-pagination-bullet{
     width: 127px;
     height: 152px;
     background-color: #fff;
@@ -1101,6 +1101,7 @@ i.perfil-ico{
 .catalogo-page .cell-prod.small-4{
     width: 30% !important;
     float: left;
+    padding: 5px;
 }
 .catalogo-page .cell-prod.small-6{
     width: 47% !important;
@@ -1247,7 +1248,7 @@ i.perfil-ico{
 .paginacao::-webkit-scrollbar-thumb:hover {
     background: #664a90;
 }
-.swiper-container-share.swiper-container-vertical>.swiper-scrollbar{
+.swiper-container.swiper-container-vertical>.swiper-scrollbar{
     background: #af94d7;
     width: 10px;
 }
@@ -1659,4 +1660,18 @@ html.is-reveal-open, html.is-reveal-open body{
 }
 #pagina-de-aneis{
     display: block;
+}
+.reveal .bullets{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: left;
+}
+.reveal .bullets img:first-child{
+    border: 1px solid #664a90;
+}
+.reveal .bullets img{
+    width: 10%;
+    margin: 10px;
+    border: 1px solid #ccc;
 }
