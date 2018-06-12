@@ -17,7 +17,7 @@ export class EditarColecoesComponent implements OnInit{
   public paginas: Array<any> = []
   public paginasCarregadas: any
 
-  public aneisJoias: Joia[]
+  public aneisJoias:Joia[]
   public brincosJoias: Joia[]
   public colaresJoias: Joia[]
   public pulseirasJoias: Joia[]
@@ -26,25 +26,34 @@ export class EditarColecoesComponent implements OnInit{
   public itemsRef: AngularFireList<any>;
   public items: Observable<any[]>;
 
-  constructor( private dbFire: Bd  , private db: AngularFireDatabase) { 
+  public aneis
+  constructor( private dbFire: Bd  , private db: AngularFireDatabase) {
 
-    this.itemsRef = db.list('produtos/Anéis');
-    this.items = this.itemsRef.snapshotChanges().map(changes => {
-      return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
-    });
-
-    this.items.subscribe((item) => {
-    
-      this.aneisJoias = item
-      
+    this.dbFire.getAneis().then( aneis => {  
+      this.aneisJoias = aneis
+      console.log(this.aneisJoias)  
     })
-    
-  }
+    this.aneis = [{
+      title: 'Meus anéis favoritos',
+      callout: this.callout,
+      id: 'aneis',
+      nextTitle: 'Brincos',
+      nextTitleBtn: 'Editar Brincos',
+      nextId: 'brincos',
+      prevTitle:'',
+      prevTitleBtn: '',
+      prevId: '',
+      saveId: true,
+      joias: this.aneisJoias,
+      tituloPagina: 'Anéis',
+      edit: true,
+      redirect: false
+    }]
+   }
 
   ngOnInit(){
     
   }
-
 
 
   public callout = `<div class="callout" data-closable>
@@ -61,22 +70,7 @@ export class EditarColecoesComponent implements OnInit{
   </span> ” para excluir um  produto.</p>
   </div>`;
 
-  public aneis = [{
-    title: 'Meus anéis favoritos',
-    callout: this.callout,
-    id: 'aneis',
-    nextTitle: 'Brincos',
-    nextTitleBtn: 'Editar Brincos',
-    nextId: 'brincos',
-    prevTitle:'',
-    prevTitleBtn: '',
-    prevId: '',
-    saveId: true,
-    joias: this.aneisJoias,
-    tituloPagina: 'Anéis',
-    edit: true,
-    redirect: false
-  }]
+  
   public brincos = [{
     title: 'Meus brincos favoritos',
     callout: this.callout,
