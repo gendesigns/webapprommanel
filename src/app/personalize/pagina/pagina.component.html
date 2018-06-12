@@ -59,11 +59,12 @@
       <i class="fas fa-plus"></i>
     </span> ” abaixo</p>
   <div class="grid-x grid-padding-x">
-    <div class="cell small-3 medium-2 margin-top-1 cell-prod" *ngFor="let joia of joias" id="{{joia.persona}}-joia-{{joia.code}}">
+    <div class="cell small-3 medium-2 margin-top-1 cell-prod" *ngFor="let joia of joias" id="{{joia.collection}}-joia-{{joia.ref}}">
       <div>
-        <img src="{{joia.img}}" alt="">
-        <div class="caption">{{joia.legenda}}</div>
-        <a class="plus" (click)="add(joia.persona+'-joia-'+joia.code, id)">
+        {{joia | json}}
+        <img src="{{joia.image1}}" alt="">
+        <div class="caption">{{joia.ref}}</div>
+        <a class="plus" (click)="add(joia.collection+'-joia-'+joia.ref, id)">
           <i class="fas fa-plus"></i>
         </a>
       </div>

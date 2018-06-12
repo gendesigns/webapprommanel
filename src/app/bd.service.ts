@@ -1,12 +1,22 @@
-import { Injectable, ChangeDetectionStrategy } from '@angular/core';
+import { Injectable } from '@angular/core';
 import * as firebase from 'firebase'
 import { Router } from '@angular/router';
-import { resolve } from 'url';
 
 @Injectable()
 export class Bd {
 
     constructor(private router: Router, ) {}
+
+    public getAneis(): Promise<any>{
+        return new Promise((resolve) => {
+            firebase.database().ref('produtos/Anéis')
+            .once('value')
+            .then((snapshot: any) => {
+                let aneis = snapshot.val()
+            resolve(aneis)        
+            })
+        })
+    }
 
     public savePersona(persona: any): void{
         

@@ -38,7 +38,7 @@ export class PaginaComponent implements OnInit {
   public btnPlusHTML;
 
 
-  constructor(private bd: Bd, private router: Router) { }
+  constructor(private bd: Bd, private router: Router) {}
 
   ngOnInit() {
     firebase.auth().onAuthStateChanged((user) => {

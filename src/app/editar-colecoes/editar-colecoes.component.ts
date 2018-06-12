@@ -1,32 +1,50 @@
 import { Component, OnInit } from '@angular/core';
-import { Bd } from '../bd.service'
-import * as firebase from 'firebase'
-import { Router } from '@angular/router';
-
 import { Joia } from '../shared/joia.model'
-import { Aneis, Brincos, Colares, Pulseiras, Pingentes } from '../personalize/joias-mock'
+// import { Aneis, Brincos, Colares, Pulseiras, Pingentes } from '../personalize/joias-mock'
 
-declare let Swiper: any;
-declare let $: any
+import { AngularFireList, AngularFireDatabase } from 'angularfire2/database';
+import { Observable } from 'rxjs/Observable';
+import { Bd } from '../bd.service';
 
 @Component({
   selector: 'app-editar-colecoes',
   templateUrl: './editar-colecoes.component.html',
   styleUrls: ['./editar-colecoes.component.css']
 })
-export class EditarColecoesComponent {
-
-  constructor(private bd: Bd, private router: Router) { }
+export class EditarColecoesComponent implements OnInit{
 
   public email: string
   public paginas: Array<any> = []
   public paginasCarregadas: any
 
-  public aneisJoias: Joia[] = Aneis
-  public brincosJoias: Joia[] = Brincos
-  public colaresJoias: Joia[] = Colares
-  public pulseirasJoias: Joia[] = Pulseiras
-  public pingentesJoias: Joia[] = Pingentes
+  public aneisJoias: Joia[]
+  public brincosJoias: Joia[]
+  public colaresJoias: Joia[]
+  public pulseirasJoias: Joia[]
+  public pingentesJoias: Joia[]
+
+  public itemsRef: AngularFireList<any>;
+  public items: Observable<any[]>;
+
+  constructor( private dbFire: Bd  , private db: AngularFireDatabase) { 
+
+    this.itemsRef = db.list('produtos/Anéis');
+    this.items = this.itemsRef.snapshotChanges().map(changes => {
+      return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
+    });
+
+    this.items.subscribe((item) => {
+    
+      this.aneisJoias = item
+      
+    })
+    
+  }
+
+  ngOnInit(){
+    
+  }
+
 
 
   public callout = `<div class="callout" data-closable>
