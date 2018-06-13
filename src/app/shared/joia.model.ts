@@ -1,5 +1,5 @@
 export class Joia {
 
-    constructor(public image1: string, public ref: string, public collection: string) {}
+    constructor(public img: string, public code: string, public legenda: string, public persona: string) {}
 
 }
