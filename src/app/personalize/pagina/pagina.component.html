@@ -27,12 +27,15 @@
     </div>
   </div>
   <div class="btn-acoes">
-    <button class="button expanded margin-top-1 rounded margin-horizontal-auto prevJoia" (click)="acao(paginaId,'#pagina-de-'+prevId, tituloPagina, prevTitle,0)" *ngIf="prevId">
+    <button class="button expanded margin-top-1 rounded margin-horizontal-auto prevJoia" (click)="acao(paginaId,'#pagina-de-'+prevId, tituloPagina, prevTitle,0)"
+      *ngIf="prevId">
       <i class="fas fa-angle-left float-left"></i>
       {{prevTitleBtn}}
     </button>
-    <button class="button expanded margin-top-1 rounded l-button margin-horizontal-auto saveJoia" (click)="acao(paginaId,'#pagina-de-'+nextId, tituloPagina, nextTitle,1)" *ngIf="saveId">Salvar</button>
-    <button class="button expanded margin-top-1 rounded nextJoia margin-horizontal-auto nextJoia" (click)="acao(paginaId,'#pagina-de-'+nextId, tituloPagina, nextTitle,2)" *ngIf="nextId">
+    <button class="button expanded margin-top-1 rounded l-button margin-horizontal-auto saveJoia" (click)="acao(paginaId,'#pagina-de-'+nextId, tituloPagina, nextTitle,1)"
+      *ngIf="saveId">Salvar</button>
+    <button class="button expanded margin-top-1 rounded nextJoia margin-horizontal-auto nextJoia" (click)="acao(paginaId,'#pagina-de-'+nextId, tituloPagina, nextTitle,2)"
+      *ngIf="nextId">
       {{nextTitleBtn}}
       <i class="fas fa-angle-right float-right"></i>
     </button>
@@ -41,27 +44,30 @@
 </div>
 
 <div class="reveal large catalogo-modal" [id]="modalId" data-reveal>
-  <div class="snackbar">Novo item adicionado.</div>
-  <ul class="menu">
-    <li>
-      <a (click)="changeGrid(id,'small-4 medium-3','catalogo-modal', true)">
-        <i class="fas fa-th-large"></i>
-      </a>
-    </li>
-    <li>
-      <a (click)="changeGrid(id,'small-3 medium-2','catalogo-modal', true)">
-        <i class="fas fa-th"></i>
-      </a>
-    </li>
-  </ul>
-  <p class="text-center margin-top-1">Para adicionar novos produtos à sua página, clique no botão “
-    <span class="plus display-inline-block position-static">
-      <i class="fas fa-plus"></i>
-    </span> ” abaixo</p>
-  <div class="grid-x grid-padding-x">
-    <div class="cell small-3 medium-2 margin-top-1 cell-prod" *ngFor="let joia of joias" id="{{joia.collection}}-joia-{{joia.ref}}">
+  <div class="fixo">
+    <div class="snackbar">Novo item adicionado.</div>
+    <ul class="menu">
+      <li>
+        <a (click)="changeGrid(id,'small-4 medium-3','catalogo-modal', true)">
+          <i class="fas fa-th-large"></i>
+        </a>
+      </li>
+      <li>
+        <a (click)="changeGrid(id,'small-3 medium-2','catalogo-modal', true)">
+          <i class="fas fa-th"></i>
+        </a>
+      </li>
+    </ul>
+    <p class="text-center margin-top-1">Para adicionar novos produtos à sua página, clique no botão “
+      <span class="plus display-inline-block position-static">
+        <i class="fas fa-plus"></i>
+      </span> ” abaixo</p>
+  </div>
+
+
+  <div class="grid-x grid-padding-x" *ngIf="id == 'aneis'">
+    <div class="cell small-3 medium-2 margin-top-1 cell-prod" *ngFor="let joia of aneis" id="{{joia.collection}}-joia-{{joia.ref}}">
       <div>
-        {{joia | json}}
         <img src="{{joia.image1}}" alt="">
         <div class="caption">{{joia.ref}}</div>
         <a class="plus" (click)="add(joia.collection+'-joia-'+joia.ref, id)">
@@ -70,6 +76,57 @@
       </div>
     </div>
   </div>
+
+
+  <div class="grid-x grid-padding-x" *ngIf="id == 'brincos'">
+    <div class="cell small-3 medium-2 margin-top-1 cell-prod" *ngFor="let joia of brincos" id="{{joia.collection}}-joia-{{joia.ref}}">
+      <div>
+        <img src="{{joia.image1}}" alt="">
+        <div class="caption">{{joia.ref}}</div>
+        <a class="plus" (click)="add(joia.collection+'-joia-'+joia.ref, id)">
+          <i class="fas fa-plus"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-x grid-padding-x" *ngIf="id == 'colares'">
+    <div class="cell small-3 medium-2 margin-top-1 cell-prod" *ngFor="let joia of colares" id="{{joia.collection}}-joia-{{joia.ref}}">
+      <div>
+        <img src="{{joia.image1}}" alt="">
+        <div class="caption">{{joia.ref}}</div>
+        <a class="plus" (click)="add(joia.collection+'-joia-'+joia.ref, id)">
+          <i class="fas fa-plus"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-x grid-padding-x" *ngIf="id == 'pingentes'">
+    <div class="cell small-3 medium-2 margin-top-1 cell-prod" *ngFor="let joia of pingentes" id="{{joia.collection}}-joia-{{joia.ref}}">
+      <div>
+        <img src="{{joia.image1}}" alt="">
+        <div class="caption">{{joia.ref}}</div>
+        <a class="plus" (click)="add(joia.collection+'-joia-'+joia.ref, id)">
+          <i class="fas fa-plus"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-x grid-padding-x" *ngIf="id == 'pulseiras'">
+    <div class="cell small-3 medium-2 margin-top-1 cell-prod" *ngFor="let joia of pulseiras" id="{{joia.collection}}-joia-{{joia.ref}}">
+      <div>
+        <img src="{{joia.image1}}" alt="">
+        <div class="caption">{{joia.ref}}</div>
+        <a class="plus" (click)="add(joia.collection+'-joia-'+joia.ref, id)">
+          <i class="fas fa-plus"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
   <button class="close-button" data-close aria-label="Close reveal" type="button">
     <span aria-hidden="true">&times;</span>
   </button>

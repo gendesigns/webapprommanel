@@ -11,6 +11,21 @@
     max-width: 90% !important;
     width: 100% !important;
 }
+.catalogo-modal{
+    max-height:600px;
+    overflow: auto;
+}
+/* .fixo{
+    position: fixed;
+    z-index: 1;
+    background: #fff;
+    width: 100%;
+    max-width: 62.5rem;
+    padding-top: 10px;
+}
+.catalogo-modal .grid-x{
+    padding-top: 100px;
+} */
 @media screen and (max-width: 39.9375em) {
     .btn-acoes {
         flex-direction: column;

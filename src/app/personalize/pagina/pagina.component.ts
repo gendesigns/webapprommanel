@@ -1,7 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Bd } from '../../bd.service';
+import { AngularFireList, AngularFireDatabase } from 'angularfire2/database';
 import * as firebase from 'firebase';
+import { Observable } from 'rxjs/Observable';
 import { Router } from '@angular/router';
+import { Auth } from '../../auth.service';
 
 @Component({
   selector: 'app-pagina',
@@ -37,8 +40,65 @@ export class PaginaComponent implements OnInit {
   public paginasCarregadas: any
   public btnPlusHTML;
 
+  public itemAneis: AngularFireList<any>;
+  public items: Observable<any[]>;
 
-  constructor(private bd: Bd, private router: Router) {}
+  public itemBrincos: AngularFireList<any>;
+  public itemsb: Observable<any[]>;
+
+  public itemColares: AngularFireList<any>;
+  public itemsc: Observable<any[]>;
+
+  public itemPingentes: AngularFireList<any>;
+  public itemsp: Observable<any[]>;
+
+  public itemPulseiras: AngularFireList<any>;
+  public itemspu: Observable<any[]>;
+
+  public aneis;
+  public brincos;
+  public colares;
+  public pingentes;
+  public pulseiras;
+
+  constructor(private firebase: Auth, private db:AngularFireDatabase,   private bd: Bd, private router: Router) {
+
+    this.itemAneis = db.list('produtos/Anéis/');
+    this.items = this.itemAneis.snapshotChanges().map(changes => {
+      return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
+    });
+
+    this.items.subscribe( res => {  this.aneis = res } )
+
+    this.itemBrincos = db.list('produtos/Brincos/');
+    this.itemsb = this.itemBrincos.snapshotChanges().map(changes => {
+      return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
+    });
+
+    this.itemsb.subscribe( res => {  this.brincos = res } )
+
+    this.itemColares = db.list('produtos/Colares/');
+    this.itemsc = this.itemColares.snapshotChanges().map(changes => {
+      return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
+    });
+
+    this.itemsc.subscribe( res => {  this.colares = res } )
+
+    this.itemPingentes = db.list('produtos/Pingentes/');
+    this.itemsp = this.itemPingentes.snapshotChanges().map(changes => {
+      return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
+    });
+
+    this.itemsp.subscribe( res => {  this.pingentes = res } )
+
+    this.itemPulseiras = db.list('produtos/Pulseiras/');
+    this.itemspu = this.itemPulseiras.snapshotChanges().map(changes => {
+      return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
+    });
+
+    this.itemspu.subscribe( res => {  this.pulseiras = res } )
+
+  }
 
   ngOnInit() {
     firebase.auth().onAuthStateChanged((user) => {
@@ -162,9 +222,9 @@ export class PaginaComponent implements OnInit {
         var clone = $('#' + atual + ' .catalogo-edit').clone();
         clone.find('.blank_space').parent().remove();
         this.htmlCarregado = clone.html();
-        this.atualizarPagina();
+        //this.atualizarPagina();
       } else {
-        this.salvarPagina();
+        //this.salvarPagina();
       }
       $('.step-info').text(info);
       this.htmlCarregado = '';
