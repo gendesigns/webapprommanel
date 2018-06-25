@@ -6,6 +6,9 @@ import { Observable } from 'rxjs/Observable';
 import { Router } from '@angular/router';
 import { Auth } from '../../auth.service';
 
+declare let jQuery:any;
+declare let $:any
+
 @Component({
   selector: 'app-pagina',
   templateUrl: './pagina.component.html',
@@ -26,6 +29,7 @@ export class PaginaComponent implements OnInit {
   public btnPlus;
   public paginaId;
   public modalId;
+  public modalId2;
   public joias;
   public tituloPagina
   public edit;
@@ -55,11 +59,20 @@ export class PaginaComponent implements OnInit {
   public itemPulseiras: AngularFireList<any>;
   public itemspu: Observable<any[]>;
 
+  public itemColecoes: AngularFireList<any>;
+  public itemscc: Observable<any[]>;
+
+  public itemDetalhes: AngularFireList<any>;
+  public itemsd: Observable<any[]>;
+
   public aneis;
   public brincos;
   public colares;
   public pingentes;
   public pulseiras;
+
+  public colecoes;
+  public detalhes;
 
   constructor(private firebase: Auth, private db:AngularFireDatabase,   private bd: Bd, private router: Router) {
 
@@ -68,7 +81,7 @@ export class PaginaComponent implements OnInit {
       return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
     });
 
-    this.items.subscribe( res => {  this.aneis = res } )
+    this.items.subscribe( res => {  this.aneis = res })
 
     this.itemBrincos = db.list('produtos/Brincos/');
     this.itemsb = this.itemBrincos.snapshotChanges().map(changes => {
@@ -98,6 +111,23 @@ export class PaginaComponent implements OnInit {
 
     this.itemspu.subscribe( res => {  this.pulseiras = res } )
 
+    this.itemColecoes = db.list('colecoes');
+    this.itemscc = this.itemColecoes.snapshotChanges().map(changes => {
+      return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
+    });
+
+    this.itemscc.subscribe( res => {  this.colecoes = res } )
+
+
+    this.itemDetalhes = db.list('tags-detalhes');
+    this.itemsd = this.itemDetalhes.snapshotChanges().map(changes => {
+      return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
+    });
+
+    this.itemsd.subscribe( res => {  this.detalhes = res } )
+
+    
+
   }
 
   ngOnInit() {
@@ -119,6 +149,7 @@ export class PaginaComponent implements OnInit {
     this.btnPlus = '<button class="plus position-static plus-big" data-open="catalogo-modal-' + this.id + '"><i class="fas fa-plus"></i></button>';
     this.paginaId = 'pagina-de-' + this.id;
     this.modalId = 'catalogo-modal-' + this.id;
+    this.modalId2 = 'catalogo-modal-' + this.id +  '-filtros';
     this.joias = this.pagina[0].joias;
     this.tituloPagina = this.pagina[0].tituloPagina;
     this.edit = this.pagina[0].edit;
@@ -128,20 +159,26 @@ export class PaginaComponent implements OnInit {
     localStorage.setItem("grid-op", '');
 
     $(document).on('click', '.remover', function () { 
-      var ref = $(this).attr('data-ref').replace('#', '');
-      var spt = ref.split('-');
-      var ref1 = ref.replace(spt[1], 'joia');
-      var ref2 = ref.replace(spt[2], 'joia');
-      $('#'+ref1).removeClass('prod-disabled');
-      $('#'+ref2).removeClass('prod-disabled');
+      var ref = '#'+$(this).attr('data-ref').replace('#', '');
+      //var spt = ref.split('-');
+      //var ref1 = ref.replace(spt[1], 'joia');
+      //var ref2 = ref.replace(spt[2], 'joia');
+
+      $(ref).removeClass('prod-disabled');
+      //$(ref).removeClass('prod-disabled');
       $(this).parents('.cell-prod').remove();
     });
+
+    $(document).foundation();
+    
+
     var carregouPages = function () {
       desabilitar('#pagina-de-aneis','anel');
       desabilitar('#pagina-de-brincos', 'brinco');
       desabilitar('#pagina-de-colares', 'colar');
       desabilitar('#pagina-de-pulseiras', 'pulseira');
       desabilitar('#pagina-de-pingentes', 'pingente');
+      //$('#catalogo-modal-aneis').foundation('open');
     }
     var customizeIntervalPages = setInterval(carregouPages, 1000);
 
@@ -242,6 +279,14 @@ export class PaginaComponent implements OnInit {
     $(document).scrollTop(0);
     localStorage.setItem("grid-op", '');
     $('.snackbar').removeClass('show');
+  }
+  showFilters(id){
+    $('.catalogo-modal').css('overflow','hidden');
+    $('#'+id).fadeIn('slow');
+  }
+  hideFilters(id){
+    $('.catalogo-modal').css('overflow','auto');    
+    $('#'+id).fadeOut('slow');
   }
   public salvarPagina(): void {
     this.bd.salvarPagina({

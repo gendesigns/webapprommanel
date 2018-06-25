@@ -40,13 +40,11 @@
       <i class="fas fa-angle-right float-right"></i>
     </button>
   </div>
-
 </div>
-
 <div class="reveal large catalogo-modal" [id]="modalId" data-reveal>
-  <div class="fixo">
-    <div class="snackbar">Novo item adicionado.</div>
-    <ul class="menu">
+  <div class="grid-x" style="padding: 16px;">
+    <div class="snackbar">Novo item adicionado. </div>
+    <ul class="menu cell small-2">
       <li>
         <a (click)="changeGrid(id,'small-4 medium-3','catalogo-modal', true)">
           <i class="fas fa-th-large"></i>
@@ -57,33 +55,78 @@
           <i class="fas fa-th"></i>
         </a>
       </li>
+      <li>
+        <a (click)="showFilters(modalId2)">
+          <i class="fas fa-filter"></i>
+        </a>
+      </li>
     </ul>
-    <p class="text-center margin-top-1">Para adicionar novos produtos à sua página, clique no botão “
-      <span class="plus display-inline-block position-static">
-        <i class="fas fa-plus"></i>
-      </span> ” abaixo</p>
+    <div class="input-group cell small-10" style="margin: 0;">
+      <input class="input-group-field" type="text">
+      <div class="input-group-button">
+        <button class="button">Buscar</button>
+      </div>
+    </div>
+    <button class="close-button" data-close aria-label="Close reveal" type="button">
+      <span aria-hidden="true">&times;</span>
+    </button>
   </div>
-
-
+  <div class="modal-filtros-container" style="display:none;" id="{{modalId2}}">
+    <div class="modal-filtros">
+      <ul class="vertical menu">
+        <li>
+          <select>
+            <option>Coleções</option>
+            <option *ngFor="let colecao of colecoes">{{colecao.title}}</option>
+          </select>
+        </li>
+        <li>
+          <select>
+            <option>Familia</option>
+            <option value="Folheado a Ouro Amarelo 18k">Folheado a Ouro 18k</option>
+            <option value="Folheado a Rhodium">Folheado a Rhodium</option>
+            <option value="Prata">Prata</option>
+            <option value="Pingentes">Aço</option>
+          </select>
+        </li>
+        <li style="max-height: 300px;overflow:  auto;">
+          <p *ngFor="let detalhe of detalhes; let i = index ">
+            <input type="checkbox" name="detalhe" id="detalhe_{{ i }}">
+            <label for="detalhe_{{ i }}">{{ detalhe.title }}</label>
+          </p>
+      </ul>
+      <button class="button l-button" (click)="hideFilters(modalId2)">Filtrar</button>
+      <button class="button warning" (click)="hideFilters(modalId2)">Limpar Filtros</button>
+      <button class="button secondary" (click)="hideFilters(modalId2)">Cancelar</button>
+    </div>
+  </div>
+  <p class="text-center">Para adicionar novos produtos à sua página, clique no botão “
+    <span class="plus display-inline-block position-static">
+      <i class="fas fa-plus"></i>
+    </span> ” abaixo</p>
   <div class="grid-x grid-padding-x" *ngIf="id == 'aneis'">
-    <div class="cell small-3 medium-2 margin-top-1 cell-prod" *ngFor="let joia of aneis" id="{{joia.collection}}-joia-{{joia.ref}}">
+    <div class="cell small-3 medium-2 margin-top-1 cell-prod" *ngFor="let joia of aneis" id="joia{{joia.key}}">
       <div>
+        <!-- <p style="font-size: 10px;text-align:center;white-space:  pre;text-overflow:  ellipsis;    overflow: hidden;margin:0">{{joia.collection}}</p>
+        <p style="font-size: 10px;text-align:center;white-space:  pre;text-overflow:  ellipsis;    overflow: hidden;margin:0">{{joia.family}}</p>
+        <p style="font-size: 10px;text-align:center;margin:0">
+          <span *ngFor="let d of joia.tagsDetails">{{d}} </span>
+        </p> -->
         <img src="{{joia.image1}}" alt="">
         <div class="caption">{{joia.ref}}</div>
-        <a class="plus" (click)="add(joia.collection+'-joia-'+joia.ref, id)">
+        <a class="plus" (click)="add('joia'+joia.key, id)">
           <i class="fas fa-plus"></i>
         </a>
       </div>
     </div>
   </div>
 
-
   <div class="grid-x grid-padding-x" *ngIf="id == 'brincos'">
-    <div class="cell small-3 medium-2 margin-top-1 cell-prod" *ngFor="let joia of brincos" id="{{joia.collection}}-joia-{{joia.ref}}">
+    <div class="cell small-3 medium-2 margin-top-1 cell-prod" *ngFor="let joia of brincos" id="joia{{joia.key}}">
       <div>
         <img src="{{joia.image1}}" alt="">
         <div class="caption">{{joia.ref}}</div>
-        <a class="plus" (click)="add(joia.collection+'-joia-'+joia.ref, id)">
+        <a class="plus" (click)="add('joia'+joia.key, id)">
           <i class="fas fa-plus"></i>
         </a>
       </div>
@@ -91,11 +134,11 @@
   </div>
 
   <div class="grid-x grid-padding-x" *ngIf="id == 'colares'">
-    <div class="cell small-3 medium-2 margin-top-1 cell-prod" *ngFor="let joia of colares" id="{{joia.collection}}-joia-{{joia.ref}}">
+    <div class="cell small-3 medium-2 margin-top-1 cell-prod" *ngFor="let joia of colares" id="joia{{joia.key}}">
       <div>
         <img src="{{joia.image1}}" alt="">
         <div class="caption">{{joia.ref}}</div>
-        <a class="plus" (click)="add(joia.collection+'-joia-'+joia.ref, id)">
+        <a class="plus" (click)="add('joia'+joia.key, id)">
           <i class="fas fa-plus"></i>
         </a>
       </div>
@@ -103,11 +146,11 @@
   </div>
 
   <div class="grid-x grid-padding-x" *ngIf="id == 'pingentes'">
-    <div class="cell small-3 medium-2 margin-top-1 cell-prod" *ngFor="let joia of pingentes" id="{{joia.collection}}-joia-{{joia.ref}}">
+    <div class="cell small-3 medium-2 margin-top-1 cell-prod" *ngFor="let joia of pingentes" id="joia{{joia.key}}">
       <div>
         <img src="{{joia.image1}}" alt="">
         <div class="caption">{{joia.ref}}</div>
-        <a class="plus" (click)="add(joia.collection+'-joia-'+joia.ref, id)">
+        <a class="plus" (click)="add('joia'+joia.key, id)">
           <i class="fas fa-plus"></i>
         </a>
       </div>
@@ -115,19 +158,14 @@
   </div>
 
   <div class="grid-x grid-padding-x" *ngIf="id == 'pulseiras'">
-    <div class="cell small-3 medium-2 margin-top-1 cell-prod" *ngFor="let joia of pulseiras" id="{{joia.collection}}-joia-{{joia.ref}}">
+    <div class="cell small-3 medium-2 margin-top-1 cell-prod" *ngFor="let joia of pulseiras" id="joia{{joia.key}}">
       <div>
         <img src="{{joia.image1}}" alt="">
         <div class="caption">{{joia.ref}}</div>
-        <a class="plus" (click)="add(joia.collection+'-joia-'+joia.ref, id)">
+        <a class="plus" (click)="add('joia'+joia.key, id)">
           <i class="fas fa-plus"></i>
         </a>
       </div>
     </div>
   </div>
-
-
-  <button class="close-button" data-close aria-label="Close reveal" type="button">
-    <span aria-hidden="true">&times;</span>
-  </button>
 </div>

@@ -996,10 +996,10 @@ ul.tabs{
     border-top-right-radius: 10px;
 }
 .catalogo-modal .menu a{
-    padding: 12px;
-    padding: 0.75rem;
-    font-size: 12px;
-    font-size: 0.75rem;
+    padding: 14px;
+    padding: 0.875rem;
+    font-size: 14px;
+    font-size: 0.875rem;
     margin: 0;
     border-right: 1px solid #513e6d;
 }
@@ -1016,17 +1016,6 @@ ul.tabs{
     font-size: 0.8125rem;
     color: #343434;
     font-weight: 600;
-}
-.catalogo-modal .close-button{
-    position: fixed;
-    background: #664a90;
-    color: #fff;
-    width: 30px;
-    height: 30px;
-    border-radius: 30px;
-    top: 15px !important;
-    font-size: 20px !important;
-    right: 20px !important;
 }
 a.btn-verde,a.btn-verde:hover,a.btn-verde:focus,a.btn-verde:active{
     background: #63b141;
@@ -1622,6 +1611,17 @@ i.perfil-ico{
     .pagina-de-produtos .page{
         margin-bottom: 15px;
         margin-top: 16px !important;
+    }
+    .catalogo-modal .close-button{
+        position: fixed;
+        background: #664a90;
+        color: #fff;
+        width: 30px;
+        height: 30px;
+        border-radius: 30px;
+        top: 15px !important;
+        font-size: 20px !important;
+        right: 20px !important;
     }
     @-webkit-keyframes fadein {
         from {bottom: 0; opacity: 0;} 
