@@ -9,6 +9,7 @@ import { EditarPerfilComponent } from './editar-perfil/editar-perfil.component';
 import { EditarColecoesComponent } from './editar-colecoes/editar-colecoes.component';
 import { MeuCatalogoComponent } from './meu-catalogo/meu-catalogo.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { GerenciadorComponent } from './gerenciador/gerenciador.component';
 
 
 export const ROUTES: Routes = [
@@ -20,5 +21,6 @@ export const ROUTES: Routes = [
     { path: 'editarMeuCatalogo', component: EditarColecoesComponent, canActivate: [ AuthGuard ] },
     { path: 'meuCatalogo', component: HomeComponent},
     { path: 'meuCatalogo/:id', component: MeuCatalogoComponent},
+    { path: 'gerenciador', component: GerenciadorComponent},
     { path: '**', component: NotFoundComponent }
 ]

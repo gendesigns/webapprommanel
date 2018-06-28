@@ -630,7 +630,7 @@ ul.tabs{
     justify-content: center;
     box-shadow: none;
 }
-.cell-prod div.blank_space{
+.cell-prod div.blank_space,.blank_space{
     border: 2px dashed #c8c8c8;
     display: flex;
     align-items: center;
@@ -848,6 +848,7 @@ ul.tabs{
     font-style: italic;
     font-size: 17px;
     font-size:1.0625rem;
+    color: #fff;
 }
 .catalogo-nome h1{
     text-transform: uppercase;
@@ -912,6 +913,7 @@ ul.tabs{
 }
 .swiper-pagination-bullet .capa .catalogo-nome p,.capa-mini .catalogo-nome p{
     font-size: 4px;
+    color:#fff;
 }
 .swiper-pagination-bullet .capa .catalogo-nome h1, .capa-mini .catalogo-nome h1{
     font-size: 15px;

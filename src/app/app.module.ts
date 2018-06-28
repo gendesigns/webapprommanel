@@ -41,6 +41,7 @@ import { EditarColecoesComponent } from './editar-colecoes/editar-colecoes.compo
 import { NotificacoesComponent } from './notificacoes/notificacoes.component';
 import { PaginaComponent } from './personalize/pagina/pagina.component';
 import { CatalogoComponent } from './catalogo/catalogo.component';
+import { GerenciadorComponent } from './gerenciador/gerenciador.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { CatalogoComponent } from './catalogo/catalogo.component';
     EditarColecoesComponent,
     NotificacoesComponent,
     PaginaComponent,
-    CatalogoComponent
+    CatalogoComponent,
+    GerenciadorComponent
   ],
   imports: [
     BrowserModule,

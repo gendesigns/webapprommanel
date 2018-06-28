@@ -1,0 +1,60 @@
+.gc{
+    width: 150px;
+    float: left;
+    margin-right: 20px;
+    position: relative;
+}
+.gc .capa-mini{
+    width: 150px;
+    height: 220px !important;
+}
+.gc p.title{
+    margin: 10px 0;
+}
+.blank_space{
+    height: 220px;
+}
+.gc-options{
+    position: absolute;
+    top: 0;
+    height: 85.5%;
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+    align-items: center;
+    justify-content: space-evenly;
+    display: none;
+}
+.gc-options button{
+    color: #fff;
+    border: 1px solid #fff;
+    width: 25px;
+    height: 25px;
+    font-size: 10px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+.gc:hover .gc-options{
+    display: flex;
+}
+.gcx{
+    width: calc(97%/3);
+    float: left;
+    padding: 0px;
+    margin-right: 1%;
+    margin-bottom: 10px;
+}
+.gcx .capa{
+    height: 470px;
+}
+.gcx .capa img{
+    width: 60%;
+}
+.gcx .capa .catalogo-nome{
+    padding: 5px;
+}
+.gcx .capa .catalogo-nome h1{
+    font-size: 32px;
+}
+.gcx .capa .catalogo-nome p{
+    font-size: 12px;
+}
